@@ -664,12 +664,11 @@
     </div>
 
     <!-- Google Forms Embed -->
-    <div class="form-card fade-in">
-      <div class="iframe-scaler">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdh5aZurhcKyYqu_w5AL53f2g4Ro1goUlkwiYLXOY-j1nvrew/viewform?embedded=true"
-          height="1200" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
-      </div>
+    <div class="iframe-scaler fade-in">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdh5aZurhcKyYqu_w5AL53f2g4Ro1goUlkwiYLXOY-j1nvrew/viewform?embedded=true"
+        id="gform-iframe" frameborder="0" marginheight="0" marginwidth="0"
+        style="width:100%; border:none; display:block; min-height:600px;">Memuat…</iframe>
     </div>
 
   </main>
@@ -733,6 +732,30 @@
       navbar.classList.toggle('scrolled', window.scrollY > 80);
     });
 
+    // ===== IFRAME AUTO-RESIZE =====
+    // Google Forms adalah cross-origin, sehingga tidak bisa baca contentWindow.
+    // Solusi: set tinggi awal cukup besar lalu kecilkan bertahap hingga pas.
+    const gframe = document.getElementById('gform-iframe');
+    gframe.addEventListener('load', function () {
+      // Tinggi default saat baru load — beri waktu form render
+      this.style.height = '900px';
+
+      // Coba deteksi apakah form sudah submit (Google Forms redirect ke halaman konfirmasi yang lebih pendek)
+      // dengan mengecek perubahan ukuran dokumen via polling
+      let lastHeight = 900;
+      const observer = setInterval(() => {
+        try {
+          const newHeight = this.contentWindow.document.body.scrollHeight;
+          if (newHeight && newHeight !== lastHeight) {
+            this.style.height = newHeight + 'px';
+            lastHeight = newHeight;
+          }
+        } catch (e) {
+          // Cross-origin block — pertahankan tinggi default
+          clearInterval(observer);
+        }
+      }, 500);
+    });
   </script>
 
 </body>
