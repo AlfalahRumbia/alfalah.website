@@ -1717,14 +1717,12 @@
 
     @media (max-width: 600px) {
 
-      /* ===== TABEL KEGIATAN HARIAN - CARD STACK MODE ===== */
       .table-wrapper {
         border: none;
         border-radius: 0;
         background: transparent;
       }
 
-      /* Sembunyikan header tabel asli */
       table thead {
         display: none;
       }
@@ -1737,7 +1735,6 @@
         width: 100%;
       }
 
-      /* Setiap baris jadi kartu */
       table tbody tr {
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(212, 175, 55, 0.25);
@@ -1751,7 +1748,6 @@
         background: rgba(255, 255, 255, 0.06);
       }
 
-      /* Reset paksa dari media query 768px */
       table {
         font-size: 13px !important;
       }
@@ -1761,7 +1757,6 @@
         padding: 0 !important;
       }
 
-      /* Kolom Waktu — label di atas tiap kartu */
       table tbody td:first-child {
         font-size: 13px !important;
         font-weight: 700;
@@ -1774,7 +1769,6 @@
         white-space: nowrap;
       }
 
-      /* Kolom Kegiatan */
       table tbody td:last-child {
         font-size: 13px !important;
         line-height: 1.5;
@@ -1786,7 +1780,6 @@
 
 
 
-    /* ========== NONAKTIFKAN ZOOM GAMBAR DI PERANGKAT SENTUH ========== */
     @media (hover: none) {
 
       .super-combo img,
@@ -1819,12 +1812,10 @@
 
 <body>
 
-  <!-- ========== NAVIGATION BAR ========== -->
   <div class="nav-menu-overlay" id="navOverlay"></div>
   <nav class="navbar" id="mainNav">
     <div class="nav-container">
 
-      <!-- Brand: logo + nama -->
       <a href="../index.html" class="nav-brand">
         <img src="../img/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="nav-logo">
         <div class="nav-brand-text">
@@ -1833,7 +1824,6 @@
         </div>
       </a>
 
-      <!-- Menu -->
       <ul class="nav-menu" id="navMenu">
         <li><a href="#beranda">Beranda</a></li>
         <li><a href="#program">Program</a></li>
@@ -1849,7 +1839,6 @@
             </svg><span>Home</span></a></li>
       </ul>
 
-      <!-- Hamburger -->
       <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
         <span></span>
         <span></span>
@@ -1859,7 +1848,6 @@
     </div>
   </nav>
 
-  <!-- ========== HERO SECTION ========== -->
   <header class="hero-header" id="beranda">
     <img src="../img/Properti Utama/Hero.webp" alt="Pondok Pesantren" class="hero-bg">
     <div class="hero-content">
@@ -1869,23 +1857,19 @@
     </div>
   </header>
 
-  <!-- ========== STATS & CTA REFINED ========== -->
   <section class="stats-cta">
     <div class="stats-cta-inner">
       <div class="stats-row">
-        <!-- Santri -->
         <div class="stat-item">
           <span class="stat-number" data-target="600">0</span>
           <span class="stat-label">Santri Aktif</span>
         </div>
 
-        <!-- Tahun -->
         <div class="stat-item">
           <span class="stat-number" data-target="19">0</span>
           <span class="stat-label">Tahun Berdiri</span>
         </div>
 
-        <!-- Alumni -->
         <div class="stat-item">
           <span class="stat-number" data-target="500">0</span>
           <span class="stat-label">Alumni</span>
@@ -1905,7 +1889,6 @@
     </div>
   </section>
 
-  <!-- ========== PROGRAM UNGGULAN ========== -->
   <section id="program" class="fade-up">
     <h2 class="section-title">Program Unggulan</h2>
     <div class="program-grid">
@@ -1927,7 +1910,6 @@
     </div>
   </section>
 
-  <!-- ========== VISI MISI ========== -->
   <section class="fade-up">
     <h2 class="section-title">Visi & Misi</h2>
     <div class="visi-misi-grid">
@@ -1943,7 +1925,6 @@
     </div>
   </section>
 
-  <!-- ========== GALERI PONDOK ========== -->
   <section class="fade-up">
     <h2 class="section-title">Galeri Pondok Pesantren</h2>
     <div class="super-combo">
@@ -1951,12 +1932,9 @@
       <img loading="lazy" src="../img/Galeri Pondok/Galeri 2.jpeg" alt="Pondok 2">
       <img loading="lazy" src="../img/Galeri Pondok/Galeri 3.jpeg" alt="Pondok 3">
       <img loading="lazy" src="../img/Galeri Pondok/Galeri 4.jpeg" alt="Pondok 4">
-      <img loading="lazy" src="../img/Galeri Pondok/Galeri 5.jpeg" alt="Pondok 5">
-      <img loading="lazy" src="../img/Galeri Pondok/Galeri 6.jpeg" alt="Pondok 6">
     </div>
   </section>
 
-  <!-- ========== KEGIATAN TAHUNAN ========== -->
   <section id="kegiatan" class="fade-up">
     <h2 class="section-title">Kegiatan Tahunan</h2>
     <ul style="font-size:16px; max-width:900px; margin: 0 auto 30px; padding-left: 20px;">
@@ -1973,7 +1951,6 @@
     </div>
   </section>
 
-  <!-- ========== KEGIATAN BULANAN ========== -->
   <section class="fade-up">
     <h2 class="section-title">Kegiatan Bulanan</h2>
     <ul style="font-size:16px; max-width:900px; margin: 0 auto 30px; padding-left: 20px;">
@@ -1989,7 +1966,6 @@
     </div>
   </section>
 
-  <!-- ========== KEGIATAN MINGGUAN ========== -->
   <section class="fade-up">
     <h2 class="section-title">Kegiatan Mingguan</h2>
     <ul style="font-size:16px; max-width:900px; margin: 0 auto 30px; padding-left: 20px;">
@@ -2006,7 +1982,6 @@
     </div>
   </section>
 
-  <!-- ========== KEGIATAN HARIAN ========== -->
   <section class="fade-up">
     <h2 class="section-title">Kegiatan Harian</h2>
     <div class="table-wrapper">
@@ -2087,7 +2062,6 @@
     </div>
   </section>
 
-  <!-- ========== GALERI KEGIATAN HARIAN ========== -->
   <section class="fade-up">
     <h3 class="section-title">Galeri Kegiatan Harian</h3>
     <div class="grid-gallery">
@@ -2100,7 +2074,6 @@
     </div>
   </section>
 
-  <!-- ========== MADRASAH DINIYAH ========== -->
   <section class="fade-up">
     <div class="container" style="text-align: center; margin-bottom: 40px;">
       <h2 class="section-title">Madrasah Diniyah Misriu</h2>
@@ -2109,7 +2082,6 @@
     </div>
 
     <div class="content-grid">
-      <!-- Ibtida'iyah -->
       <div class="info-box-premium">
         <div class="info-icon-wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -2129,7 +2101,6 @@
         </ul>
       </div>
 
-      <!-- Tsanawiyah -->
       <div class="info-box-premium">
         <div class="info-icon-wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -2159,11 +2130,9 @@
     </div>
   </section>
 
-  <!-- ========== MATERI MADRASAH ========== -->
   <section class="fade-up">
     <h2 class="section-title">Materi Madrasah</h2>
 
-    <!-- IBTIDAIYAH SECTION -->
     <div style="margin-bottom: 50px;">
       <h3
         style="font-size: 28px; color: var(--accent); margin-bottom: 30px; text-align: center; position: relative; padding-bottom: 15px;">
@@ -2207,7 +2176,6 @@
       </div>
     </div>
 
-    <!-- TSANAWIYAH SECTION -->
     <div>
       <h3
         style="font-size: 28px; color: var(--accent); margin-bottom: 30px; text-align: center; position: relative; padding-bottom: 15px;">
@@ -2261,7 +2229,6 @@
     </div>
   </section>
 
-  <!-- ========== FASILITAS ========== -->
   <section id="fasilitas" class="fade-up">
     <h2 class="section-title">Fasilitas</h2>
     <div class="fasilitas-gallery">
@@ -2312,12 +2279,10 @@
     </div>
   </section>
 
-  <!-- ========== PENDAFTARAN ========== -->
   <section id="pendaftaran" class="fade-up">
     <h2 class="section-title">Penerimaan Santri Baru</h2>
 
     <div class="pendaftaran-cards">
-      <!-- Lokasi & Waktu -->
       <div class="pendaftaran-card">
         <h4>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -2335,7 +2300,6 @@
         </ul>
       </div>
 
-      <!-- Syarat Pondok -->
       <div class="pendaftaran-card">
         <h4>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -2353,7 +2317,6 @@
         </ul>
       </div>
 
-      <!-- Syarat Madrasah -->
       <div class="pendaftaran-card">
         <h4>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -2390,7 +2353,6 @@
     </div>
   </section>
 
-  <!-- ========== KONTAK ========== -->
   <section id="kontak" class="fade-up">
     <h2 class="section-title">Send Feedback</h2>
     <div class="contact-section">
@@ -2409,7 +2371,6 @@
     </div>
   </section>
 
-  <!-- ========== LOKASI KAMI ========== -->
   <section class="fade-up">
     <h2 class="section-title">location</h2>
     <div class="maps-container">
@@ -2420,11 +2381,9 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <!-- IDENTITY COLUMN (LEFT) -->
         <div class="footer-identity">
           <img src="../img/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo"
             style="width: 100px; margin-bottom: 25px;">
@@ -2433,7 +2392,6 @@
             unggul, berakhlak mulia, dan berwawasan global di Lampung Tengah.</p>
         </div>
 
-        <!-- SOCIAL LIST COLUMN (MIDDLE) -->
         <div class="footer-social-section">
           <h4
             style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
@@ -2449,7 +2407,6 @@
           </ul>
         </div>
 
-        <!-- UTILITY LINKS COLUMN (RIGHT) -->
         <div class="footer-utility-section">
           <h4
             style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
@@ -2471,7 +2428,6 @@
 
 
 
-  <!-- ========== LIGHTBOX ========== -->
   <div class="lightbox" id="lightbox">
     <button class="close" id="lightboxClose">✕</button>
     <button class="nav prev" id="lightPrev">‹</button>
@@ -2479,10 +2435,8 @@
     <button class="nav next" id="lightNext">›</button>
   </div>
 
-  <!-- ========== JAVASCRIPT ========== -->
 
   <script>
-    // ========== MOBILE NAVIGATION ==========
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const navOverlay = document.getElementById('navOverlay');
@@ -2514,13 +2468,11 @@
       link.addEventListener('click', closeMenu);
     });
 
-    // ========== NAVBAR SCROLL EFFECT ==========
     const navbar = document.getElementById('mainNav');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 80);
     });
 
-    // ========== ACTIVE LINK ON SCROLL ==========
     const sections = document.querySelectorAll('section[id], header[id]');
     const menuLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
@@ -2536,7 +2488,6 @@
 
     sections.forEach(s => sectionObserver.observe(s));
 
-    // ========== SMOOTH SCROLL ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -2552,7 +2503,6 @@
       });
     });
 
-    // ========== INTERSECTION OBSERVER FOR ANIMATIONS ==========
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -2564,9 +2514,7 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // ========== CAROUSEL (dihapus - diganti scroll gallery) ==========
 
-    // ========== LIGHTBOX GALLERY ==========
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
@@ -2618,10 +2566,6 @@
       if (e.key === 'ArrowRight') showNext();
     });
 
-    // ========== BACK TO TOP BUTTON ==========
-
-
-    // ========== FORM SUBMISSION ==========
     const contactForm = document.querySelector('.contact-form');
 
     if (contactForm) {
@@ -2631,34 +2575,29 @@
         const nama = document.getElementById('nama').value.trim();
         const pesan = document.getElementById('pesan').value.trim();
 
-        // Validasi sederhana
         if (!nama || !pesan) {
           alert('Mohon lengkapi semua field!');
           return;
         }
 
-        // Encode untuk WhatsApp
         const waMessage = encodeURIComponent(
           `Assalamualaikum,\n\nNama: ${nama}\nPesan: ${pesan}`
         );
 
-        // Kirim ke WhatsApp
         window.open(`https://wa.me/6285709662892?text=${waMessage}`, '_blank');
 
-        // Reset form
         contactForm.reset();
         alert('Terima kasih! Pesan Anda akan diteruskan ke WhatsApp.');
       });
     }
-    // ========== COUNTER ANIMATION ==========
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const target = entry.target;
           const countTo = parseInt(target.getAttribute('data-target'));
           let count = 0;
-          const duration = 2000; // 2 seconds
-          const step = countTo / (duration / 16); // 60fps
+          const duration = 2000;
+          const step = countTo / (duration / 16);
 
           const updateCount = () => {
             count += step;
