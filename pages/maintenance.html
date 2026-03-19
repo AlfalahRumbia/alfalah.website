@@ -408,36 +408,137 @@
     /* ─── Responsive ─── */
     @media (max-width: 600px) {
       body {
-        height: auto;
-        min-height: 100vh;
-        overflow: auto;
+        height: 100vh;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
       }
 
       .page-wrapper {
-        padding: 20px 14px;
-        align-items: flex-start;
+        padding: 12px;
+        width: 100%;
       }
 
       .content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
       }
 
       .panel-left {
-        padding: 24px 22px 20px;
-        border-right: none;
-        border-bottom: 1px solid var(--accent-border);
+        padding: 16px 14px;
+        border-right: 1px solid var(--accent-border);
+        border-bottom: none;
       }
 
       .panel-right {
-        padding: 20px 22px 24px;
+        padding: 16px 14px;
+        gap: 12px;
+      }
+
+      .badge {
+        font-size: 7px;
+        letter-spacing: 1.5px;
+        padding: 3px 8px;
+        margin-bottom: 10px;
       }
 
       .main-title {
-        font-size: 20px;
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .main-subtitle {
+        font-size: 9px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+      }
+
+      .progress-section {
+        margin-bottom: 12px;
+      }
+
+      .progress-label {
+        font-size: 7.5px;
+        margin-bottom: 5px;
+      }
+
+      .steps-list {
+        gap: 6px;
+      }
+
+      .step-item {
+        font-size: 9px;
+        gap: 7px;
+      }
+
+      .step-icon {
+        width: 14px;
+        height: 14px;
+        font-size: 7px;
+        flex-shrink: 0;
+      }
+
+      .countdown-title {
+        font-size: 7px;
+        margin-bottom: 8px;
+      }
+
+      .countdown-grid {
+        gap: 5px;
+      }
+
+      .countdown-unit {
+        padding: 7px 4px 6px;
       }
 
       .countdown-num {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 3px;
+      }
+
+      .countdown-label {
+        font-size: 6.5px;
+        letter-spacing: 1px;
+      }
+
+      .info-block {
+        padding: 8px 10px;
+      }
+
+      .info-title {
+        font-size: 7px;
+        margin-bottom: 7px;
+        padding-bottom: 6px;
+      }
+
+      .info-row {
+        font-size: 8.5px;
+        margin-bottom: 4px;
+      }
+
+      .info-val {
+        font-size: 8px;
+      }
+
+      .info-val.live {
+        font-size: 8px;
+      }
+
+      .btn-primary {
+        padding: 9px 12px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        gap: 5px;
+      }
+
+      .btn-primary svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      .contact-note {
+        font-size: 8.5px;
+        line-height: 1.5;
       }
     }
   </style>
