@@ -49,14 +49,12 @@
       overflow: hidden;
     }
 
-    /* ─── Background ─── */
     .bg-layer,
     .bg-pattern,
     .bg-orb {
       display: none;
     }
 
-    /* ─── Page Layout ─── */
     .page-wrapper {
       position: relative;
       z-index: 1;
@@ -67,7 +65,6 @@
       padding: 16px;
     }
 
-    /* ─── Main Content ─── */
     .main-content {
       display: flex;
       align-items: center;
@@ -96,7 +93,6 @@
       }
     }
 
-    /* Left Panel */
     .panel-left {
       padding: 32px 32px;
       border-right: 1px solid var(--accent-border);
@@ -150,7 +146,6 @@
       max-width: 300px;
     }
 
-    /* Progress */
     .progress-section {
       margin-bottom: 20px;
     }
@@ -197,7 +192,6 @@
       box-shadow: 0 0 6px var(--accent);
     }
 
-    /* Steps */
     .steps-list {
       list-style: none;
       display: flex;
@@ -253,7 +247,6 @@
       }
     }
 
-    /* Right Panel */
     .panel-right {
       padding: 32px 28px;
       display: flex;
@@ -262,7 +255,6 @@
       gap: 18px;
     }
 
-    /* Countdown */
     .countdown-block {
       margin-bottom: 0;
     }
@@ -307,7 +299,6 @@
       color: var(--text-muted);
     }
 
-    /* System Info */
     .info-block {
       background: rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.06);
@@ -354,7 +345,6 @@
       font-size: 9.5px;
     }
 
-    /* CTA */
     .cta-wrap {
       display: flex;
       flex-direction: column;
@@ -405,7 +395,6 @@
       text-decoration: underline;
     }
 
-    /* ─── Responsive ─── */
     @media (max-width: 600px) {
       body {
         height: 100vh;
@@ -554,11 +543,9 @@
 
   <div class="page-wrapper">
 
-    <!-- Main -->
     <main class="main-content">
       <div class="content-grid">
 
-        <!-- Left -->
         <div class="panel-left">
           <div class="badge">
             <span class="badge-dot"></span>
@@ -572,7 +559,6 @@
             memberikan pengalaman yang lebih baik bagi Anda.
           </p>
 
-          <!-- Progress -->
           <div class="progress-section">
             <div class="progress-label">
               <span>Progress Pemeliharaan</span>
@@ -583,7 +569,6 @@
             </div>
           </div>
 
-          <!-- Steps -->
           <ul class="steps-list">
             <li class="step-item done">
               <div class="step-icon">✓</div>
@@ -604,10 +589,8 @@
           </ul>
         </div>
 
-        <!-- Right -->
         <div class="panel-right">
 
-          <!-- Countdown -->
           <div class="countdown-block">
             <div class="countdown-title">Estimasi selesai dalam</div>
             <div class="countdown-grid">
@@ -630,7 +613,6 @@
             </div>
           </div>
 
-          <!-- System Info -->
           <div class="info-block">
             <div class="info-title">Informasi Sistem</div>
             <div class="info-row">
@@ -651,7 +633,6 @@
             </div>
           </div>
 
-          <!-- CTA -->
           <div class="cta-wrap">
             <a href="../index.html" class="btn-primary">
               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -672,7 +653,6 @@
   </div>
 
   <script>
-    // ── Countdown ──
     const target = new Date('2026-03-26T04:00:00Z');
 
     function pad(n) { return String(n).padStart(2, '0'); }
@@ -700,7 +680,6 @@
       document.getElementById('cd-secs').textContent = pad(s);
     }
 
-    // ── Live Clock ──
     function updateClock() {
       const now = new Date();
       document.getElementById('utcTime').textContent = now.toUTCString().replace(' GMT', ' UTC');
