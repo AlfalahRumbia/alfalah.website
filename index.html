@@ -465,7 +465,9 @@
     .cta-section::after {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 2px;
       background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, #fff8e1 50%, var(--accent) 70%, transparent 100%);
       opacity: 0.7;
@@ -505,8 +507,17 @@
     }
 
     @keyframes pulseDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.6); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.6);
+      }
     }
 
     .cta-inner h2 {
@@ -518,7 +529,7 @@
       letter-spacing: -0.5px;
     }
 
-    .cta-inner > p {
+    .cta-inner>p {
       font-size: clamp(13px, 2.5vw, 15px);
       color: rgba(255, 255, 255, 0.55);
       line-height: 1.8;
@@ -559,7 +570,7 @@
       left: -60%;
       width: 60%;
       height: 200%;
-      background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.12) 50%, transparent 60%);
+      background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.12) 50%, transparent 60%);
       transform: skewX(-20deg);
       transition: left 0.6s ease;
       pointer-events: none;
@@ -617,68 +628,78 @@
 
     /* Brosur — outline glassmorphism */
     .cta-btn--brosur {
-      background: rgba(255,255,255,0.05);
-      border: 1.5px solid rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
       color: #fff;
     }
+
     .cta-btn--brosur:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(212,175,55,0.5);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(212, 175, 55, 0.5);
       transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
       color: #fff;
     }
+
     .cta-btn--brosur .cta-btn-icon-wrap {
-      background: rgba(212,175,55,0.15);
-      border: 1px solid rgba(212,175,55,0.3);
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.3);
     }
+
     .cta-btn--brosur .cta-btn-arrow {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     /* Offline — accent green */
     .cta-btn--offline {
       background: rgba(40, 68, 63, 0.6);
-      border: 1.5px solid rgba(40,200,140,0.25);
+      border: 1.5px solid rgba(40, 200, 140, 0.25);
       color: #fff;
     }
+
     .cta-btn--offline:hover {
       background: rgba(40, 68, 63, 0.9);
-      border-color: rgba(40,200,140,0.55);
+      border-color: rgba(40, 200, 140, 0.55);
       transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(40,68,63,0.5);
+      box-shadow: 0 16px 40px rgba(40, 68, 63, 0.5);
       color: #fff;
     }
+
     .cta-btn--offline .cta-btn-icon-wrap {
-      background: rgba(40,200,140,0.15);
-      border: 1px solid rgba(40,200,140,0.3);
+      background: rgba(40, 200, 140, 0.15);
+      border: 1px solid rgba(40, 200, 140, 0.3);
     }
+
     .cta-btn--offline .cta-btn-arrow {
-      background: rgba(40,200,140,0.15);
+      background: rgba(40, 200, 140, 0.15);
     }
 
     /* Online — gold solid */
     .cta-btn--online {
       background: linear-gradient(135deg, var(--accent) 0%, #c8951f 100%);
-      border: 1.5px solid rgba(212,175,55,0.5);
+      border: 1.5px solid rgba(212, 175, 55, 0.5);
       color: #1a2e2b;
     }
+
     .cta-btn--online:hover {
       background: linear-gradient(135deg, #e8c840 0%, #d4a020 100%);
       transform: translateY(-5px);
-      box-shadow: 0 20px 50px rgba(212,175,55,0.45);
+      box-shadow: 0 20px 50px rgba(212, 175, 55, 0.45);
       color: #1a2e2b;
     }
+
     .cta-btn--online .cta-btn-icon-wrap {
-      background: rgba(26,46,43,0.18);
-      border: 1px solid rgba(26,46,43,0.2);
+      background: rgba(26, 46, 43, 0.18);
+      border: 1px solid rgba(26, 46, 43, 0.2);
     }
+
     .cta-btn--online .cta-btn-title,
     .cta-btn--online .cta-btn-desc {
       color: #1a2e2b;
     }
+
     .cta-btn--online .cta-btn-arrow {
-      background: rgba(26,46,43,0.15);
+      background: rgba(26, 46, 43, 0.15);
     }
 
 
@@ -997,10 +1018,6 @@
     <div class="berita-grid">
 
       <div class="informasi-card card-base fade-up">
-        <img src="img/Informasi/Informasi 3.jpg" alt="Informasi 3" loading="lazy">
-      </div>
-
-      <div class="informasi-card card-base fade-up">
         <img src="img/Informasi/Informasi 4.jpg" alt="Informasi 4" loading="lazy">
       </div>
 
@@ -1009,14 +1026,14 @@
           <img src="img/Informasi/Informasi 5.jpg" alt="Informasi 5" loading="lazy">
           <span class="live-badge">LIVE</span>
         </div>
-        <a href="https://www.tiktok.com/@alfalahfababead123" target="_blank" rel="noopener noreferrer"
-          class="live-btn">
-         <svg width="14" height="14" viewBox="0 0 24 24" fill="white"
-           style="display:inline-block;vertical-align:middle;margin-right:6px;flex-shrink:0;"
-           xmlns="http://www.w3.org/2000/svg">
-           <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
-         </svg>
-         Tonton di TikTok
+        <a href="https://www.tiktok.com/@alfalahfababead123" target="_blank" rel="noopener noreferrer" class="live-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"
+            style="display:inline-block;vertical-align:middle;margin-right:6px;flex-shrink:0;"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+          </svg>
+          Tonton di TikTok
         </a>
       </div>
     </div>
@@ -1026,7 +1043,8 @@
     <div class="cta-inner fade-up">
       <div class="cta-label">Pendaftaran Telah Dibuka</div>
       <h2>Penerimaan Santri Baru<br>Tahun Ajaran 2026/2027</h2>
-      <p>Daftarkan Putra-Putri Anda ke Pondok Pesantren Al-Falah dan wujudkan generasi yang berilmu dan berakhlak mulia.</p>
+      <p>Daftarkan Putra-Putri Anda ke Pondok Pesantren Al-Falah dan wujudkan generasi yang berilmu dan berakhlak mulia.
+      </p>
 
       <div class="cta-buttons">
 
@@ -1034,18 +1052,20 @@
           <div class="cta-btn-icon-wrap">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
             </svg>
           </div>
           <span class="cta-btn-title">Lihat Brosur</span>
           <span class="cta-btn-desc">Informasi lengkap program &amp; fasilitas</span>
           <div class="cta-btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </div>
         </a>
 
@@ -1053,15 +1073,17 @@
           <div class="cta-btn-icon-wrap">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>
-              <path d="M9 21V12h6v9"/>
+              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+              <path d="M9 21V12h6v9" />
             </svg>
           </div>
           <span class="cta-btn-title">Daftar Offline</span>
           <span class="cta-btn-desc">Datang langsung ke kantor pondok</span>
           <div class="cta-btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </div>
         </a>
 
@@ -1069,15 +1091,17 @@
           <div class="cta-btn-icon-wrap">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a2e2b" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
             </svg>
           </div>
           <span class="cta-btn-title">Daftar via Website</span>
           <span class="cta-btn-desc">Pendaftaran online dari mana saja</span>
           <div class="cta-btn-arrow">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a2e2b" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </div>
         </a>
 
