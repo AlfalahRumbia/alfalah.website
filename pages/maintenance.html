@@ -654,13 +654,10 @@
 
   <script>
     // ─── KONFIGURASI ────────────────────────────────────────────────
-    // Sesuaikan waktu mulai & selesai maintenance di sini
-    const start  = new Date('2026-03-20T00:00:00Z'); // Waktu mulai maintenance
-    const target = new Date('2026-04-03T04:00:00Z'); // Waktu estimasi selesai
+    const start  = new Date('2026-03-20T00:00:00Z');
+    const target = new Date('2026-04-05T04:00:00Z');
     // ────────────────────────────────────────────────────────────────
 
-    // Threshold per step (dalam persen)
-    // step ke-N dianggap DONE ketika progress melewati batas ini
     const stepThresholds = [25, 50, 75, 100];
 
     function pad(n) { return String(n).padStart(2, '0'); }
