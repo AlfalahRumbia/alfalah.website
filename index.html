@@ -258,6 +258,31 @@
       background: var(--secondary);
     }
 
+    .formal-section .formal-grid {
+      grid-template-columns: repeat(2, minmax(280px, 360px));
+      justify-content: center;
+    }
+
+    .formal-section .formal-card img,
+    .formal-section .formal-card .dual-img {
+      height: 200px;
+    }
+
+    .formal-section .formal-card .dual-img {
+      display: flex;
+    }
+
+    .formal-section .formal-card .dual-img img {
+      width: 50%;
+      height: 100%;
+      object-fit: contain;
+      background: #f5f5f5;
+    }
+
+    .formal-section .formal-card .dual-img img:last-child {
+      border-left: 1px solid #eee;
+    }
+
     .formal-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -775,8 +800,14 @@
       }
 
       .formal-section .formal-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 200px));
+        justify-content: center;
         gap: 8px;
+      }
+
+      .formal-section .formal-card img,
+      .formal-section .formal-card .dual-img {
+        height: 130px;
       }
 
       .informasi-card img {
@@ -891,8 +922,14 @@
       }
 
       .formal-section .formal-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 150px));
+        justify-content: center;
         gap: 6px;
+      }
+
+      .formal-section .formal-card img,
+      .formal-section .formal-card .dual-img {
+        height: 100px;
       }
 
       .informasi-card img {
@@ -972,8 +1009,14 @@
       }
 
       .formal-section .formal-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 110px));
+        justify-content: center;
         gap: 5px;
+      }
+
+      .formal-section .formal-card img,
+      .formal-section .formal-card .dual-img {
+        height: 80px;
       }
 
       .informasi-card img {
@@ -1138,9 +1181,9 @@
     <div class="formal-grid">
       <a href="pages/maintenance.html" class="formal-card card-base fade-up"
         style="display: block; text-decoration: none; color: inherit;">
-        <div style="display: flex;">
-          <img src="img/Logo/SMP Logo.jpg" alt="SMP Al Falah" loading="lazy" style="width: 50%; object-fit: contain; background: #f5f5f5;">
-          <img src="img/Logo/SMK Logo.jpg" alt="SMK Al Falah" loading="lazy" style="width: 50%; object-fit: contain; background: #f5f5f5; border-left: 1px solid #eee;">
+        <div class="dual-img">
+          <img src="img/Logo/SMP Logo.jpg" alt="SMP Al Falah" loading="lazy">
+          <img src="img/Logo/SMK Logo.jpg" alt="SMK Al Falah" loading="lazy">
         </div>
         <div class="formal-info">
           <span class="role">Formal</span>
