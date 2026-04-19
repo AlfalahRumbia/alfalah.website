@@ -478,39 +478,19 @@
   }
   .alur-step p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
 
-  /* ─── Contact ────────────────────────────────────────── */
-  .contact-section { background: var(--cream-dark); }
-  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-  .contact-text .section-rule { margin: 18px 0; }
-  .contact-text p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 32px; }
-  .contact-cards { display: flex; flex-direction: column; gap: 12px; }
-  .contact-card {
-    display: flex; align-items: center; gap: 16px;
-    background: var(--white); border-radius: 14px;
-    padding: 18px 24px; border: 1px solid var(--cream-dark);
-    box-shadow: 0 2px 12px rgba(26,53,40,0.06);
-    transition: all 0.25s;
-    text-decoration: none;
-  }
-  .contact-card:hover { box-shadow: var(--shadow); transform: translateX(4px); border-color: rgba(200,151,42,0.3); }
-  .contact-card .cc-icon {
-    width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px;
-    background: linear-gradient(135deg, var(--green-deep), var(--green-light));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-  }
-  .contact-card .cc-info {}
-  .contact-card .cc-label { font-size: 12px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; }
-  .contact-card .cc-value { font-size: 16px; font-weight: 700; color: var(--green-deep); }
+
+
+
+  /* ─── Location ────────────────────────────────────────── */
+  .location-section { padding: 96px 0; background: var(--cream-dark); }
   .map-embed {
     border-radius: 20px; overflow: hidden;
     box-shadow: var(--shadow-lg);
-    height: 380px; background: var(--cream);
+    height: 480px; background: var(--cream);
     border: 1px solid var(--cream-dark);
     display: flex; align-items: center; justify-content: center;
     flex-direction: column; gap: 12px; color: var(--text-muted);
   }
-  .map-placeholder { font-size: 40px; }
   .map-embed iframe { width: 100%; height: 100%; border: none; }
 
   /* ─── Footer ─────────────────────────────────────────── */
@@ -585,7 +565,7 @@
     .ekstra-grid { grid-template-columns: repeat(3, 1fr); }
     .daftar-top { grid-template-columns: 1fr; }
     .alur-steps { grid-template-columns: 1fr; }
-    .contact-inner { grid-template-columns: 1fr; }
+
     .footer-inner { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
@@ -624,7 +604,8 @@
     <li><a href="#fasilitas">Fasilitas</a></li>
     <li><a href="#ekstra">Ekskul</a></li>
     <li><a href="#pendaftaran">Pendaftaran</a></li>
-    <li><a href="#kontak" class="nav-cta">Daftar Sekarang</a></li>
+    <li><a href="#lokasi">Lokasi</a></li>
+    <li><a href="#pendaftaran" class="nav-cta">Daftar Sekarang</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -637,7 +618,7 @@
   <a href="#fasilitas" onclick="closeMenu()">Fasilitas</a>
   <a href="#ekstra" onclick="closeMenu()">Ekstrakurikuler</a>
   <a href="#pendaftaran" onclick="closeMenu()">Pendaftaran</a>
-  <a href="#kontak" onclick="closeMenu()">Kontak</a>
+  <a href="#lokasi" onclick="closeMenu()">Lokasi</a>
 </div>
 
 <!-- ═══ HERO ══════════════════════════════════════════════ -->
@@ -886,65 +867,31 @@
   </div>
 </section>
 
-<!-- ═══ KONTAK ════════════════════════════════════════════ -->
-<section class="contact-section" id="kontak">
+<!-- ═══ LOKASI ════════════════════════════════════════════ -->
+<section class="location-section" id="lokasi">
   <div class="container">
-    <div class="contact-inner">
-      <div class="contact-text reveal">
-        <div class="section-label">Hubungi Kami</div>
-        <h2 class="section-title">Contact Person</h2>
-        <div class="section-rule"></div>
-        <p>Hubungi kami untuk informasi lebih lanjut mengenai pendaftaran, fasilitas, dan program pendidikan yang tersedia di Yayasan Queen Al-Falah.</p>
-        <div class="contact-cards">
-          <a href="tel:085664605759" class="contact-card">
-            <div class="cc-icon">🏠</div>
-            <div class="cc-info">
-              <div class="cc-label">Pondok Putra</div>
-              <div class="cc-value">0856 6460 5759</div>
-            </div>
-          </a>
-          <a href="tel:085839315552" class="contact-card">
-            <div class="cc-icon">🏡</div>
-            <div class="cc-info">
-              <div class="cc-label">Pondok Putri</div>
-              <div class="cc-value">0858 3931 5552</div>
-            </div>
-          </a>
-          <a href="tel:085811559948" class="contact-card">
-            <div class="cc-icon">📚</div>
-            <div class="cc-info">
-              <div class="cc-label">SMP Al-Falah</div>
-              <div class="cc-value">0858 1155 9948</div>
-            </div>
-          </a>
-          <a href="tel:085269437658" class="contact-card">
-            <div class="cc-icon">🔧</div>
-            <div class="cc-info">
-              <div class="cc-label">SMK Al-Falah</div>
-              <div class="cc-value">0852 6943 7658</div>
-            </div>
-          </a>
-          <a href="tel:085658959732" class="contact-card">
-            <div class="cc-icon">🎓</div>
-            <div class="cc-info">
-              <div class="cc-label">Universitas Terbuka (SALUT)</div>
-              <div class="cc-value">0856 5895 9732</div>
-            </div>
-          </a>
-        </div>
+    <div class="reveal" style="text-align: center; margin-bottom: 48px;">
+      <div class="section-label" style="color:var(--gold)">Kunjungi Kami</div>
+      <h2 class="section-title">Lokasi Pesantren</h2>
+      <div class="section-rule" style="margin: 18px auto;"></div>
+      <p class="section-desc" style="margin: 0 auto;">Jl. Minak Brajo Kutan, Desa Teluk Dalem Ilir, Kec. Rumbia, Kab. Lampung Tengah</p>
+    </div>
+    
+    <div class="reveal reveal-delay-1">
+      <div class="map-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=Pondok+Pesantren+Al-Falah+Rumbia+Lampung+Tengah&output=embed"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Lokasi Pondok Pesantren Al-Falah"
+        ></iframe>
       </div>
-      <div class="reveal reveal-delay-2">
-        <div class="map-embed">
-          <iframe
-            src="https://maps.google.com/maps?q=Pondok+Pesantren+Al-Falah+Rumbia+Lampung+Tengah&output=embed"
-            allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi Pondok Pesantren Al-Falah"
-          ></iframe>
-        </div>
-        <div style="margin-top:20px; padding:20px 24px; background:var(--white); border-radius:14px; border:1px solid var(--cream-dark); box-shadow:0 2px 12px rgba(26,53,40,0.06);">
-          <div style="font-size:12px; color:var(--text-muted); font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">Alamat Lengkap</div>
-          <div style="font-size:14px; color:var(--text-mid); line-height:1.8;">Jl. Minak Brajo Kutan, Desa Teluk Dalem Ilir,<br />Kecamatan Rumbia, Kabupaten Lampung Tengah,<br />Provinsi Lampung 34157</div>
+      <div style="margin-top:20px; padding:24px; background:var(--white); border-radius:14px; border:1px solid var(--cream-dark); box-shadow:0 2px 12px rgba(26,53,40,0.06); text-align: center;">
+        <div style="font-size:12px; color:var(--text-muted); font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px;">Alamat Lengkap</div>
+        <div style="font-size:15px; color:var(--text-mid); line-height:1.8;">
+          Jl. Minak Brajo Kutan, Desa Teluk Dalem Ilir,<br />
+          Kecamatan Rumbia, Kabupaten Lampung Tengah,<br />
+          Provinsi Lampung 34157
         </div>
       </div>
     </div>
@@ -984,7 +931,7 @@
           <li onclick="document.getElementById('fasilitas').scrollIntoView({behavior:'smooth'})">Fasilitas</li>
           <li onclick="document.getElementById('ekstra').scrollIntoView({behavior:'smooth'})">Ekstrakurikuler</li>
           <li onclick="document.getElementById('pendaftaran').scrollIntoView({behavior:'smooth'})">Pendaftaran</li>
-          <li onclick="document.getElementById('kontak').scrollIntoView({behavior:'smooth'})">Kontak</li>
+          <li onclick="document.getElementById('lokasi').scrollIntoView({behavior:'smooth'})">Lokasi</li>
         </ul>
       </div>
     </div>
