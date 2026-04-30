@@ -1848,6 +1848,33 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .kegiatan-group {
+      margin-bottom: 40px;
+    }
+
+    .kegiatan-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .kegiatan-subtitle {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .kegiatan-subtitle {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .kegiatan-group {
+        margin-bottom: 30px;
+      }
+    }
   </style>
 </head>
 
@@ -1979,46 +2006,50 @@
   </section>
 
   <section id="kegiatan" class="fade-up">
-    <h2 class="section-title">Kegiatan Tahunan</h2>
-    <div class="kegiatan-grid">
-      <div class="kegiatan-card">
-        <h4>Haul Akbar</h4>
-      </div>
-      <div class="kegiatan-card">
-        <h4>Pra Haflah</h4>
-      </div>
-      <div class="kegiatan-card">
-        <h4>Haflah Akhirissanah</h4>
+    <h2 class="section-title">Kegiatan Pesantren</h2>
+
+    <div class="kegiatan-group">
+      <h3 class="kegiatan-subtitle">Kegiatan Tahunan</h3>
+      <div class="kegiatan-grid">
+        <div class="kegiatan-card">
+          <h4>Haul Akbar</h4>
+        </div>
+        <div class="kegiatan-card">
+          <h4>Pra Haflah</h4>
+        </div>
+        <div class="kegiatan-card">
+          <h4>Haflah Akhirissanah</h4>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="fade-up">
-    <h2 class="section-title">Kegiatan Bulanan</h2>
-    <div class="kegiatan-grid">
-      <div class="kegiatan-card">
-        <h4>Manakib</h4>
-      </div>
-      <div class="kegiatan-card">
-        <h4>Khitobah</h4>
+    <div class="kegiatan-group">
+      <h3 class="kegiatan-subtitle">Kegiatan Bulanan</h3>
+      <div class="kegiatan-grid">
+        <div class="kegiatan-card">
+          <h4>Manakib</h4>
+        </div>
+        <div class="kegiatan-card">
+          <h4>Khitobah</h4>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="fade-up">
-    <h2 class="section-title">Kegiatan Mingguan</h2>
-    <div class="kegiatan-grid">
-      <div class="kegiatan-card">
-        <h4>Tahlil &amp; Yasinan</h4>
-      </div>
-      <div class="kegiatan-card">
-        <h4>Lalaran Kubro</h4>
-      </div>
-      <div class="kegiatan-card">
-        <h4>Dzibaiyah</h4>
-      </div>
-      <div class="kegiatan-card">
-        <h4>Ziarah</h4>
+    <div class="kegiatan-group">
+      <h3 class="kegiatan-subtitle">Kegiatan Mingguan</h3>
+      <div class="kegiatan-grid">
+        <div class="kegiatan-card">
+          <h4>Tahlil &amp; Yasinan</h4>
+        </div>
+        <div class="kegiatan-card">
+          <h4>Lalaran Kubro</h4>
+        </div>
+        <div class="kegiatan-card">
+          <h4>Dzibaiyah</h4>
+        </div>
+        <div class="kegiatan-card">
+          <h4>Ziarah</h4>
+        </div>
       </div>
     </div>
   </section>
