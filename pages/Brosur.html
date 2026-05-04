@@ -186,6 +186,8 @@
     .nav-brand-text {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       line-height: 1.15;
     }
 
@@ -195,6 +197,7 @@
       font-weight: 600;
       color: var(--text-light);
       letter-spacing: 0.3px;
+      white-space: nowrap;
     }
 
     .nav-brand-sub {
@@ -348,17 +351,23 @@
     .hero-content {
       text-align: center;
       color: var(--text-light);
-      max-width: 800px;
+      max-width: 900px;
+      margin: 0 auto;
       padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       animation: fadeInUp 1s ease;
     }
 
     .hero-content h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 6vw, 68px);
+      font-size: clamp(24px, 6vw, 68px);
       font-weight: 900;
       margin-bottom: 15px;
       text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
     }
 
     .hero-content h2 {
@@ -1416,7 +1425,7 @@
 
       .footer-identity {
         grid-column: 1 / -1;
-        text-align: left;
+        text-align: center;
       }
 
       .footer-identity img.footer-logo {
@@ -1748,6 +1757,17 @@
       .back-to-top {
         right: 30px;
         bottom: 100px;
+      }
+ 
+      .info-box-premium h3 {
+        font-size: 18px !important;
+      }
+      .info-box-premium p, .step-list li {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+      }
+      .info-box-premium {
+        padding: 25px 20px !important;
       }
 
     }
