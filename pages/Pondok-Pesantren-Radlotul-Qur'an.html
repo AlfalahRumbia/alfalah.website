@@ -874,6 +874,64 @@
     @media (max-width: 768px) {
       .schedule-head { padding: 18px; }
       .schedule-body { padding: 14px; }
+
+      /* Responsive Table (Stacked Card View) */
+      table.schedule-table {
+        min-width: auto !important;
+      }
+
+      table.schedule-table thead {
+        display: none; /* Hide header on mobile */
+      }
+
+      table.schedule-table, 
+      table.schedule-table tbody, 
+      table.schedule-table tr, 
+      table.schedule-table td {
+        display: block;
+        width: 100%;
+      }
+
+      table.schedule-table tr {
+        margin-bottom: 15px;
+        border: 1px solid rgba(26, 77, 46, 0.1);
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        overflow: hidden;
+      }
+
+      table.schedule-table td {
+        text-align: left !important;
+        padding: 8px 15px !important;
+        position: relative;
+        border-bottom: none;
+        font-size: 14px;
+        min-height: auto;
+      }
+
+      table.schedule-table td:last-child {
+        padding-bottom: 15px !important;
+      }
+
+      table.schedule-table td::before {
+        display: none; /* Remove repetitive labels */
+      }
+
+      .schedule-program {
+        font-size: 16px !important;
+        font-weight: 800 !important;
+        color: var(--primary);
+        padding-top: 15px !important;
+      }
+
+      .schedule-time {
+        color: var(--accent) !important;
+        font-weight: 700;
+        font-size: 12px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
     }
 
   </style>
@@ -1052,24 +1110,24 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="schedule-program">Juz Amma</td>
-                  <td>Mulai dari surah Al-Lail – surah An-Naba</td>
-                  <td class="schedule-time">05.15 WIB s/d Selesai</td>
+                  <td class="schedule-program" data-label="Program">Juz Amma</td>
+                  <td data-label="Keterangan">Mulai dari surah Al-Lail – surah An-Naba</td>
+                  <td class="schedule-time" data-label="Waktu">05.15 WIB s/d Selesai</td>
                 </tr>
                 <tr>
-                  <td class="schedule-program">Surat Penting</td>
-                  <td>Surah Yasin, Surah Al-Waqiah, Surah Al-Mulk</td>
-                  <td>—</td>
+                  <td class="schedule-program" data-label="Program">Surat Penting</td>
+                  <td data-label="Keterangan">Surah Yasin, Surah Al-Waqiah, Surah Al-Mulk</td>
+                  <td data-label="Waktu">—</td>
                 </tr>
                 <tr>
-                  <td class="schedule-program">Bin Nadzor</td>
-                  <td>-</td>
-                  <td class="schedule-time">05.15 WIB</td>
+                  <td class="schedule-program" data-label="Program">Bin Nadzor</td>
+                  <td data-label="Keterangan">-</td>
+                  <td class="schedule-time" data-label="Waktu">05.15 WIB</td>
                 </tr>
                 <tr>
-                  <td class="schedule-program">Bil Ghoib</td>
-                  <td>-</td>
-                  <td class="schedule-time">18.30 WIB</td>
+                  <td class="schedule-program" data-label="Program">Bil Ghoib</td>
+                  <td data-label="Keterangan">-</td>
+                  <td class="schedule-time" data-label="Waktu">18.30 WIB</td>
                 </tr>
               </tbody>
             </table>
@@ -1089,19 +1147,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="schedule-program">Fasholatan</td>
-                  <td>-</td>
-                  <td class="schedule-time">05.15 WIB s/d Selesai</td>
+                  <td class="schedule-program" data-label="Program">Fasholatan</td>
+                  <td data-label="Keterangan">-</td>
+                  <td class="schedule-time" data-label="Waktu">05.15 WIB s/d Selesai</td>
                 </tr>
                 <tr>
-                  <td class="schedule-program">Juz Amma</td>
-                  <td>s/d Surah Ad-Dhuha</td>
-                  <td>—</td>
+                  <td class="schedule-program" data-label="Program">Juz Amma</td>
+                  <td data-label="Keterangan">s/d Surah Ad-Dhuha</td>
+                  <td data-label="Waktu">—</td>
                 </tr>
                 <tr>
-                  <td class="schedule-program">Sorogan Bin Nadzor</td>
-                  <td>Kelas Tekror</td>
-                  <td class="schedule-time">05.15 WIB & 18.20 WIB</td>
+                  <td class="schedule-program" data-label="Program">Sorogan Bin Nadzor</td>
+                  <td data-label="Keterangan">Kelas Tekror</td>
+                  <td class="schedule-time" data-label="Waktu">05.15 WIB & 18.20 WIB</td>
                 </tr>
               </tbody>
             </table>
