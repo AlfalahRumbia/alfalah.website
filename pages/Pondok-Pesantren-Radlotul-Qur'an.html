@@ -609,6 +609,100 @@
     }
     .nav-menu-overlay.open { display: block; }
 
+    /* Jadwal (table) */
+    .schedule-wrap {
+      background: var(--secondary-dark);
+    }
+    .schedule-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid rgba(26,77,46,0.10);
+      overflow: hidden;
+    }
+    .schedule-head {
+      padding: 26px;
+      background: linear-gradient(135deg, rgba(26,77,46,0.10), rgba(212,175,55,0.12));
+      border-bottom: 1px solid rgba(26,77,46,0.10);
+      text-align: center;
+    }
+    .schedule-head .title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: clamp(26px, 3.2vw, 40px);
+      color: var(--primary);
+    }
+    .schedule-head .subtitle {
+      margin-top: 6px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+    .schedule-body {
+      padding: 18px;
+    }
+    .schedule-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--primary);
+      margin: 6px 0 12px;
+    }
+    .schedule-table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 14px;
+      border: 1px solid rgba(26,77,46,0.10);
+      background: #fff;
+    }
+    table.schedule-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 640px;
+    }
+    table.schedule-table thead th {
+      text-align: left;
+      padding: 14px 14px;
+      font-weight: 900;
+      border-bottom: 1px solid rgba(26,77,46,0.12);
+    }
+    table.schedule-table tbody td {
+      padding: 14px;
+      color: var(--text-mid);
+      border-bottom: 1px solid rgba(26,77,46,0.08);
+      vertical-align: top;
+    }
+    table.schedule-table tbody tr:nth-child(even) td {
+      background: rgba(26,77,46,0.03);
+    }
+    table.schedule-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .schedule-time {
+      font-weight: 900;
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+    .schedule-program {
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .schedule-thead-green th {
+      background: rgba(26,77,46,0.08);
+      color: var(--primary);
+    }
+    .schedule-thead-gold th {
+      background: rgba(212,175,55,0.16);
+      color: #5b4300;
+    }
+    @media (max-width: 768px) {
+      .schedule-head { padding: 18px; }
+      .schedule-body { padding: 14px; }
+    }
+
   </style>
 </head>
 
@@ -755,99 +849,81 @@
     </div>
   </section>
 
-  <section id="jadwal" class="fade-up" style="background: var(--secondary);">
+  <section id="jadwal" class="fade-up schedule-wrap">
     <div class="container">
-      <div style="background: #fff; border-radius: 18px; box-shadow: var(--shadow-hover); border: 1px solid rgba(26,77,46,0.10); overflow: hidden;">
-        <div style="padding: 26px 26px 10px; background: linear-gradient(135deg, rgba(26,77,46,0.10), rgba(212,175,55,0.12)); border-bottom: 1px solid rgba(26,77,46,0.10);">
-          <div style="text-align: center;">
-            <div style="font-family: 'Playfair Display', serif; font-weight: 900; letter-spacing: 1px; font-size: clamp(26px, 3.2vw, 40px); color: var(--primary);">
-              JADWAL
-            </div>
-            <div style="margin-top: 6px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-mid);">
-              Bersama Ibu Nyai & Ustadzah
-            </div>
-          </div>
+      <div class="schedule-card">
+        <div class="schedule-head">
+          <div class="title">JADWAL</div>
+          <div class="subtitle">BERSAMA IBU NYAI & USTADZAH</div>
         </div>
 
-        <div style="padding: 26px;">
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px;">
-            <div style="border-radius: 16px; border: 1px solid rgba(26,77,46,0.10); overflow: hidden; background: rgba(26,77,46,0.03);">
-              <div style="padding: 16px 18px; background: rgba(26,77,46,0.08); border-bottom: 1px solid rgba(26,77,46,0.10);">
-                <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 800; color: var(--primary); text-align: center;">
-                  BERSAMA IBU NYAI
-                </div>
-              </div>
-
-              <div style="padding: 18px;">
-                <div style="font-weight: 900; color: var(--text-dark); margin-bottom: 10px;">JUZ AMMA</div>
-                <ul style="margin: 0 0 12px 18px; color: var(--text-mid);">
-                  <li>Mulai dari surah Al-Lail – surah An-Naba</li>
-                </ul>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 12px; background: #fff; border: 1px dashed rgba(26,77,46,0.18);">
-                  <span style="font-weight: 900; color: var(--primary);">PUKUL 05.15 WIB</span>
-                  <span style="color: var(--text-mid);">s/d Selesai</span>
-                </div>
-
-                <div style="height: 14px;"></div>
-
-                <div style="font-weight: 900; color: var(--text-dark); margin-bottom: 10px;">SURAT PENTING</div>
-                <ul style="margin: 0 0 14px 18px; color: var(--text-mid);">
-                  <li>Surah Yasin</li>
-                  <li>Surah Al-Waqiah</li>
-                  <li>Surah Al-Mulk</li>
-                </ul>
-
-                <div style="display: grid; gap: 10px;">
-                  <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border-radius: 12px; background: #fff; border: 1px solid rgba(26,77,46,0.10);">
-                    <span style="font-weight: 900; color: var(--primary);">BIN NADZOR</span>
-                    <span style="font-weight: 900; color: var(--text-dark);">PUKUL 05.15 WIB</span>
-                  </div>
-                  <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 12px; border-radius: 12px; background: #fff; border: 1px solid rgba(26,77,46,0.10);">
-                    <span style="font-weight: 900; color: var(--primary);">BIL GHOIB</span>
-                    <span style="font-weight: 900; color: var(--text-dark);">PUKUL 18.30 WIB</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div style="border-radius: 16px; border: 1px solid rgba(26,77,46,0.10); overflow: hidden; background: rgba(212,175,55,0.06);">
-              <div style="padding: 16px 18px; background: rgba(212,175,55,0.14); border-bottom: 1px solid rgba(26,77,46,0.10);">
-                <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 800; color: var(--primary); text-align: center;">
-                  BERSAMA USTADZAH
-                </div>
-              </div>
-
-              <div style="padding: 18px;">
-                <div style="display: grid; gap: 12px;">
-                  <div style="padding: 12px; border-radius: 12px; background: #fff; border: 1px solid rgba(26,77,46,0.10);">
-                    <div style="display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
-                      <span style="font-weight: 900; color: var(--primary);">FASHOLATAN</span>
-                      <span style="font-weight: 900; color: var(--text-dark);">05.15 WIB s/d Selesai</span>
-                    </div>
-                  </div>
-
-                  <div style="padding: 12px; border-radius: 12px; background: #fff; border: 1px solid rgba(26,77,46,0.10);">
-                    <div style="font-weight: 900; color: var(--text-dark); margin-bottom: 8px;">JUZ AMMA</div>
-                    <ul style="margin: 0 0 0 18px; color: var(--text-mid);">
-                      <li>s/d Surah Ad-Dhuha</li>
-                    </ul>
-                  </div>
-
-                  <div style="padding: 12px; border-radius: 12px; background: #fff; border: 1px solid rgba(26,77,46,0.10);">
-                    <div style="font-weight: 900; color: var(--primary); margin-bottom: 6px;">SOROGAN BIN NADZOR</div>
-                    <ul style="margin: 0 0 10px 18px; color: var(--text-mid);">
-                      <li>Kelas Tekror</li>
-                    </ul>
-                    <div style="display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 10px; border-top: 1px dashed rgba(26,77,46,0.18);">
-                      <span style="font-weight: 900; color: var(--text-dark);">05.15 WIB</span>
-                      <span style="font-weight: 900; color: var(--text-dark);">18.20 WIB</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="schedule-body">
+          <div class="schedule-subtitle">Jadwal Bersama Ibu Nyai</div>
+          <div class="schedule-table-scroll">
+            <table class="schedule-table">
+              <thead class="schedule-thead-green">
+                <tr>
+                  <th>Program</th>
+                  <th>Keterangan (sesuai PDF)</th>
+                  <th style="white-space: nowrap;">Waktu</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="schedule-program">Juz Amma</td>
+                  <td>Mulai dari surah Al-Lail – surah An-Naba</td>
+                  <td class="schedule-time">05.15 WIB s/d Selesai</td>
+                </tr>
+                <tr>
+                  <td class="schedule-program">Surat Penting</td>
+                  <td>Surah Yasin, Surah Al-Waqiah, Surah Al-Mulk</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td class="schedule-program">Bin Nadzor</td>
+                  <td>BIN NADZOR PUKUL 05.15 WIB</td>
+                  <td class="schedule-time">05.15 WIB</td>
+                </tr>
+                <tr>
+                  <td class="schedule-program">Bil Ghoib</td>
+                  <td>BIL GHOIB PUKUL 18.30 WIB</td>
+                  <td class="schedule-time">18.30 WIB</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
+          <div style="height: 16px;"></div>
+
+          <div class="schedule-subtitle">Jadwal Bersama Ustadzah</div>
+          <div class="schedule-table-scroll">
+            <table class="schedule-table">
+              <thead class="schedule-thead-gold">
+                <tr>
+                  <th>Program</th>
+                  <th>Keterangan (sesuai PDF)</th>
+                  <th style="white-space: nowrap;">Waktu</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="schedule-program">Fasholatan</td>
+                  <td>FASHOLATAN 05.15 WIB s/d Selesai</td>
+                  <td class="schedule-time">05.15 WIB s/d Selesai</td>
+                </tr>
+                <tr>
+                  <td class="schedule-program">Juz Amma</td>
+                  <td>s/d Surah Ad-Dhuha</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td class="schedule-program">Sorogan Bin Nadzor</td>
+                  <td>Kelas Tekror</td>
+                  <td class="schedule-time">05.15 WIB & 18.20 WIB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
