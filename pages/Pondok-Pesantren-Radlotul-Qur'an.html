@@ -647,11 +647,112 @@
     }
 
     @media (max-width: 900px) {
-      /* Match form-online mobile header: brand + Home button only */
-      .hamburger { display: none !important; }
-      .nav-menu { display: none !important; }
-      .nav-menu-overlay { display: none !important; }
-      .nav-cta-home { display: inline-flex; }
+      /* Match Brosur.html mobile navigation (hamburger + slide menu) */
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-brand-name {
+        font-size: 12px;
+      }
+
+      .nav-brand-sub {
+        font-size: 10px;
+      }
+
+      .nav-logo {
+        height: 36px;
+      }
+
+      .nav-cta-home {
+        display: none !important;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(280px, 78vw);
+        height: 100dvh;
+        background: linear-gradient(160deg, #1a2e2b 0%, #0d1a18 100%);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -6px 0 40px rgba(0, 0, 0, 0.5);
+        overflow-y: auto;
+        z-index: 9998;
+        display: flex;
+      }
+
+      .nav-menu::before {
+        content: 'Menu Navigasi';
+        display: block;
+        padding: 24px 20px 18px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(212, 175, 55, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 10px;
+        margin-top: 60px;
+      }
+
+      .nav-menu.open {
+        right: 0;
+      }
+
+      .nav-menu li {
+        padding: 0 12px;
+      }
+
+      .nav-menu a {
+        font-size: 15px;
+        width: 100%;
+        display: block;
+        padding: 13px 14px;
+        border-radius: 10px;
+        color: rgba(255, 255, 255, 0.88);
+        border-bottom: none;
+      }
+
+      .nav-menu a:hover,
+      .nav-menu a.active {
+        background: rgba(212, 175, 55, 0.12);
+        color: var(--accent);
+      }
+
+      .nav-menu li:last-child {
+        padding: 16px 12px 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 8px;
+      }
+
+      .nav-cta {
+        width: 100%;
+        text-align: center;
+        border-radius: 12px !important;
+        padding: 13px 20px;
+        justify-content: center;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .nav-menu-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 9997;
+        backdrop-filter: blur(4px);
+      }
+
+      .nav-menu-overlay.open {
+        display: block;
+      }
     }
 
     .nav-menu-overlay {
@@ -785,9 +886,9 @@
 
       <ul class="nav-menu" id="navMenu">
         <li><a href="#beranda">Beranda</a></li>
-        <li><a href="#profil">Profil</a></li>
         <li><a href="#program">Program</a></li>
-        <li><a href="#fasilitas">Fasilitas</a></li>
+        <li><a href="#program-unggulan">Program Unggulan</a></li>
+        <li><a href="#jadwal">Jadwal</a></li>
         <li><a href="../index.html" class="nav-cta">Home</a></li>
       </ul>
 
@@ -803,7 +904,7 @@
     <img src="../img/Properti Utama/Hero.webp" alt="PPRQ Al-Falah" class="hero-bg">
     <div class="hero-content">
       <img src="../img/Properti Utama/LOGO PPRQ.png" alt="Logo PPRQ" style="width: 120px; margin-bottom: 20px; filter: drop-shadow(0 0 20px rgba(212,175,55,0.5));">
-      <p style="font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 62px); font-weight: 900; margin-bottom: 15px; text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); line-height: 1.2;">Pondok Pesantren Roudlotul Qur'an</p>
+      <p style="font-family: 'Playfair Display', serif; font-size: clamp(28px, 6vw, 62px); font-weight: 900; margin-bottom: 15px; text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); line-height: 1.2;">Pondok Pesantren Roudlotul Qur'an (PPRQ)</p>
       <h2>Pusat Pendidikan Tahfidzul Qur'an dan Pembinaan Akhlakul Karimah di bawah naungan Pondok Pesantren Al-Falah Rumbia.</h2>
     </div>
   </header>
@@ -884,10 +985,10 @@
         <div style="flex: 1; min-width: 300px;">
           <ul class="program-list" style="list-style: none; padding: 0;">
             <li style="font-size: 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-              <span style="color: var(--primary); font-size: 24px;">•</span> Ujian Kenaikan Juz
+              <span style="color: var(--primary); font-size: 24px;">•</span> Ujian Kenaikan Juz (Tekror)
             </li>
             <li style="font-size: 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
-              <span style="color: var(--primary); font-size: 24px;">•</span> Istimaul Qur'an
+              <span style="color: var(--primary); font-size: 24px;">•</span> Istima'ul Qur'an (Tasmi')
             </li>
           </ul>
         </div>
@@ -917,18 +1018,18 @@
     <div class="container">
       <div class="schedule-card">
         <div class="schedule-head">
-          <div class="title">JADWAL</div>
-          <div class="subtitle">BERSAMA IBU NYAI & USTADZAH</div>
+          <div class="title">Jadwal Setoran Al-Qur'an</div>
+          <div class="subtitle">Bersama Ibu Nyai & Ustadzah</div>
         </div>
 
         <div class="schedule-body">
-          <div class="schedule-subtitle">Jadwal Bersama Ibu Nyai</div>
+          <div class="schedule-subtitle">Jadwal SetoranBersama Ibu Nyai</div>
           <div class="schedule-table-scroll">
             <table class="schedule-table">
               <thead class="schedule-thead-green">
                 <tr>
                   <th>Program</th>
-                  <th>Keterangan (sesuai PDF)</th>
+                  <th>Keterangan</th>
                   <th style="white-space: nowrap;">Waktu</th>
                 </tr>
               </thead>
@@ -945,12 +1046,12 @@
                 </tr>
                 <tr>
                   <td class="schedule-program">Bin Nadzor</td>
-                  <td>BIN NADZOR PUKUL 05.15 WIB</td>
+                  <td>-</td>
                   <td class="schedule-time">05.15 WIB</td>
                 </tr>
                 <tr>
                   <td class="schedule-program">Bil Ghoib</td>
-                  <td>BIL GHOIB PUKUL 18.30 WIB</td>
+                  <td>-</td>
                   <td class="schedule-time">18.30 WIB</td>
                 </tr>
               </tbody>
@@ -965,14 +1066,14 @@
               <thead class="schedule-thead-gold">
                 <tr>
                   <th>Program</th>
-                  <th>Keterangan (sesuai PDF)</th>
+                  <th>Keterangan</th>
                   <th style="white-space: nowrap;">Waktu</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td class="schedule-program">Fasholatan</td>
-                  <td>FASHOLATAN 05.15 WIB s/d Selesai</td>
+                  <td>-</td>
                   <td class="schedule-time">05.15 WIB s/d Selesai</td>
                 </tr>
                 <tr>
@@ -1001,8 +1102,7 @@
           <img src="../img/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo"
             style="width: 80px; margin-bottom: 25px;">
           <h2>Pondok Pesantren Al-Falah</h2>
-          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan siap bermanfaat bagi umat. Berlokasi di Teluk Dalem
-            Ilir, Rumbia, Lampung Tengah.</p>
+          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan siap bermanfaat bagi umat.</p>
         </div>
 
         <div class="footer-social-section">
@@ -1044,17 +1144,32 @@
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu');
     const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-menu a');
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('open');
-      navOverlay.classList.toggle('open');
-    });
+    function openMenu() {
+      hamburger.classList.add('active');
+      navMenu.classList.add('open');
+      navOverlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
 
-    navOverlay.addEventListener('click', () => {
+    function closeMenu() {
       hamburger.classList.remove('active');
       navMenu.classList.remove('open');
       navOverlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
 
     window.addEventListener('scroll', () => {
