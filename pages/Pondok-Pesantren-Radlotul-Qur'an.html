@@ -71,7 +71,7 @@
       }
 
       section {
-        padding: 35px 5%;
+        padding: 35px 5% !important;
       }
 
       .section-title {
@@ -83,8 +83,9 @@
         height: 60vh !important;
       }
 
-      .hero-content h1 {
-        font-size: 30px !important;
+      .hero-content h1, 
+      .hero-content p {
+        font-size: 28px !important;
       }
 
       .hero-content h2 {
@@ -123,6 +124,26 @@
 
       .visi-misi-box strong {
         font-size: 16px !important;
+      }
+
+      .visi-misi-grid {
+        gap: 30px !important;
+      }
+
+      .program-content-wrap {
+        gap: 30px !important;
+      }
+
+      .program-list li {
+        font-size: 16px !important;
+      }
+
+      .program-feature-img {
+        height: 250px !important;
+      }
+
+      .gallery-img-item {
+        height: 180px !important;
       }
     }
 
@@ -656,9 +677,9 @@
   <section id="program" class="fade-up" style="background: var(--primary-dark); color: var(--text-light);">
     <div class="container">
       <h2 class="section-title" style="color: var(--accent); margin-bottom: 60px;">Program Tahfizul Qur'an</h2>
-      <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+      <div class="program-content-wrap" style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
         <div style="flex: 1; min-width: 300px;">
-          <ul style="list-style: none; padding: 0;">
+          <ul class="program-list" style="list-style: none; padding: 0;">
             <li style="font-size: 20px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px;">
               <span style="color: var(--accent); font-size: 24px;">•</span> Fasholatan
             </li>
@@ -677,20 +698,20 @@
           </ul>
         </div>
         <div style="flex: 1.2; min-width: 300px;">
-          <div style="background: #fff; border-radius: 15px; height: 350px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 24px; font-weight: 700; overflow: hidden;">
+          <div class="program-feature-img" style="background: #fff; border-radius: 15px; height: 350px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 24px; font-weight: 700; overflow: hidden;">
             <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Gambar" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px;">
-        <div style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
+        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
           <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Galeri 1" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
+        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
           <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Galeri 2" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
+        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
           <img src="../img/Galeri Pondok/Galeri 4.PNG" alt="Galeri 3" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
       </div>
