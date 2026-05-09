@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://alfalahrumbia.web.id/</loc>
+    <lastmod>2026-05-10</lastmod>
+  </url>
+
+  <!-- Halaman Utama -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/index.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Brosur -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/pages/brosur.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Form Pendaftaran Online -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/pages/form-online.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Form Pendaftaran Offline -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/pages/form-ofline.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Kontak -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/pages/contact.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/pages/Privacy-Policy.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Terms and Conditions -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/pages/Terms-And-Conditions.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Disclaimer -->
+  <url>
+    <loc>https://alfalahrumbia.web.id/pages/Disclaimer.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
