@@ -227,6 +227,39 @@
       margin: 0 auto;
     }
 
+    .visi-misi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .visi-misi-box {
+      padding: 35px;
+      border-left: 5px solid var(--accent);
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+
+    .visi-misi-box:hover {
+      background: rgba(0, 0, 0, 0.05);
+      transform: translateX(5px);
+    }
+
+    .visi-misi-box strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      display: block;
+      margin-bottom: 15px;
+      color: var(--accent);
+    }
+
+    .visi-misi-box p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-dark);
+    }
+
     .navbar {
       position: fixed;
       top: 0;
@@ -1043,20 +1076,20 @@
   </header>
 
 
-  <section class="fade-up visi-misi-section" style="background: #ffffff; padding: 80px 8%;">
+  <section class="fade-up visi-misi-section" style="background: #fff; padding: 80px 8%;">
     <div class="container">
-      <div class="visi-misi-grid" style="display: flex; gap: 60px; justify-content: center; flex-wrap: wrap;">
+      <div class="visi-misi-grid">
         
-        <div style="flex: 1; min-width: 300px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: var(--primary); margin-bottom: 24px;">Visi :</h2>
-          <p style="font-size: 19px; line-height: 1.8; color: var(--text-dark); font-weight: 500;">
+        <div class="visi-misi-box">
+          <strong>VISI</strong>
+          <p>
             Menjadikan Santri yang Multitalenta serta menanamkan jiwa Qur'ani, serta Istiqomah menjaga dalam setiap hafalannya, mendalami ilmu yang terkandung dalam al-Qur'an dengan metode Tahfidzul Qur'an dan Tartilul Qur'an Bin Nadhor.
           </p>
         </div>
 
-        <div style="flex: 1; min-width: 300px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: var(--primary); margin-bottom: 24px;">Misi :</h2>
-          <p style="font-size: 19px; line-height: 1.8; color: var(--text-dark); font-weight: 500;">
+        <div class="visi-misi-box">
+          <strong>MISI</strong>
+          <p>
             Mengedepankan akhlaqul karimah dan mencetak Santri yang ilmiyah amaliyah, amaliyah ilmiyah melalui akhlaqul karimah yang sesuai dengan nilai-nilai al-Qur'an, sehingga merupakan tarbiyah terhadap pembentukan karakter bangsa yang berkualitas.
           </p>
         </div>
@@ -1101,19 +1134,19 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px;">
         <div class="image-container">
           <div class="gallery-img-item">
-            <img src="../img/PPRQ/4.jpeg" alt="Galeri 1">
+            <img src="../img/PPRQ/Dokumentasi Khataman Juz Amma.jpeg" alt="Galeri 1">
           </div>
           <p class="image-caption">Khataman Juz Amma</p>
         </div>
         <div class="image-container">
           <div class="gallery-img-item">
-            <img src="../img/PPRQ/5.jpeg" alt="Galeri 2">
+            <img src="../img/PPRQ/Dokumentasi Khataman Bin Nadzor.jpeg" alt="Galeri 2">
           </div>
           <p class="image-caption">Khataman Bin Nadzor</p>
         </div>
         <div class="image-container">
           <div class="gallery-img-item">
-            <img src="../img/PPRQ/6.jpeg" alt="Galeri 3">
+            <img src="../img/PPRQ/Dokumentasi Khataman Bil Ghoib.jpeg" alt="Galeri 3">
           </div>
           <p class="image-caption">Khataman Bil Ghoib</p>
         </div>
@@ -1140,7 +1173,7 @@
         <div style="flex: 1.2; min-width: 300px;">
           <div class="image-container">
             <div class="program-feature-img">
-              <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Program Unggulan">
+              <img src="../img/PPRQ/4.jpeg" alt="Program Unggulan">
             </div>
             <p class="image-caption">Dokumentasi Ujian Kenaikan Juz</p>
           </div>
@@ -1150,13 +1183,13 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px;">
         <div class="image-container">
           <div class="gallery-img-item">
-            <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Unggulan Galeri 1">
+            <img src="../img/PPRQ/5.jpeg" alt="Program Unggulan Galeri 1">
           </div>
           <p class="image-caption">Dokumentasi</p>
         </div>
         <div class="image-container">
           <div class="gallery-img-item">
-            <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Program Unggulan Galeri 2">
+            <img src="../img/PPRQ/6.jpeg" alt="Program Unggulan Galeri 2">
           </div>
           <p class="image-caption">Dokumentasi Tasmi'</p>
         </div>
