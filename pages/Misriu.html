@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kurikulum MISRIU • Madrasah Islamiyah Salafiyah Riyadhlotul Uqul</title>
+  <link rel="icon" type="image/png" href="../img/Properti%20Utama/Logo.png">
+  <link rel="apple-touch-icon" href="../img/Properti%20Utama/Logo.png">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#1A4D2E">
+  <meta name="description"
+    content="Kurikulum Madrasah Islamiyah Salafiyah Riyadhlotul Uqul (MISRIU). Program pendidikan diniyah berjenjang Ibtidaiyah dan Tsanawiyah.">
+  <meta property="og:image" content="../img/Properti%20Utama/Logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary:      #1A4D2E;
+      --primary-dark: #0F301F;
+      --primary-mid:  #4F6F52;
+      --secondary:    #FEFBF3;
+      --secondary-dark:#F5EFE6;
+      --accent:       #D4AF37;
+      --accent-soft:  rgba(212, 175, 55, 0.12);
+      --accent-border:rgba(212, 175, 55, 0.3);
+      --text-dark:    #0D1B1E;
+      --text-mid:     #4A5D59;
+      --text-light:   #fff;
+      --radius:       24px;
+      --radius-sm:    12px;
+      --shadow-card:  0 10px 40px rgba(15,48,31,0.08);
+      --shadow-hover: 0 20px 70px rgba(15,48,31,0.15);
+      --transition:   0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Nunito Sans', sans-serif; color: var(--text-dark); background: var(--secondary); line-height: 1.8; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+    section { padding: 100px 0; position: relative; }
+
+    /* ── NAVBAR (Standard) ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; height: 72px;
+      background: linear-gradient(135deg, var(--primary) 0%, #1e3330 100%);
+      padding: 0 5%; display: flex; align-items: center; z-index: 9999;
+      box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2); border-bottom: 1px solid var(--accent-border);
+      transition: all 0.4s ease;
+    }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1240px; margin: 0 auto; }
+    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo { height: 48px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); }
+    .nav-brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 0.3px; white-space: nowrap; }
+    .nav-brand-sub { font-size: 10px; color: var(--accent); font-weight: 400; text-transform: uppercase; letter-spacing: 1.2px; opacity: 0.9; }
+    
+    .nav-menu { display: flex; list-style: none; gap: 30px; align-items: center; }
+    .nav-menu a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 600; transition: var(--transition); }
+    .nav-menu a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: var(--primary-dark) !important;
+      padding: 8px 20px; border-radius: 50px; font-weight: 700;
+      display: flex; align-items: center; gap: 8px; transition: var(--transition);
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
+
+    .hamburger { display: none; background: none; border: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
+    
+    .nav-menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9997; backdrop-filter: blur(4px); }
+
+    /* ── MOBILE MENU ── */
+    @media (max-width: 900px) {
+      .nav-menu {
+        position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+        background: linear-gradient(160deg, #1a2e2b 0%, #0d1a18 100%);
+        flex-direction: column; align-items: stretch; padding: 80px 20px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 9998;
+      }
+      .nav-menu.open { right: 0; }
+      .nav-menu-overlay.open { display: block; }
+      .hamburger { display: flex; }
+      .nav-menu li { border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .nav-menu a { display: block; padding: 15px 0; font-size: 16px; }
+      .nav-cta { margin-top: 20px; justify-content: center; }
+    }
+
+    /* ── HERO HEADER ── */
+    .page-header {
+      padding: 180px 0 100px;
+      background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z' fill='none' stroke='%23D4AF37' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-block; padding: 6px 20px; border-radius: 50px;
+      background: rgba(212, 175, 55, 0.15); border: 1px solid var(--accent-border);
+      color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; margin-bottom: 24px; animation: fadeInDown 0.8s ease;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 56px);
+      font-weight: 900; line-height: 1.1; margin-bottom: 20px; animation: fadeInUp 0.8s ease;
+    }
+    .page-header p {
+      font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,0.7);
+      max-width: 700px; margin: 0 auto; line-height: 1.6; animation: fadeInUp 0.8s 0.2s ease both;
+    }
+
+    /* ── CURRICULUM CONTENT ── */
+    .content-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px; margin-bottom: 60px;
+    }
+    .premium-card {
+      background: #fff; border-radius: var(--radius); padding: 50px 40px;
+      box-shadow: var(--shadow-card); transition: var(--transition);
+      position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.03);
+    }
+    .premium-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-hover); }
+    .premium-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%;
+      background: var(--accent); transition: width 0.4s ease;
+    }
+    .premium-card:hover::before { width: 10px; }
+    
+    .card-label { font-size: 11px; font-weight: 700; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .premium-card h3 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
+    .premium-card p { font-size: 15px; color: var(--text-mid); margin-bottom: 25px; }
+    
+    .feature-list { list-style: none; }
+    .feature-list li {
+      position: relative; padding-left: 28px; margin-bottom: 14px;
+      font-size: 14px; font-weight: 600; color: var(--text-dark);
+    }
+    .feature-list li::before {
+      content: '✦'; position: absolute; left: 0; color: var(--accent); font-size: 16px;
+    }
+
+    .info-footer-box {
+      background: var(--primary-dark); border-radius: var(--radius); padding: 45px;
+      color: #fff; position: relative; overflow: hidden;
+      box-shadow: 0 20px 50px rgba(15,48,31,0.2);
+    }
+    .info-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .info-item h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--accent); margin-bottom: 12px; }
+    .info-item p { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+
+    .materi-section { background: var(--secondary-dark); }
+    .sec-title-wrap { text-align: center; margin-bottom: 70px; }
+    .sec-title-wrap h2 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: var(--primary); margin-bottom: 15px; }
+    .sec-title-wrap .divider { width: 60px; height: 4px; background: var(--accent); margin: 0 auto; border-radius: 2px; }
+
+    .jenjang-group { margin-bottom: 80px; }
+    .jenjang-header {
+      display: flex; align-items: center; gap: 20px; margin-bottom: 40px;
+    }
+    .jenjang-header .line { flex: 1; height: 1px; background: var(--accent-border); }
+    .jenjang-header h3 {
+      font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700;
+      color: var(--primary); background: var(--accent-soft); padding: 8px 24px; border-radius: 50px;
+      border: 1px solid var(--accent-border);
+    }
+
+    .materi-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .materi-card {
+      background: #fff; border-radius: var(--radius-sm); padding: 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: var(--transition);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .materi-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.08); border-color: var(--accent-border); }
+    .materi-level {
+      font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase;
+      letter-spacing: 1.5px; margin-bottom: 15px; border-bottom: 1px solid var(--secondary-dark);
+      padding-bottom: 10px; display: block;
+    }
+    .materi-list { list-style: none; }
+    .materi-list li {
+      font-size: 14px; padding: 6px 0; color: var(--text-dark);
+      display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .materi-list li:last-child { border-bottom: none; }
+    .materi-list li::before { content: '•'; color: var(--accent); font-weight: 900; }
+
+    /* ── FOOTER (Standard) ── */
+    .footer { background: #000; color: #fff; padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+    .footer-identity h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px; }
+    .footer-identity p { font-size: 16px; line-height: 1.8; color: #fff; max-width: 500px; }
+    .social-list-extended, .utility-list-extended { list-style: none; padding: 0; }
+    .social-list-extended li, .utility-list-extended li { margin-bottom: 12px; }
+    .social-list-extended a, .utility-list-extended a { color: #fff; text-decoration: none; font-size: 14px; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
+    .social-list-extended a:hover, .utility-list-extended a:hover { color: var(--accent); }
+    .footer-bottom { text-align: center; font-size: 14px; color: rgba(255,255,255,0.8); padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 900px) {
+      section { padding: 60px 0; }
+      .page-header { padding: 140px 0 70px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --radius: 20px; }
+      .container { padding: 0 6%; }
+      
+      .page-header h1 { font-size: 32px; }
+      .page-header p { font-size: 14px; }
+      .header-badge { font-size: 10px; letter-spacing: 1.5px; }
+
+      .content-grid { grid-template-columns: 1fr; gap: 20px; }
+      .premium-card { padding: 35px 25px; }
+      .premium-card h3 { font-size: 24px; }
+      
+      .info-footer-box { padding: 30px 20px; }
+      .info-row { grid-template-columns: 1fr; gap: 25px; }
+      
+      .sec-title-wrap h2 { font-size: 28px; }
+      .jenjang-header h3 { font-size: 16px; padding: 6px 16px; }
+      
+      .materi-grid { grid-template-columns: 1fr; gap: 15px; }
+      .materi-card { padding: 25px; }
+
+      .footer-content { grid-template-columns: 1.4fr 0.6fr; gap: 35px 20px; text-align: left; }
+      .footer-identity { grid-column: 1 / -1; text-align: center; }
+      .footer-identity p { margin: 0 auto; max-width: 100%; }
+      .social-list-extended a, .utility-list-extended a { justify-content: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-content { grid-template-columns: 1fr; text-align: center; }
+      .social-list-extended a, .utility-list-extended a { justify-content: center; }
+      .page-header { padding: 120px 0 60px; }
+      .page-header h1 { font-size: 28px; }
+      
+      .nav-brand-name { font-size: 14px; }
+      .nav-brand-sub { font-size: 8px; }
+      .nav-logo { height: 38px; }
+
+      .premium-card { padding: 30px 20px; }
+      .feature-list li { font-size: 13px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav-menu-overlay" id="navOverlay"></div>
+  <nav class="navbar" id="mainNav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../img/Properti%20Utama/Logo Browser.png" alt="Logo Al-Falah" class="nav-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Pondok Pesantren Al-Falah</span>
+          <span class="nav-brand-sub">Teluk Dalem Ilir · Rumbia</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#jenjang">Jenjang</a></li>
+        <li><a href="#metode">Metode</a></li>
+        <li><a href="#kurikulum">Kurikulum</a></li>
+        <li><a href="../index.html" class="nav-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" /><path d="M9 21V12h6v9" />
+          </svg><span>Home</span></a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header" id="hero">
+    <div class="container">
+      <div class="header-badge">Program Pendidikan Diniyah</div>
+      <h1>Madrasah Diniyah MISRIU</h1>
+      <p>Madrasah Islamiyah Salafiyah Riyadlotul 'Uqul (MISRIU), pondok pesantren Al Falah.</p>
+    </div>
+  </header>
+
+  <section id="jenjang">
+    <div class="container">
+      <div class="content-grid">
+        <div class="premium-card">
+          <span class="card-label">Program 3 Tahun</span>
+          <h3>Tingkat Ibtida'iyah</h3>
+          <p>Fokus utama pada pembinaan akhlaq (moralitas & mentalitas) serta pengembangan wawasan sosial dasar bagi santri tingkat pemula.</p>
+          <ul class="feature-list">
+            <li>Penulisan Huruf Arab & Tajwid</li>
+            <li>Pemantapan Tauhid Dasar</li>
+            <li>Dasar Gramatika Arab (Nahwu)</li>
+          </ul>
+        </div>
+
+        <div class="premium-card">
+          <span class="card-label">Program 4 Tahun</span>
+          <h3>Tingkat Tsanawiyah</h3>
+          <p>Jenjang pendalaman yang menekankan pada penguasaan literatur klasik (Kitab Kuning) dan ilmu alat tingkat lanjut.</p>
+          <ul class="feature-list">
+            <li>Kajian Mendalam Nahwu-Shorf</li>
+            <li>Fathul Qorib & Ilmu Fiqh</li>
+            <li>Faro'idl & Mustholah Hadits</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="info-footer-box" id="metode">
+        <div class="info-row">
+          <div class="info-item">
+            <h4>Metode Pembelajaran</h4>
+            <p>Kegiatan belajar dilaksanakan setiap hari pukul 20.00 - 22.30 WIB. Dilanjutkan dengan sesi Musyawarah (Diskusi Bersama) Ba'da Dzuhur hingga pukul 15.00 WIB untuk memperdalam pemahaman materi.</p>
+          </div>
+          <div class="info-item">
+            <h4>Sistem Evaluasi</h4>
+            <p>Ujian tulis dan lisan diadakan secara komprehensif setiap akhir semester. Hasil evaluasi ini menjadi tolok ukur utama keberhasilan santri dan syarat mutlak untuk kenaikan jenjang tingkat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="materi-section" id="kurikulum">
+    <div class="container">
+      <div class="sec-title-wrap">
+        <h2>Materi Pembelajaran</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="jenjang-group">
+        <div class="jenjang-header">
+          <div class="line"></div>
+          <h3>TINGKAT IBTIDAIYAH</h3>
+          <div class="line"></div>
+        </div>
+        <div class="materi-grid">
+          <div class="materi-card">
+            <span class="materi-level">Kelas 1 Ibtidaiyah</span>
+            <ul class="materi-list">
+              <li>Mabadhi Fiqih (Juz 1-2)</li>
+              <li>Aqidatul Awam</li>
+              <li>Tarech Nabi</li>
+              <li>Hidayatus Sibyan</li>
+            </ul>
+          </div>
+          <div class="materi-card">
+            <span class="materi-level">Kelas 2 Ibtidaiyah</span>
+            <ul class="materi-list">
+              <li>Mabadhi Fiqih (Juz 3-4)</li>
+              <li>Khoridatul Bahiyyah</li>
+              <li>Khulasoh Nurul Yaqin (Juz 1 & 2)</li>
+              <li>Tuhfatul Athfal</li>
+            </ul>
+          </div>
+          <div class="materi-card">
+            <span class="materi-level">Kelas 3 Ibtidaiyah</span>
+            <ul class="materi-list">
+              <li>Tanwirul Hija</li>
+              <li>Bad'ul Amali</li>
+              <li>Khulasoh Nurul Yaqin (Juz 3 & 4)</li>
+              <li>Hidayatul Mustafid</li>
+              <li>Sabrowi Safi`i</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="jenjang-group" style="margin-bottom: 0;">
+        <div class="jenjang-header">
+          <div class="line"></div>
+          <h3>TINGKAT TSANAWIYAH</h3>
+          <div class="line"></div>
+        </div>
+        <div class="materi-grid">
+          <div class="materi-card">
+            <span class="materi-level">Kelas 1 Tsanawiyah</span>
+            <ul class="materi-list">
+              <li>Riyadlul Badi'ah</li>
+              <li>Tijan Ad Durori</li>
+              <li>Jawahirul Kalamiyah</li>
+              <li>Qowa`idul I'lal</li>
+              <li>Asshofi'iyah</li>
+              <li>Lughowi</li>
+              <li>Jurumiyah</li>
+            </ul>
+          </div>
+          <div class="materi-card">
+            <span class="materi-level">Kelas 2 Tsanawiyah</span>
+            <ul class="materi-list">
+              <li>Sulam At Taufiq</li>
+              <li>Al Maqsud</li>
+              <li>Jauharotut Tauhid</li>
+              <li>Al Imrithi</li>
+            </ul>
+          </div>
+          <div class="materi-card">
+            <span class="materi-level">Kelas 3 Tsanawiyah</span>
+            <ul class="materi-list">
+              <li>Alfiyah Ibnu Malik</li>
+              <li>Fathul Qorib Al Mujib</li>
+            </ul>
+          </div>
+          <div class="materi-card">
+            <span class="materi-level">Kelas 4 Tsanawiyah</span>
+            <ul class="materi-list">
+              <li>Jauharul Maknun</li>
+              <li>Sullam AL Munawarot</li>
+              <li>Al Maroqot</li>
+              <li>Faroidhul Bahiyah</li>
+              <li>Al Baiquniyah</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-identity">
+          <img src="../img/Properti%20Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo" style="width: 80px; margin-bottom: 25px;">
+          <h2>Pondok Pesantren Al-Falah</h2>
+          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan siap bermanfaat bagi umat. Berlokasi di Teluk Dalem Ilir, Rumbia, Lampung Tengah.</p>
+        </div>
+
+        <div class="footer-social-section">
+          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Social Media</h4>
+          <ul class="social-list-extended">
+            <li><a href="https://www.instagram.com/pp.alfalah_rumbia/">Alfalah Putra Instagram</a></li>
+            <li><a href="https://www.instagram.com/alfalahputri_rumbia/">Alfalah Putri Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@pon.pes_alfalah">Alfalah Putra TikTok</a></li>
+            <li><a href="https://youtube.com/@kh_muhayat_channel">YouTube Channel</a></li>
+            <li><a href="https://wa.me/6285832155052">WhatsApp Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-utility-section">
+          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Support</h4>
+          <ul class="utility-list-extended">
+            <li><a href="contact.html">Contact PP.ALFALAH</a></li>
+            <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+            <li><a href="Terms-And-Conditions.html">Terms and Conditions</a></li>
+            <li><a href="Disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Pondok Pesantren Al-Falah Teluk Dalem Ilir Rumbia. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+    });
+
+    navOverlay.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('open');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        navOverlay.classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

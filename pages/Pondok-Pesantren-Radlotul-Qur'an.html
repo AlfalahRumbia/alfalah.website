@@ -5,12 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pondok Pesantren Roudlotul Qur'an • Teluk Dalem Ilir Rumbia.</title>
-  <link rel="icon" type="image/png" href="../img/Properti%20Utama/Logo%20Browser.png">
-  <link rel="apple-touch-icon" href="../img/Properti%20Utama/Logo%20Browser.png">
+  <link rel="icon" type="image/png" href="../img/Properti%20Utama/Logo.png">
+  <link rel="apple-touch-icon" href="../img/Properti%20Utama/Logo.png">
   <link rel="manifest" href="../manifest.json">
   <meta name="theme-color" content="#1A4D2E">
   <meta name="description"
     content="Pondok Pesantren Roudlotul Qur'an - Pusat pengembangan Tahfidzul Qur'an dan ilmu-ilmu syar'i. Mencetak generasi Qur'ani yang berakhlak mulia.">
+  <meta property="og:image" content="../img/Properti%20Utama/Logo.png">
   <meta name="keywords"
     content="pondok pesantren, roudlotul qur'an, pprq, al-falah, rumbia, lampung tengah, tahfidz, quran">
 
@@ -159,12 +160,41 @@
       }
 
       .program-feature-img {
-        height: 250px !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
       }
 
       .gallery-img-item {
-        height: 180px !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
       }
+    }
+
+    /* ── GALLERY STYLES (Match Brosur.html) ── */
+    .program-feature-img, .gallery-img-item {
+      background: #0d1f1d !important;
+      border-radius: 15px !important;
+      overflow: hidden;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      height: auto !important;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .program-feature-img img, .gallery-img-item img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      filter: grayscale(40%);
+      transition: var(--transition);
+    }
+
+    .program-feature-img:hover img, .gallery-img-item:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
     }
 
     .container {
@@ -1034,21 +1064,21 @@
           </ul>
         </div>
         <div style="flex: 1.2; min-width: 300px;">
-          <div class="program-feature-img" style="background: #fff; border-radius: 15px; height: 350px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 24px; font-weight: 700; overflow: hidden;">
-            <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Gambar" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="program-feature-img">
+            <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Gambar">
           </div>
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px;">
-        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
-          <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Galeri 1" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="gallery-img-item">
+          <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Galeri 1">
         </div>
-        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
-          <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Galeri 2" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="gallery-img-item">
+          <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Galeri 2">
         </div>
-        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
-          <img src="../img/Galeri Pondok/Galeri 4.PNG" alt="Galeri 3" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="gallery-img-item">
+          <img src="../img/Galeri Pondok/Galeri 4.PNG" alt="Galeri 3">
         </div>
       </div>
     </div>
@@ -1071,21 +1101,21 @@
         </div>
 
         <div style="flex: 1.2; min-width: 300px;">
-          <div class="program-feature-img" style="background: #fff; border-radius: 15px; height: 350px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 24px; font-weight: 700; overflow: hidden; border: 1px solid rgba(26, 77, 46, 0.14);">
-            <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Program Unggulan" style="width: 100%; height: 100%; object-fit: cover;">
+          <div class="program-feature-img">
+            <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Program Unggulan">
           </div>
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px;">
-        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
-          <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Unggulan Galeri 1" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="gallery-img-item">
+          <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Unggulan Galeri 1">
         </div>
-        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
-          <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Program Unggulan Galeri 2" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="gallery-img-item">
+          <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Program Unggulan Galeri 2">
         </div>
-        <div class="gallery-img-item" style="background: #fff; border-radius: 15px; height: 200px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 20px; font-weight: 700; overflow: hidden;">
-          <img src="../img/Galeri Pondok/Galeri 4.PNG" alt="Program Unggulan Galeri 3" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="gallery-img-item">
+          <img src="../img/Galeri Pondok/Galeri 4.PNG" alt="Program Unggulan Galeri 3">
         </div>
       </div>
     </div>
