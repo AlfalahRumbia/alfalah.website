@@ -173,7 +173,7 @@
     /* ── GALLERY STYLES (Match Brosur.html) ── */
     .program-feature-img, .gallery-img-item {
       background: #0d1f1d !important;
-      border-radius: 15px !important;
+      border-radius: 0 !important;
       overflow: hidden;
       display: flex !important;
       align-items: center;
@@ -195,6 +195,31 @@
     .program-feature-img:hover img, .gallery-img-item:hover img {
       filter: grayscale(0%);
       transform: scale(1.05);
+    }
+
+    /* ── CAPTION STYLES ── */
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: 100%;
+    }
+
+    .image-caption {
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0 5px;
+    }
+
+    section:nth-of-type(even) .image-caption {
+      color: var(--accent);
+    }
+
+    section:nth-of-type(odd) .image-caption {
+      color: var(--primary);
     }
 
     .container {
@@ -1064,21 +1089,32 @@
           </ul>
         </div>
         <div style="flex: 1.2; min-width: 300px;">
-          <div class="program-feature-img">
-            <img src="../img/PPRQ/3.png" alt="Program Gambar">
+          <div class="image-container">
+            <div class="program-feature-img">
+              <img src="../img/PPRQ/3.png" alt="Program Gambar">
+            </div>
           </div>
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px;">
-        <div class="gallery-img-item">
-          <img src="../img/PPRQ/4.jpeg" alt="Galeri 1">
+        <div class="image-container">
+          <div class="gallery-img-item">
+            <img src="../img/PPRQ/4.jpeg" alt="Galeri 1">
+          </div>
+          <p class="image-caption">Khataman Juz Amma</p>
         </div>
-        <div class="gallery-img-item">
-          <img src="../img/PPRQ/5.jpeg" alt="Galeri 2">
+        <div class="image-container">
+          <div class="gallery-img-item">
+            <img src="../img/PPRQ/5.jpeg" alt="Galeri 2">
+          </div>
+          <p class="image-caption">Khataman Bin Nadzor</p>
         </div>
-        <div class="gallery-img-item">
-          <img src="../img/PPRQ/6.jpeg" alt="Galeri 3">
+        <div class="image-container">
+          <div class="gallery-img-item">
+            <img src="../img/PPRQ/6.jpeg" alt="Galeri 3">
+          </div>
+          <p class="image-caption">Khataman Bil Ghoib</p>
         </div>
       </div>
     </div>
@@ -1101,21 +1137,33 @@
         </div>
 
         <div style="flex: 1.2; min-width: 300px;">
-          <div class="program-feature-img">
-            <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Program Unggulan">
+          <div class="image-container">
+            <div class="program-feature-img">
+              <img src="../img/Galeri Pondok/Galeri 3.PNG" alt="Program Unggulan">
+            </div>
+            <p class="image-caption">Dokumentasi Ujian Kenaikan Juz</p>
           </div>
         </div>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px;">
-        <div class="gallery-img-item">
-          <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Unggulan Galeri 1">
+        <div class="image-container">
+          <div class="gallery-img-item">
+            <img src="../img/Galeri Pondok/Galeri 1.PNG" alt="Program Unggulan Galeri 1">
+          </div>
+          <p class="image-caption">Dokumentasi</p>
         </div>
-        <div class="gallery-img-item">
-          <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Program Unggulan Galeri 2">
+        <div class="image-container">
+          <div class="gallery-img-item">
+            <img src="../img/Galeri Pondok/Galeri 2.PNG" alt="Program Unggulan Galeri 2">
+          </div>
+          <p class="image-caption">Dokumentasi Tasmi'</p>
         </div>
-        <div class="gallery-img-item">
-          <img src="../img/Galeri Pondok/Galeri 4.PNG" alt="Program Unggulan Galeri 3">
+        <div class="image-container">
+          <div class="gallery-img-item">
+            <img src="../img/Galeri Pondok/Galeri 4.PNG" alt="Program Unggulan Galeri 3">
+          </div>
+          <p class="image-caption">Dokumentasi</p>
         </div>
       </div>
     </div>
