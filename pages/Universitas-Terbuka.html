@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universitas Terbuka (SALUT) Al Falah • Pondok Pesantren Al-Falah</title>
+  <link rel="icon" type="image/png" href="../img/Properti%20Utama/Logo.png">
+  <link rel="apple-touch-icon" href="../img/Properti%20Utama/Logo.png">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#1A4D2E">
+  <meta name="description"
+    content="Sentra Layanan Universitas Terbuka (SALUT) Al Falah Lampung Tengah. Pendidikan tinggi negeri fleksibel dan terjangkau di Pondok Pesantren Al-Falah.">
+  <meta property="og:image" content="../img/Properti%20Utama/Logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary:      #1A4D2E;
+      --primary-dark: #0F301F;
+      --primary-mid:  #4F6F52;
+      --secondary:    #FEFBF3;
+      --secondary-dark:#F5EFE6;
+      --accent:       #D4AF37;
+      --accent-soft:  rgba(212, 175, 55, 0.12);
+      --accent-border:rgba(212, 175, 55, 0.3);
+      --text-dark:    #0D1B1E;
+      --text-mid:     #4A5D59;
+      --text-light:   #fff;
+      --radius:       24px;
+      --radius-sm:    12px;
+      --shadow-card:  0 10px 40px rgba(15,48,31,0.08);
+      --shadow-hover: 0 20px 70px rgba(15,48,31,0.15);
+      --transition:   0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Nunito Sans', sans-serif; color: var(--text-dark); background: var(--secondary); line-height: 1.8; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+    section { padding: 100px 0; position: relative; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; height: 64px;
+      background: linear-gradient(135deg, var(--primary) 0%, #1e3330 100%);
+      padding: 0 40px; display: flex; align-items: center; z-index: 9999;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25); border-bottom: 2px solid rgba(212, 175, 55, 0.35);
+      transition: all 0.4s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(22, 38, 35, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+      border-bottom-color: rgba(212, 175, 55, 0.5);
+    }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; gap: 20px; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo { height: 46px; width: auto; flex-shrink: 0; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)); }
+    .nav-brand-text { display: flex; flex-direction: column; align-items: flex-start; text-align: left; line-height: 1.15; }
+    .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 0.3px; white-space: nowrap; }
+    .nav-brand-sub { font-size: 10px; color: var(--accent); font-weight: 400; letter-spacing: 0.5px; opacity: 0.9; }
+    
+    .nav-menu { display: flex; list-style: none; gap: 6px; align-items: center; }
+    .nav-menu a {
+      color: rgba(255, 255, 255, 0.85); text-decoration: none; font-weight: 600; font-size: 13px;
+      padding: 7px 13px; border-radius: 8px; transition: all 0.3s ease; position: relative; white-space: nowrap;
+    }
+    .nav-menu a::after {
+      content: ''; position: absolute; bottom: 3px; left: 13px; right: 13px; width: 0; height: 2px;
+      background: var(--accent); border-radius: 2px; transition: width 0.3s ease;
+    }
+    .nav-menu a:hover { color: #fff; background: rgba(255, 255, 255, 0.08); }
+    .nav-menu a:hover::after, .nav-menu a.active::after { width: calc(100% - 26px); }
+    .nav-menu a.active { color: var(--accent); background: rgba(212, 175, 55, 0.1); }
+
+    .nav-cta {
+      display: inline-block; padding: 9px 20px; background: var(--accent); color: #1a1a1a !important;
+      font-weight: 700 !important; font-size: 13.5px !important; border-radius: 50px !important;
+      text-decoration: none; transition: all 0.3s ease !important; white-space: nowrap;
+      box-shadow: 0 3px 12px rgba(212, 175, 55, 0.35);
+    }
+    .nav-cta:hover { background: #e8c33a !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important; color: #1a1a1a !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; border-radius: 8px; transition: background 0.3s ease; flex-shrink: 0; }
+    .hamburger:hover { background: rgba(255, 255, 255, 0.1); }
+    .hamburger span { display: block; width: 24px; height: 2.5px; background: #fff; border-radius: 3px; transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); transform-origin: center; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    
+    .nav-menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: 9997; backdrop-filter: blur(4px); }
+    .nav-menu-overlay.open { display: block; }
+
+    /* ── MOBILE MENU ── */
+    @media (max-width: 900px) {
+      .hamburger { display: flex; }
+      .nav-menu {
+        position: fixed; top: 0; right: -100%; width: min(280px, 78vw); height: 100dvh;
+        background: linear-gradient(160deg, #1a2e2b 0%, #0d1a18 100%); flex-direction: column;
+        align-items: stretch; gap: 0; padding: 0; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -6px 0 40px rgba(0, 0, 0, 0.5); overflow-y: auto; z-index: 9998; display: flex;
+      }
+      .nav-menu::before {
+        content: 'Menu Navigasi'; display: block; padding: 24px 20px 18px; font-size: 11px;
+        font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(212, 175, 55, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 10px; margin-top: 60px;
+      }
+      .nav-menu.open { right: 0; }
+      .nav-menu li { padding: 0 12px; }
+      .nav-menu a { font-size: 15px; width: 100%; display: block; padding: 13px 14px; border-radius: 10px; color: rgba(255, 255, 255, 0.88); }
+      .nav-menu a:hover, .nav-menu a.active { background: rgba(212, 175, 55, 0.12); color: var(--accent); }
+      .nav-menu li:last-child { padding: 16px 12px 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); margin-top: 8px; }
+    }
+
+    /* ── HERO HEADER ── */
+    .page-header {
+      padding: 180px 0 100px;
+      background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 L100 25 L100 75 L50 100 L0 75 L0 25 Z' fill='none' stroke='%23D4AF37' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-block; padding: 6px 20px; border-radius: 50px;
+      background: rgba(212, 175, 55, 0.15); border: 1px solid var(--accent-border);
+      color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; margin-bottom: 24px; animation: fadeInDown 0.8s ease;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 56px);
+      font-weight: 900; line-height: 1.1; margin-bottom: 20px; animation: fadeInUp 0.8s ease;
+    }
+    .page-header p {
+      font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,0.7);
+      max-width: 700px; margin: 0 auto; line-height: 1.6; animation: fadeInUp 0.8s 0.2s ease both;
+    }
+
+    /* ── CONTENT SECTION ── */
+    .profil-section { background: var(--secondary); }
+    .premium-card {
+      background: #fff; border-radius: var(--radius); padding: 60px;
+      box-shadow: var(--shadow-card); transition: var(--transition);
+      position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.03);
+      max-width: 1000px; margin: 0 auto;
+    }
+    .premium-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 8px; height: 100%;
+      background: var(--accent);
+    }
+    
+    .card-label { 
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary); color: #fff; padding: 10px 25px;
+      border-radius: 12px; font-weight: 800; font-size: 14px;
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(26, 77, 46, 0.2);
+    }
+    .card-label::before { content: '✦'; color: var(--accent); }
+
+    .premium-card h2 { 
+      font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); 
+      font-weight: 800; color: var(--primary); margin-bottom: 30px; line-height: 1.2;
+    }
+    .premium-card p { 
+      font-size: 17px; color: var(--text-dark); margin-bottom: 25px; 
+      line-height: 1.8; text-align: justify;
+    }
+    .premium-card p:last-child { margin-bottom: 0; }
+
+    /* ── FOOTER ── */
+    .footer { background: #000; color: #fff; padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+    .footer-identity h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 20px; }
+    .footer-identity p { font-size: 16px; line-height: 1.8; color: #fff; max-width: 500px; }
+    .social-list-extended, .utility-list-extended { list-style: none; padding: 0; }
+    .social-list-extended li, .utility-list-extended li { margin-bottom: 12px; }
+    .social-list-extended a, .utility-list-extended a { color: #fff; text-decoration: none; font-size: 14px; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
+    .social-list-extended a:hover, .utility-list-extended a:hover { color: var(--accent); }
+    .footer-bottom { text-align: center; font-size: 14px; color: rgba(255,255,255,0.8); padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 768px) {
+      section { padding: 60px 0; }
+      .page-header { padding: 140px 0 70px; }
+      .premium-card { padding: 35px 20px; border-radius: 16px; }
+      .card-label { padding: 8px 18px; font-size: 12px; margin-bottom: 20px; }
+      .premium-card h2 { font-size: 24px; margin-bottom: 20px; }
+      .premium-card p { font-size: 15px; text-align: left; }
+      
+      .prodi-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .prodi-card { padding: 30px 20px !important; }
+      .prodi-card h3 { font-size: 26px !important; }
+
+      .fasilitas-grid { grid-template-columns: 1fr !important; }
+      .keuntungan-grid { grid-template-columns: 1fr !important; }
+
+      .footer-content { grid-template-columns: 1fr; text-align: center; }
+      .footer-identity { text-align: center; }
+      .footer-identity p { margin: 0 auto; }
+      .social-list-extended a, .utility-list-extended a { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav-menu-overlay" id="navOverlay"></div>
+  <nav class="navbar" id="mainNav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../img/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="nav-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Pondok Pesantren Al-Falah</span>
+          <span class="nav-brand-sub">Teluk Dalem Ilir · Rumbia</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#skema">Skema</a></li>
+        <li><a href="#prodi">Program Studi</a></li>
+        <li><a href="#fasilitas">Fasilitas</a></li>
+        <li><a href="#keuntungan">Keuntungan</a></li>
+        <li><a href="#syarat">Syarat</a></li>
+        <li><a href="../index.html" class="nav-cta">Kembali ke Home</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page-header" id="hero">
+    <div class="container">
+      <div class="header-badge">Pendidikan Tinggi Negeri</div>
+      <h1>Universitas Terbuka (SALUT) Al Falah</h1>
+      <p>Sentra Layanan Universitas Terbuka (SALUT) di bawah naungan Pondok Pesantren Al-Falah Lampung Tengah.</p>
+    </div>
+  </header>
+
+  <section class="profil-section" id="profil" style="background: var(--secondary);">
+    <div class="container">
+      <div class="premium-card">
+        <div class="card-label">PROFIL UT (SALUT) AL FALAH</div>
+        <h2>Pendidikan Tinggi Fleksibel & Terjangkau</h2>
+        <p>Universitas Terbuka Negeri (Salut) Al Falah Lampung Tengah merupakan Perguruan Tinggi Negeri (PTN) yang beralamatkan di Lampung Tengah dengan sistem perkuliahan yang fleksibel dan dapat dilaksanakan dimana saja sehingga tidak terbatas oleh ruang dan waktu, tidak memandang batas usia serta biaya yang sangat terjangkau.</p>
+        <p>Universitas Terbuka Negeri (Salut) Al Falah Lampung Tengah mempunyai misi meningkatkan kualitas sistem pendidikan untuk menjawab kebutuhan masyarakat dengan berbagai jurusan yang dibutuhkan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="skema-section" id="skema" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding-top: 0;">
+    <div class="container">
+      <div class="premium-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
+        <div class="card-label">SKEMA LAYANAN</div>
+        <h2 style="color: var(--accent);">Pilihan Sistem Perkuliahan</h2>
+        <p style="color: rgba(255,255,255,0.9);">Layanan pendidikan program Diploma atau sarjana mahasiswa FKIP, FHISP, FEB & FST memiliki pilihan skema layanan setiap paket semester (SIPAS) yaitu layanan pengemasan mata kuliah yang dirancang untuk memudahkan mahasiswa karena sudah ditentukannya mata kuliah apa saja yang harus Anda ambil dari semester 1 hingga lulus. sedangkan non sipas yaitu jalur otonomi penuh bagi mahasiswa. Dalam sistem ini, kendali atas perencanaan studi sepenuhnya berada di tangan mahasiswa.</p>
+        <p style="color: rgba(255,255,255,0.9);">Dalam skema layanan UT (Salut) Al Falah terdapat juga sistem Rekognisi Pembelajaran Lampau (RPL). RPL atau juga disebut Alih Kredit merupakan sebuah pengakuan kelulusan pembelajaran mahasiswa dari perguruan tinggi lain ke program studi UT (Salut) Al Falah. Artinya, mahasiswa tidak perlu mengulang pembelajaran yang sudah dilakukan di perguruan tinggi sebelumnya.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="prodi-section" id="prodi" style="background: var(--secondary); padding-top: 50px;">
+    <div class="container">
+      <div class="sec-title-wrap" style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: var(--primary); margin-bottom: 15px;">Program Studi</h2>
+        <div style="width: 80px; height: 4px; background: var(--accent); margin: 0 auto; border-radius: 2px;"></div>
+      </div>
+
+      <div class="prodi-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+        <!-- FEB -->
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
+          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FEB</h3>
+          <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Ekonomi dan Bisnis</p>
+          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Manajemen</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ekonomi Pembangunan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ekonomi Syariah</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Akuntansi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Akuntansi Keuangan Publik</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pariwisata</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Kewirausahaan</li>
+          </ul>
+        </div>
+
+        <!-- FKIP -->
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
+          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FKIP</h3>
+          <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Keguruan dan Ilmu Pendidikan</p>
+          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Bahasa dan Sastra Indonesia</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Bahasa Inggris</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Biologi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Fisika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Kimia</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Matematika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Ekonomi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Pancasila dan Kewarganegaraan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Mata Kuliah Umum</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Teknologi Pendidikan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Guru Sekolah Dasar (PGSD)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Guru Pendidikan Anak Usia Dini (PGPAUD)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Program Pendidikan Profesi Guru (PPG)</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Agama Islam (PAI)</li>
+          </ul>
+        </div>
+
+        <!-- FST -->
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
+          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FST</h3>
+          <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Sains dan Teknologi</p>
+          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Statistika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Matematika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Biologi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Teknologi Pangan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Agribisnis</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Perencanaan Wilayah dan Kota</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sistem Informasi</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sains Data</li>
+          </ul>
+        </div>
+
+        <!-- FHISIP -->
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
+          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FHISIP</h3>
+          <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Hukum Ilmu Sosial dan Ilmu Politik</p>
+          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <ul style="list-style: none; padding: 0;">
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Administrasi Negara (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Administrasi Bisnis (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Hukum (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Pemerintahan (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Komunikasi (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Perpustakaan (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sosiologi (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sastra Inggris (S1)</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Perpajakan (S1)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fasilitas-section" id="fasilitas" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding-top: 0;">
+    <div class="container">
+      <div class="premium-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
+        <div class="card-label">FASILITAS UT (SALUT) AL FALAH</div>
+        <h2 style="color: var(--accent);">Sarana Penunjang Pendidikan</h2>
+        <ul class="fasilitas-grid" style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <li style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: flex-start; gap: 15px;">
+            <span style="font-size: 24px; color: var(--accent); font-weight: 900;">1.</span>
+            <p style="font-weight: 600; font-size: 17px;">Pusat Layanan Mahasiswa (Student Center)</p>
+          </li>
+          <li style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: flex-start; gap: 15px;">
+            <span style="font-size: 24px; color: var(--accent); font-weight: 900;">2.</span>
+            <p style="font-weight: 600; font-size: 17px;">Laboratorium Komputer dengan spesifikasi mumpuni yang digunakan untuk perkuliahan</p>
+          </li>
+          <li style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: flex-start; gap: 15px;">
+            <span style="font-size: 24px; color: var(--accent); font-weight: 900;">3.</span>
+            <p style="font-weight: 600; font-size: 17px;">Ruang Belajar & Tutorial Perkuliahan</p>
+          </li>
+          <li style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2); display: flex; align-items: flex-start; gap: 15px;">
+            <span style="font-size: 24px; color: var(--accent); font-weight: 900;">4.</span>
+            <p style="font-weight: 600; font-size: 17px;">Sarana Pendukung Akademik yang digunakan untuk penunjang pembelajaran</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keuntungan Section -->
+  <section class="keuntungan-section" id="keuntungan" style="background: var(--secondary); padding-top: 50px;">
+    <div class="container">
+      <div class="premium-card" style="max-width: 900px; margin: 0 auto; border-left: 8px solid var(--accent);">
+        <div class="card-label">KEUNTUNGAN KULIAH DI UT (SALUT) AL FALAH</div>
+        <h2 style="font-size: 28px; margin-bottom: 25px;">Mengapa Memilih Kami?</h2>
+        <ul class="keuntungan-grid" style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px 30px;">
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">1.</span> Universitas Negeri</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">2.</span> Bebas Biaya Bangunan</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">3.</span> Tetap Bisa Bekerja</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">4.</span> Hemat Biaya Transportasi</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">5.</span> Tanpa Batas Usia</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">6.</span> Banyak Program Studi</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">7.</span> Tanpa Tes Masuk</li>
+          <li style="padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">8.</span> Penyumbang CPNS DAN PPPK Tertinggi</li>
+          <li style="padding: 10px 0; font-weight: 600; color: var(--text-dark); display: flex; align-items: center; gap: 12px;"><span style="color: var(--accent); font-weight: 800;">9.</span> Melayani Alih Kredit/RPL</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Syarat Section -->
+  <section class="syarat-section" id="syarat" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding-top: 0;">
+    <div class="container">
+      <div class="premium-card" style="max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
+        <div class="card-label">SYARAT PENDAFTARAN</div>
+        <h2 style="font-size: 28px; margin-bottom: 25px; color: var(--accent);">Persyaratan Dokumen</h2>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 15px; background: rgba(255,255,255,0.1); border-radius: 12px; margin-bottom: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 15px;">
+            <span style="color: var(--accent);">✦</span> Foto Copy Ijazah SMA/SMK Sederajat
+          </li>
+          <li style="padding: 15px; background: rgba(255,255,255,0.1); border-radius: 12px; margin-bottom: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 15px;">
+            <span style="color: var(--accent);">✦</span> Foto Copy KTP & Kartu Keluarga
+          </li>
+          <li style="padding: 15px; background: rgba(255,255,255,0.1); border-radius: 12px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 15px;">
+            <span style="color: var(--accent);">✦</span> Pas Foto Ukuran 4 X 6
+          </li>
+        </ul>
+        
+        <div style="margin-top: 40px; text-align: center;">
+          <a href="https://wa.me/6285832155052" class="nav-cta" style="padding: 15px 30px; font-size: 16px;">Daftar Sekarang via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-identity">
+          <img src="../img/Properti%20Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo" style="width: 80px; margin-bottom: 25px;">
+          <h2>Pondok Pesantren Al-Falah</h2>
+          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan siap bermanfaat bagi umat. Berlokasi di Teluk Dalem Ilir, Rumbia, Lampung Tengah.</p>
+        </div>
+
+        <div class="footer-social-section">
+          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Social Media</h4>
+          <ul class="social-list-extended">
+            <li><a href="https://www.instagram.com/pp.alfalah_rumbia/">Alfalah Putra Instagram</a></li>
+            <li><a href="https://www.instagram.com/alfalahputri_rumbia/">Alfalah Putri Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@pon.pes_alfalah">Alfalah Putra TikTok</a></li>
+            <li><a href="https://youtube.com/@kh_muhayat_channel">YouTube Channel</a></li>
+            <li><a href="https://wa.me/6285832155052">WhatsApp Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-utility-section">
+          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Support</h4>
+          <ul class="utility-list-extended">
+            <li><a href="contact.html">Contact PP.ALFALAH</a></li>
+            <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
+            <li><a href="Terms-And-Conditions.html">Terms and Conditions</a></li>
+            <li><a href="Disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Pondok Pesantren Al-Falah Teluk Dalem Ilir Rumbia. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    function openMenu() {
+      hamburger.classList.add('active');
+      navMenu.classList.add('open');
+      navOverlay.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('open');
+      navOverlay.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('mainNav');
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+
+</body>
+</html>
