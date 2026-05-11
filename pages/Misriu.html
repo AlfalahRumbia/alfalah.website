@@ -250,6 +250,63 @@
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
 
+    @media (max-width: 992px) {
+      .footer-content {
+        grid-template-columns: 1.4fr 0.6fr;
+        gap: 35px 20px;
+        padding: 0 5%;
+      }
+
+      .footer-identity {
+        grid-column: 1 / -1;
+        text-align: left;
+      }
+
+      .footer-identity img.footer-logo {
+        width: 48px !important;
+        margin-bottom: 15px !important;
+      }
+
+      .footer-identity h2 {
+        font-size: 18px !important;
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+
+      .footer-identity p {
+        font-size: 12px;
+        max-width: 100%;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 10px;
+      }
+
+      .footer-social-section h4,
+      .footer-utility-section h4 {
+        font-size: 11px !important;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: #fff !important;
+      }
+
+      .social-list-extended a,
+      .utility-list-extended a {
+        font-size: 12px !important;
+        gap: 8px;
+        color: #fff !important;
+        white-space: nowrap;
+      }
+
+      .footer {
+        padding: 20px 0 30px !important;
+      }
+
+      .footer-bottom {
+        font-size: 10px !important;
+        padding-top: 20px !important;
+      }
+    }
+
     @media (max-width: 900px) {
       section { padding: 60px 0; }
       .page-header { padding: 140px 0 70px; }
@@ -276,22 +333,27 @@
       .materi-grid { grid-template-columns: 1fr; gap: 15px; }
       .materi-card { padding: 25px; }
 
-      .footer-content { grid-template-columns: 1.4fr 0.6fr; gap: 35px 20px; text-align: left; }
-      .footer-identity { grid-column: 1 / -1; text-align: center; }
-      .footer-identity p { margin: 0 auto; max-width: 100%; }
-      .social-list-extended a, .utility-list-extended a { justify-content: flex-start; }
+      .navbar {
+        padding: 8px 5% !important;
+      }
+
+      .nav-logo {
+        height: 36px !important;
+      }
+
+      .nav-brand-name {
+        font-size: 13px !important;
+      }
+
+      .nav-brand-sub {
+        font-size: 9px !important;
+      }
     }
 
     @media (max-width: 480px) {
-      .footer-content { grid-template-columns: 1fr; text-align: center; }
-      .social-list-extended a, .utility-list-extended a { justify-content: center; }
       .page-header { padding: 120px 0 60px; }
       .page-header h1 { font-size: 28px; }
       
-      .nav-brand-name { font-size: 14px; }
-      .nav-brand-sub { font-size: 8px; }
-      .nav-logo { height: 38px; }
-
       .premium-card { padding: 30px 20px; }
       .feature-list li { font-size: 13px; }
     }
@@ -492,17 +554,20 @@
         <div class="footer-social-section">
           <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Social Media</h4>
           <ul class="social-list-extended">
-            <li><a href="https://www.instagram.com/pp.alfalah_rumbia/">Alfalah Putra Instagram</a></li>
-            <li><a href="https://www.instagram.com/alfalahputri_rumbia/">Alfalah Putri Instagram</a></li>
-            <li><a href="https://www.tiktok.com/@pon.pes_alfalah">Alfalah Putra TikTok</a></li>
+            <li><a href="https://www.instagram.com/pp.alfalah_rumbia/">Alfalah Putra Instagram Account</a></li>
+            <li><a href="https://www.instagram.com/alfalahputri_rumbia/">Alfalah Putri Instagram Account</a></li>
+            <li><a href="https://www.tiktok.com/@pon.pes_alfalah">Alfalah Putra TikTok Account</a></li>
+            <li><a href="https://www.tiktok.com/@alfalahputrirumbia">Alfalah Putri TikTok Account</a></li>
+            <li><a href="https://www.tiktok.com/@alfalahfababead123">TikTok LIVE</a></li>
             <li><a href="https://youtube.com/@kh_muhayat_channel">YouTube Channel</a></li>
-            <li><a href="https://wa.me/6285832155052">WhatsApp Support</a></li>
+            <li><a href="https://wa.me/6285832155052">WhatsApp</a></li>
           </ul>
         </div>
 
         <div class="footer-utility-section">
           <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Support</h4>
           <ul class="utility-list-extended">
+            <li><a href="maintenance.html">For Media</a></li>
             <li><a href="contact.html">Contact PP.ALFALAH</a></li>
             <li><a href="Privacy-Policy.html">Privacy Policy</a></li>
             <li><a href="Terms-And-Conditions.html">Terms and Conditions</a></li>
