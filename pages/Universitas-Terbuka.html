@@ -158,6 +158,9 @@
       content: ''; position: absolute; top: 0; left: 0; width: 8px; height: 100%;
       background: var(--accent);
     }
+    /* Prodi card punya border-top sendiri, tidak perlu bar kiri */
+    .prodi-card::before { display: none; }
+    .premium-card.dark-card::before { display: none; }
     
     .card-label { 
       display: inline-flex; align-items: center; gap: 10px;
@@ -192,7 +195,7 @@
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       section { padding: 60px 0; }
       .page-header { padding: 140px 0 70px; }
       .premium-card { padding: 35px 20px; border-radius: 16px; }
@@ -207,10 +210,21 @@
       .fasilitas-grid { grid-template-columns: 1fr !important; }
       .keuntungan-grid { grid-template-columns: 1fr !important; }
 
-      .footer-content { grid-template-columns: 1fr; text-align: center; }
-      .footer-identity { text-align: center; }
-      .footer-identity p { margin: 0 auto; }
-      .social-list-extended a, .utility-list-extended a { justify-content: center; }
+      /* Footer Mobile Consistency */
+      .footer { padding: 40px 0 30px !important; }
+      .footer-content { grid-template-columns: 1.4fr 0.6fr; gap: 35px 20px; padding: 0 5%; }
+      .footer-identity { grid-column: 1 / -1; text-align: left; }
+      .footer-identity img.footer-logo { width: 48px !important; margin-bottom: 15px !important; }
+      .footer-identity h2 { font-size: 18px !important; margin-bottom: 10px; text-align: left; }
+      .footer-identity p { font-size: 12px; color: rgba(255,255,255,0.7); text-align: left; margin: 0; }
+      .footer-social-section h4, .footer-utility-section h4 {
+        font-size: 11px !important; letter-spacing: 1px; margin-bottom: 15px;
+        font-weight: 600; color: #fff !important; text-align: left;
+      }
+      .social-list-extended a, .utility-list-extended a {
+        font-size: 12px !important; color: #fff !important; white-space: nowrap; justify-content: flex-start;
+      }
+      .footer-bottom { font-size: 10px !important; padding-top: 20px !important; text-align: center; }
     }
   </style>
 </head>
@@ -266,9 +280,9 @@
     </div>
   </section>
 
-  <section class="skema-section" id="skema" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding-top: 0;">
+  <section class="skema-section" id="skema" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff;">
     <div class="container">
-      <div class="premium-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
+      <div class="premium-card dark-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
         <div class="card-label">SKEMA LAYANAN</div>
         <h2 style="color: var(--accent);">Pilihan Sistem Perkuliahan</h2>
         <p style="color: rgba(255,255,255,0.9);">Layanan pendidikan program Diploma atau sarjana mahasiswa FKIP, FHISP, FEB & FST memiliki pilihan skema layanan setiap paket semester (SIPAS) yaitu layanan pengemasan mata kuliah yang dirancang untuk memudahkan mahasiswa karena sudah ditentukannya mata kuliah apa saja yang harus Anda ambil dari semester 1 hingga lulus. sedangkan non sipas yaitu jalur otonomi penuh bagi mahasiswa. Dalam sistem ini, kendali atas perencanaan studi sepenuhnya berada di tangan mahasiswa.</p>
@@ -277,7 +291,7 @@
     </div>
   </section>
 
-  <section class="prodi-section" id="prodi" style="background: var(--secondary); padding-top: 50px;">
+  <section class="prodi-section" id="prodi" style="background: var(--secondary);">
     <div class="container">
       <div class="sec-title-wrap" style="text-align: center; margin-bottom: 60px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; color: var(--primary); margin-bottom: 15px;">Program Studi</h2>
@@ -286,85 +300,85 @@
 
       <div class="prodi-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
         <!-- FEB -->
-        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
-          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FEB</h3>
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid var(--accent);">
+          <h3 style="font-size: 32px; color: var(--primary); font-weight: 800; margin-bottom: 5px;">FEB</h3>
           <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Ekonomi dan Bisnis</p>
-          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <div style="background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
           <ul style="list-style: none; padding: 0;">
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Manajemen</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ekonomi Pembangunan</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ekonomi Syariah</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Akuntansi</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Akuntansi Keuangan Publik</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pariwisata</li>
-            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Kewirausahaan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Manajemen</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ekonomi Pembangunan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ekonomi Syariah</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Akuntansi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Akuntansi Keuangan Publik</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pariwisata</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Kewirausahaan</li>
           </ul>
         </div>
 
         <!-- FKIP -->
-        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
-          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FKIP</h3>
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid var(--accent);">
+          <h3 style="font-size: 32px; color: var(--primary); font-weight: 800; margin-bottom: 5px;">FKIP</h3>
           <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Keguruan dan Ilmu Pendidikan</p>
-          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <div style="background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
           <ul style="list-style: none; padding: 0;">
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Bahasa dan Sastra Indonesia</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Bahasa Inggris</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Biologi</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Fisika</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Kimia</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Matematika</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Ekonomi</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Pancasila dan Kewarganegaraan</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Mata Kuliah Umum</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Teknologi Pendidikan</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Guru Sekolah Dasar (PGSD)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Guru Pendidikan Anak Usia Dini (PGPAUD)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Program Pendidikan Profesi Guru (PPG)</li>
-            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Pendidikan Agama Islam (PAI)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Bahasa dan Sastra Indonesia</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Bahasa Inggris</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Biologi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Fisika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Kimia</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Matematika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Ekonomi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Pancasila dan Kewarganegaraan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Mata Kuliah Umum</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Teknologi Pendidikan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Guru Sekolah Dasar (PGSD)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Guru Pendidikan Anak Usia Dini (PGPAUD)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Program Pendidikan Profesi Guru (PPG)</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Pendidikan Agama Islam (PAI)</li>
           </ul>
         </div>
 
         <!-- FST -->
-        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
-          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FST</h3>
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid var(--accent);">
+          <h3 style="font-size: 32px; color: var(--primary); font-weight: 800; margin-bottom: 5px;">FST</h3>
           <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Sains dan Teknologi</p>
-          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <div style="background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
           <ul style="list-style: none; padding: 0;">
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Statistika</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Matematika</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Biologi</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Teknologi Pangan</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Agribisnis</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Perencanaan Wilayah dan Kota</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sistem Informasi</li>
-            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sains Data</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Statistika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Matematika</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Biologi</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Teknologi Pangan</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Agribisnis</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Perencanaan Wilayah dan Kota</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Sistem Informasi</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Sains Data</li>
           </ul>
         </div>
 
         <!-- FHISIP -->
-        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid #0056b3;">
-          <h3 style="font-size: 32px; color: #0056b3; font-weight: 800; margin-bottom: 5px;">FHISIP</h3>
+        <div class="premium-card prodi-card" style="margin: 0; padding: 40px; border-top: 5px solid var(--accent);">
+          <h3 style="font-size: 32px; color: var(--primary); font-weight: 800; margin-bottom: 5px;">FHISIP</h3>
           <p style="font-weight: 700; color: var(--text-mid); margin-bottom: 20px;">Fakultas Hukum Ilmu Sosial dan Ilmu Politik</p>
-          <div style="background: #0056b3; color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
+          <div style="background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 8px; font-weight: 700; margin-bottom: 25px; text-align: center;">Program Sarjana</div>
           <ul style="list-style: none; padding: 0;">
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Administrasi Negara (S1)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Administrasi Bisnis (S1)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Hukum (S1)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Pemerintahan (S1)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Komunikasi (S1)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Ilmu Perpustakaan (S1)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sosiologi (S1)</li>
-            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Sastra Inggris (S1)</li>
-            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #444;"><span style="color: #0056b3;">•</span> Perpajakan (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ilmu Administrasi Negara (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ilmu Administrasi Bisnis (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ilmu Hukum (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ilmu Pemerintahan (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ilmu Komunikasi (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Ilmu Perpustakaan (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Sosiologi (S1)</li>
+            <li style="padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Sastra Inggris (S1)</li>
+            <li style="padding: 8px 0; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-dark);"><span style="color: var(--accent); font-weight: 800;">✦</span> Perpajakan (S1)</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="fasilitas-section" id="fasilitas" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding-top: 0;">
+  <section class="fasilitas-section" id="fasilitas" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff;">
     <div class="container">
-      <div class="premium-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
+      <div class="premium-card dark-card" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
         <div class="card-label">FASILITAS UT (SALUT) AL FALAH</div>
         <h2 style="color: var(--accent);">Sarana Penunjang Pendidikan</h2>
         <ul class="fasilitas-grid" style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
@@ -390,7 +404,7 @@
   </section>
 
   <!-- Keuntungan Section -->
-  <section class="keuntungan-section" id="keuntungan" style="background: var(--secondary); padding-top: 50px;">
+  <section class="keuntungan-section" id="keuntungan" style="background: var(--secondary);">
     <div class="container">
       <div class="premium-card" style="max-width: 900px; margin: 0 auto; border-left: 8px solid var(--accent);">
         <div class="card-label">KEUNTUNGAN KULIAH DI UT (SALUT) AL FALAH</div>
@@ -413,7 +427,7 @@
   <!-- Syarat Section -->
   <section class="syarat-section" id="syarat" style="background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding-top: 0;">
     <div class="container">
-      <div class="premium-card" style="max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
+      <div class="premium-card dark-card" style="max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.2); color: #fff;">
         <div class="card-label">SYARAT PENDAFTARAN</div>
         <h2 style="font-size: 28px; margin-bottom: 25px; color: var(--accent);">Persyaratan Dokumen</h2>
         <ul style="list-style: none; padding: 0;">
