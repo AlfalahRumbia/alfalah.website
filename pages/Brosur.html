@@ -526,37 +526,73 @@
 
     @media (max-width: 992px) {
       .stats-cta-inner {
-        flex-direction: column;
-        padding: 40px 30px;
-        gap: 35px;
+        padding: 25px 20px;
+        gap: 20px;
       }
       .stats-row {
-        width: 100%;
-        flex-direction: column;
-        gap: 30px;
+        gap: 15px;
+      }
+      .stat-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+      }
+      .stat-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+      .stat-number {
+        font-size: 22px;
+      }
+      .stat-label {
+        font-size: 9px;
+        letter-spacing: 1px;
       }
       .stat-item {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .stat-info {
-        align-items: center;
+        gap: 10px;
       }
       .stats-cta {
         margin-top: -40px;
       }
+      .stats-cta .btn-primary {
+        padding: 12px 20px;
+        font-size: 13px;
+      }
     }
 
     @media (max-width: 600px) {
-      .stat-number {
-        font-size: 30px;
+      .stats-cta-inner {
+        padding: 18px 12px;
+        gap: 12px;
+        border-radius: 18px;
+      }
+      .stats-row {
+        gap: 8px;
       }
       .stat-icon {
-        width: 48px;
-        height: 48px;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+      }
+      .stat-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+      .stat-number {
+        font-size: 18px;
+      }
+      .stat-label {
+        font-size: 7.5px;
+        letter-spacing: 0.8px;
+      }
+      .stat-item {
+        gap: 6px;
+      }
+      .stats-cta .btn-primary {
+        padding: 10px 14px;
+        font-size: 11px;
+        border-radius: 10px;
+        gap: 6px;
       }
     } 
 
@@ -2053,17 +2089,14 @@
     <h2 class="section-title">Program Unggulan</h2>
     <div class="program-grid">
       <div class="program-card">
-        <div class="program-icon">📖</div>
         <h3>Tahfidz Al-Qur'an</h3>
         <p>Program hafalan Al-Qur'an dengan metode tasmi' dan murajaah.</p>
       </div>
       <div class="program-card">
-        <div class="program-icon">🕌</div>
         <h3>Kajian Kitab Kuning</h3>
         <p>Pengajian kitab-kitab salaf dengan metode sorogan untuk pemahaman mendalam.</p>
       </div>
       <div class="program-card">
-        <div class="program-icon">⚽</div>
         <h3>Ekstrakurikuler</h3>
         <p>Kegiatan olahraga, seni, dan keterampilan untuk mengembangkan bakat dan minat santri.</p>
       </div>
@@ -2354,48 +2387,6 @@
 
   <section id="pendaftaran" class="fade-up">
     <h2 class="section-title">Penerimaan Santri Baru</h2>
-
-    <div class="pendaftaran-cards">
-      <div class="pendaftaran-card">
-        <h4>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          Lokasi & Waktu
-        </h4>
-        <ul>
-          <li><strong>Tempat:</strong> Kantor PP Al-Falah</li>
-          <li><strong>Pagi:</strong> 07.00 - 11.30 WIB</li>
-          <li><strong>Sore:</strong> 17.00 WIB - 18.00 WIB</li>
-          <li><strong>Malam:</strong> 20.00 WIB - 22.00 WIB</li>
-        </ul>
-      </div>
-
-      <div class="pendaftaran-card">
-        <h4>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          Syarat Pendaftaran Pondok Pesantren
-        </h4>
-        <ul class="step-list" style="font-size: 13px !important;">
-          <li>Sowan Romo Kyai Disertai Wali</li>
-          <li>Mendaftarkan Diri Ke Kantor Disertai Wali</li>
-          <li>Mengisi Surat Pernyataan Bermaterai Yang Di Tanda Tangani Oleh Wali</li>
-          <li>Menyerahkan Foto Copy Kartu Keluarga, Akta Kelahiran, Ijazah Terakhir</li>
-          <li>Menyerahkan Pas Foto 3x4</li>
-          <li>Mengisi Formulir Pendaftaran</li>
-          <li>Membayar Administrasi</li>
-        </ul>
-      </div>
-    </div>
 
     <div style="display: flex; justify-content: center; margin-top: 50px;">
       <a href="../pages/form-online.html" class="btn-primary"
