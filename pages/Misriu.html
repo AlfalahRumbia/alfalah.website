@@ -460,15 +460,47 @@
     .materi-list li::before { content: '•'; color: var(--accent); font-weight: 900; }
 
     /* ── FOOTER (Standard) ── */
-    .footer { background: #000; color: #fff; padding: 80px 0 40px; border-top: 1px solid rgba(255,255,255,0.1); }
-    .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 60px; }
-    .footer-identity h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.5px; }
-    .footer-identity p { font-size: 16px; line-height: 1.8; color: #fff; max-width: 500px; }
-    .social-list-extended, .utility-list-extended { list-style: none; padding: 0; }
-    .social-list-extended li, .utility-list-extended li { margin-bottom: 12px; }
-    .social-list-extended a, .utility-list-extended a { color: #fff; text-decoration: none; font-size: 14px; transition: var(--transition); display: flex; align-items: center; gap: 10px; }
-    .social-list-extended a:hover, .utility-list-extended a:hover { color: var(--accent); }
-    .footer-bottom { text-align: center; font-size: 14px; color: rgba(255,255,255,0.8); padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer {
+      background:#000; color:#fff;
+      padding:80px 0 40px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      font-family: Arial, sans-serif;
+    }
+    .footer-content {
+      display:grid; grid-template-columns:2fr 1fr 1fr;
+      gap:40px; margin-bottom:60px;
+    }
+    .footer-identity h2 { font-family:'Arial Black', 'Arial', sans-serif; font-size:24px; font-weight:900; margin-bottom:15px; letter-spacing:0.5px; }
+    .footer-identity p  { font-size:16px; line-height:1.8; color:rgba(255,255,255,0.8); max-width:500px; font-weight:400; }
+    .footer-social-section h4, .footer-utility-section h4 { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; }
+    .social-list-extended, .utility-list-extended { list-style:none; padding:0; }
+    .social-list-extended li, .utility-list-extended li { margin-bottom:12px; }
+    .social-list-extended a, .utility-list-extended a {
+      color:rgba(255,255,255,0.8); text-decoration:none; font-size:14px; font-weight:400;
+      transition:all 0.3s ease; display:flex; align-items:center; gap:10px;
+    }
+    .social-list-extended a:hover, .utility-list-extended a:hover { color:var(--accent); opacity:1; }
+    .footer-bottom {
+      text-align:center; font-size:14px; color:rgba(255,255,255,0.6); font-weight:400;
+      padding-top:40px; border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width:992px) {
+      .footer-content { grid-template-columns:1.4fr 0.6fr; gap:35px 20px; padding:0 5%; }
+      .footer-identity { grid-column:1 / -1; }
+      .footer-identity img.footer-logo { width:48px !important; margin-bottom:15px !important; }
+      .footer-identity h2 { font-size:18px !important; margin-bottom:10px; }
+      .footer-identity p  { font-size:12px; color:rgba(255,255,255,0.7); }
+      .footer-social-section h4, .footer-utility-section h4 {
+        font-size:11px !important; letter-spacing:1px; margin-bottom:15px;
+        font-weight:600; color:#fff !important;
+      }
+      .social-list-extended a, .utility-list-extended a {
+        font-size:12px !important; color:#fff !important; white-space:nowrap;
+      }
+      .footer { padding:40px 0 30px !important; }
+      .footer-bottom { font-size:10px !important; padding-top:20px !important; }
+    }
 
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
@@ -601,12 +633,12 @@
         <li><a href="#jenjang">Jenjang</a></li>
         <li><a href="#metode">Metode</a></li>
         <li><a href="#kurikulum">Kurikulum</a></li>
-        <li><a href="../index.html" class="nav-cta"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+        <li><a href="javascript:history.back()" class="nav-cta"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
               stroke-linejoin="round" style="display:inline;vertical-align:-2px;margin-right:5px">
-              <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
-              <path d="M9 21V12h6v9" />
-            </svg><span>Home</span></a></li>
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg><span>Back</span></a></li>
       </ul>
 
       <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
@@ -763,16 +795,19 @@
   </section>
 
   <footer class="footer">
-    <div class="container">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
       <div class="footer-content">
         <div class="footer-identity">
-          <img src="../img/Properti%20Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo" style="width: 80px; margin-bottom: 25px;">
+          <img src="../img/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo"
+            style="width: 80px; margin-bottom: 25px;">
           <h2>Pondok Pesantren Al-Falah</h2>
-          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan siap bermanfaat bagi umat. Berlokasi di Teluk Dalem Ilir, Rumbia, Lampung Tengah.</p>
+          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan bermanfaat bagi umat.</p>
         </div>
 
         <div class="footer-social-section">
-          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Social Media</h4>
+          <h4
+            style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
+            Social Media</h4>
           <ul class="social-list-extended">
             <li><a href="https://www.instagram.com/pp.alfalah_rumbia/">Alfalah Putra Instagram Account</a></li>
             <li><a href="https://www.instagram.com/alfalahputri_rumbia/">Alfalah Putri Instagram Account</a></li>
@@ -785,7 +820,9 @@
         </div>
 
         <div class="footer-utility-section">
-          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">Support</h4>
+          <h4
+            style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
+            Support</h4>
           <ul class="utility-list-extended">
             <li><a href="maintenance.html">For Media</a></li>
             <li><a href="contact.html">Contact PP.ALFALAH</a></li>
@@ -797,7 +834,7 @@
       </div>
 
       <div class="footer-bottom">
-        &copy; 2026 Pondok Pesantren Al-Falah Teluk Dalem Ilir Rumbia. All Rights Reserved.
+        © 2026 Pondok Pesantren Al-Falah Teluk Dalem Ilir Rumbia. All Rights Reserved.
       </div>
     </div>
   </footer>

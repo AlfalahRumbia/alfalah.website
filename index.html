@@ -209,8 +209,8 @@
       margin-bottom:14px; transition:transform 0.3s ease; flex-shrink:0;
     }
     .cta-btn:hover .cta-btn-icon-wrap { transform:scale(1.12) translateY(-2px); }
-    .cta-btn-title { font-family:'Playfair Display',serif; font-size:14px; font-weight:700; letter-spacing:0.2px; margin-bottom:5px; line-height:1.3; }
-    .cta-btn-desc  { font-size:11px; font-weight:400; line-height:1.5; opacity:0.75; margin-bottom:14px; flex-grow:1; }
+    .cta-btn-title { font-family:'Playfair Display',serif; font-size:14px; font-weight:700; letter-spacing:0.2px; margin-bottom:5px; line-height:1.3; text-align:center; }
+    .cta-btn-desc  { font-size:11px; font-weight:400; line-height:1.5; opacity:0.75; margin-bottom:14px; flex-grow:1; text-align:center; }
     .cta-btn-arrow {
       width:32px; height:32px; border-radius:8px;
       display:flex; align-items:center; justify-content:center;
@@ -279,22 +279,24 @@
       background:#000; color:#fff;
       padding:80px 0 40px;
       border-top:1px solid rgba(255,255,255,0.1);
+      font-family: Arial, sans-serif;
     }
     .footer-content {
       display:grid; grid-template-columns:2fr 1fr 1fr;
       gap:40px; margin-bottom:60px;
     }
-    .footer-identity h2 { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; margin-bottom:20px; letter-spacing:-0.5px; }
-    .footer-identity p  { font-size:16px; line-height:1.8; color:#fff; max-width:500px; }
+    .footer-identity h2 { font-family:'Arial Black', 'Arial', sans-serif; font-size:24px; font-weight:900; margin-bottom:15px; letter-spacing:0.5px; }
+    .footer-identity p  { font-size:16px; line-height:1.8; color:rgba(255,255,255,0.8); max-width:500px; font-weight:400; }
+    .footer-social-section h4, .footer-utility-section h4 { font-family: 'Arial Black', Arial, sans-serif; font-weight: 900; }
     .social-list-extended, .utility-list-extended { list-style:none; padding:0; }
     .social-list-extended li, .utility-list-extended li { margin-bottom:12px; }
     .social-list-extended a, .utility-list-extended a {
-      color:#fff; text-decoration:none; font-size:14px;
+      color:rgba(255,255,255,0.8); text-decoration:none; font-size:14px; font-weight:400;
       transition:var(--transition); display:flex; align-items:center; gap:10px;
     }
-    .social-list-extended a:hover, .utility-list-extended a:hover { color:var(--accent); }
+    .social-list-extended a:hover, .utility-list-extended a:hover { color:var(--accent); opacity:1; }
     .footer-bottom {
-      text-align:center; font-size:14px; color:rgba(255,255,255,0.8);
+      text-align:center; font-size:14px; color:rgba(255,255,255,0.6); font-weight:400;
       padding-top:40px; border-top:1px solid rgba(255,255,255,0.1);
     }
 
@@ -542,8 +544,7 @@
           <img src="img/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo"
             style="width: 80px; margin-bottom: 25px;">
           <h2>Pondok Pesantren Al-Falah</h2>
-          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan siap bermanfaat bagi umat. Berlokasi di Teluk Dalem
-            Ilir, Rumbia, Lampung Tengah.</p>
+          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan bermanfaat bagi umat.</p>
         </div>
 
         <div class="footer-social-section">
@@ -588,10 +589,6 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
-
-
-    document.getElementById('copy-year').textContent = new Date().getFullYear();
   </script>
 </body>
 
