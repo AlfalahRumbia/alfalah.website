@@ -3,62 +3,91 @@
 
   <url>
     <loc>https://alfalahrumbia.com/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-14</lastmod>
+    <priority>1.0</priority>
   </url>
 
   <!-- Halaman Utama -->
   <url>
     <loc>https://alfalahrumbia.com/index.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Brosur -->
   <url>
-    <loc>https://alfalahrumbia.com/pages/brosur.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <loc>https://alfalahrumbia.com/pages/Brosur.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Misriu -->
+  <url>
+    <loc>https://alfalahrumbia.com/pages/Misriu.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- PPRQ -->
+  <url>
+    <loc>https://alfalahrumbia.com/pages/Pondok-Pesantren-Radlotul-Qur%27an.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Universitas Terbuka -->
+  <url>
+    <loc>https://alfalahrumbia.com/pages/Universitas-Terbuka.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pendidikan Formal Lainnya -->
+  <url>
+    <loc>https://alfalahrumbia.com/pages/Pendidikan-Formal-Lainnya.html</loc>
+    <lastmod>2026-05-14</lastmod>
     <priority>0.9</priority>
   </url>
 
   <!-- Form Pendaftaran Online -->
   <url>
     <loc>https://alfalahrumbia.com/pages/form-online.html</loc>
-    <lastmod>2026-05-10</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
   </url>
 
   <!-- Form Pendaftaran Offline -->
   <url>
-    <loc>https://alfalahrumbia.com/pages/form-ofline.html</loc>
-    <lastmod>2026-05-10</lastmod>
-    <priority>0.9</priority>
+    <loc>https://alfalahrumbia.com/pages/form-offline.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <priority>0.8</priority>
   </url>
 
   <!-- Kontak -->
   <url>
     <loc>https://alfalahrumbia.com/pages/contact.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <priority>0.8</priority>
   </url>
 
   <!-- Privacy Policy -->
   <url>
     <loc>https://alfalahrumbia.com/pages/Privacy-Policy.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <priority>0.7</priority>
   </url>
 
   <!-- Terms and Conditions -->
   <url>
     <loc>https://alfalahrumbia.com/pages/Terms-And-Conditions.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <priority>0.7</priority>
   </url>
 
   <!-- Disclaimer -->
   <url>
     <loc>https://alfalahrumbia.com/pages/Disclaimer.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <priority>0.7</priority>
   </url>
 
