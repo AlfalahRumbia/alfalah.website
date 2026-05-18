@@ -12,13 +12,13 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "img/Properti%20Utama/Logo.png",
+      "src": "assets/images/Properti%20Utama/Logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "img/Properti%20Utama/Logo.png",
+      "src": "assets/images/Properti%20Utama/Logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"

@@ -1,0 +1,520 @@
+:root {
+      --primary: #28443F;
+      --primary-dark: #1b2f2b;
+      --primary-mid: #213b36;
+      --secondary: #FFFCEF;
+      --accent: #D4AF37;
+      --accent-light: rgba(212, 175, 55, 0.18);
+      --accent-border: rgba(212, 175, 55, 0.28);
+      --text-light: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.55);
+      --text-soft: rgba(255, 255, 255, 0.75);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: var(--text-light);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .bg-layer,
+    .bg-pattern,
+    .bg-orb {
+      display: none;
+    }
+
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px;
+    }
+
+    .main-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 780px;
+      width: 100%;
+      border: 1px solid var(--accent-border);
+      background: #1b2f2b;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16), 0 4px 12px rgba(0, 0, 0, 0.08);
+      animation: popupIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      opacity: 0;
+      transform: scale(0.85);
+    }
+
+    @keyframes popupIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .panel-left {
+      padding: 32px 32px;
+      border-right: 1px solid var(--accent-border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      background: var(--accent-light);
+      width: fit-content;
+      margin-bottom: 16px;
+    }
+
+    .badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .main-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+
+    .main-title span {
+      color: var(--accent);
+    }
+
+    .main-subtitle {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 300px;
+    }
+
+    .progress-section {
+      margin-bottom: 20px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .progress-pct {
+      color: var(--accent);
+    }
+
+    .progress-track {
+      height: 2.5px;
+      background: rgba(255, 255, 255, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 72%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      position: relative;
+    }
+
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 6px var(--accent);
+    }
+
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .step-item.done {
+      color: var(--text-soft);
+    }
+
+    .step-item.active {
+      color: var(--text-light);
+    }
+
+    .step-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 8px;
+    }
+
+    .step-item.done .step-icon {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--accent-border);
+      color: var(--accent);
+    }
+
+    .step-item.active .step-icon {
+      background: transparent;
+      border: 2px solid rgba(212, 175, 55, 0.2);
+      border-top-color: var(--accent);
+      color: transparent;
+      animation: spinIcon 0.9s linear infinite;
+    }
+
+    @keyframes spinIcon {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .panel-right {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .countdown-block {
+      margin-bottom: 0;
+    }
+
+    .countdown-title {
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+    }
+
+    .countdown-unit {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 10px 6px 8px;
+      text-align: center;
+    }
+
+    .countdown-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 5px;
+      letter-spacing: -0.5px;
+    }
+
+    .countdown-label {
+      font-size: 7.5px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .info-block {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 12px 14px;
+    }
+
+    .info-title {
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding-bottom: 8px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 10px;
+    }
+
+    .info-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-key {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .info-val {
+      color: var(--text-soft);
+      font-family: 'Courier New', monospace;
+      font-size: 9.5px;
+      text-align: right;
+    }
+
+    .info-val.live {
+      color: var(--accent);
+      font-size: 9.5px;
+    }
+
+    .cta-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 11px 20px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #e2c14a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-primary svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .contact-note {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .contact-note a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-note a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        height: 100vh;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .page-wrapper {
+        padding: 12px;
+        width: 100%;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      .panel-left {
+        padding: 14px 16px 12px;
+        border-right: none;
+        border-bottom: 1px solid var(--accent-border);
+      }
+
+      .panel-right {
+        padding: 12px 16px 14px;
+        gap: 10px;
+      }
+
+      .badge {
+        font-size: 7px;
+        letter-spacing: 1.5px;
+        padding: 3px 8px;
+        margin-bottom: 8px;
+      }
+
+      .main-title {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      .main-subtitle {
+        font-size: 9px;
+        line-height: 1.55;
+        margin-bottom: 10px;
+      }
+
+      .progress-section {
+        margin-bottom: 10px;
+      }
+
+      .progress-label {
+        font-size: 7.5px;
+        margin-bottom: 5px;
+      }
+
+      .steps-list {
+        gap: 6px;
+      }
+
+      .step-item {
+        font-size: 9px;
+        gap: 7px;
+      }
+
+      .step-icon {
+        width: 14px;
+        height: 14px;
+        font-size: 7px;
+        flex-shrink: 0;
+      }
+
+      .countdown-title {
+        font-size: 7px;
+        margin-bottom: 7px;
+      }
+
+      .countdown-grid {
+        gap: 5px;
+      }
+
+      .countdown-unit {
+        padding: 6px 4px 5px;
+      }
+
+      .countdown-num {
+        font-size: 15px;
+        margin-bottom: 3px;
+      }
+
+      .countdown-label {
+        font-size: 6.5px;
+        letter-spacing: 1px;
+      }
+
+      .info-block {
+        padding: 7px 10px;
+        margin-bottom: 0;
+      }
+
+      .info-title {
+        font-size: 7px;
+        margin-bottom: 6px;
+        padding-bottom: 5px;
+      }
+
+      .info-row {
+        font-size: 8px;
+        margin-bottom: 4px;
+      }
+
+      .info-val,
+      .info-val.live {
+        font-size: 7.5px;
+      }
+
+      .cta-wrap {
+        gap: 7px;
+      }
+
+      .btn-primary {
+        padding: 8px 12px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        gap: 5px;
+      }
+
+      .btn-primary svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      .contact-note {
+        font-size: 8.5px;
+        line-height: 1.5;
+      }
+    }
