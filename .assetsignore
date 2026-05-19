@@ -1,0 +1,10 @@
+.git/
+.git
+.wrangler/
+scratch/
+scratch
+img/
+img
+.assetsignore
+wrangler.jsonc
+*.py
