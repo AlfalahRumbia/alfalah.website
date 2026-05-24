@@ -788,8 +788,8 @@
 
     .fasilitas-name {
       font-size: 16px;
-      font-weight: 600;
-      color: white;
+      font-weight: 800;
+      color: var(--text-dark);
       margin-bottom: 8px;
     }
 
@@ -798,6 +798,88 @@
       color: rgba(255, 255, 255, 0.9);
       line-height: 1.5;
     }
+
+    /* ── Feedback / Contact Form ── */
+    .contact-section {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form {
+      background: #ffffff;
+      border: 1.5px solid rgba(212, 175, 55, 0.3);
+      border-radius: 20px;
+      padding: 40px 35px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-dark);
+      letter-spacing: 0.3px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+      background: var(--secondary);
+      border: 2.5px solid #888;
+      border-radius: 12px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #999;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      display: inline-block;
+      width: 100%;
+      padding: 15px 30px;
+      background: var(--accent);
+      color: var(--text-dark);
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      background: #e8c33a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+    }
+
 
     .gallery {
       display: flex;
