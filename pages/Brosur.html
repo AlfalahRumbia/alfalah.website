@@ -29,7 +29,6 @@
 <body>
 
   <div class="nav-menu-overlay" id="navOverlay"></div>
-  <div class="iridescence-wrapper" id="iridescenceContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 70px; z-index: 9998;"></div>
   <nav class="navbar" id="mainNav">
     <div class="nav-container">
 
@@ -562,25 +561,8 @@
 
 
     <script src="../js/global.js" defer></script>
-  <script src="../js/components/Iridescence.js" defer></script>
   <script src="../js/components/navbar.js" defer></script>
   <script src="../js/pages/brosur.js" defer></script>
-
-  <script defer>
-    // Initialize Iridescence effect on navbar
-    document.addEventListener('DOMContentLoaded', function() {
-      const container = document.getElementById('iridescenceContainer');
-      if (container) {
-        const iridescence = new Iridescence({
-          container: container,
-          color: [0.06274509803921569, 0.7254901960784313, 0.5058823529411764],
-          mouseReact: true,
-          amplitude: 0.1,
-          speed: 1
-        });
-      }
-    });
-  </script>
 
 </body>
 
