@@ -4,24 +4,24 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, var(--primary) 0%, #1e3330 100%);
+  background: linear-gradient(135deg, #0A1F3F 0%, #003F7D 100%);
   padding: 0 40px;
   height: 64px;
   display: flex;
   align-items: center;
   z-index: 9999;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
-  border-bottom: 2px solid rgba(212, 175, 55, 0.35);
+  border-bottom: 2px solid rgba(240, 171, 0, 0.35);
   transition: all 0.4s ease;
 }
 
 .navbar.scrolled {
   padding: 0 40px;
-  background: rgba(22, 38, 35, 0.97);
+  background: rgba(10, 31, 63, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
-  border-bottom-color: rgba(212, 175, 55, 0.5);
+  border-bottom-color: rgba(240, 171, 0, 0.5);
 }
 
 .nav-container {
@@ -116,21 +116,21 @@
 
 .nav-menu a.active {
   color: var(--accent);
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(240, 171, 0, 0.1);
 }
 
 .nav-cta {
   display: inline-block;
   padding: 9px 20px;
   background: var(--accent);
-  color: #1a1a1a !important;
+  color: #0A1F3F !important;
   font-weight: 700 !important;
   font-size: 13.5px !important;
   border-radius: 50px !important;
   text-decoration: none;
   transition: all 0.3s ease !important;
   white-space: nowrap;
-  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 3px 12px rgba(240, 171, 0, 0.35);
 }
 
 .nav-cta::after {
@@ -138,10 +138,10 @@
 }
 
 .nav-cta:hover {
-  background: #e8c33a !important;
+  background: #FDB515 !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
-  color: #1a1a1a !important;
+  box-shadow: 0 6px 20px rgba(240, 171, 0, 0.5) !important;
+  color: #0A1F3F !important;
 }
 
 .hamburger {
@@ -221,7 +221,7 @@
     right: -100%;
     width: min(280px, 78vw);
     height: 100dvh;
-    background: linear-gradient(160deg, #1a2e2b 0%, #0d1a18 100%);
+    background: linear-gradient(160deg, #0A1F3F 0%, #061229 100%);
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -240,7 +240,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(212, 175, 55, 0.7);
+    color: rgba(240, 171, 0, 0.7);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-bottom: 10px;
     margin-top: 60px;
@@ -266,7 +266,7 @@
 
   .nav-menu a:hover,
   .nav-menu a.active {
-    background: rgba(212, 175, 55, 0.12);
+    background: rgba(240, 171, 0, 0.12);
     color: var(--accent);
   }
 

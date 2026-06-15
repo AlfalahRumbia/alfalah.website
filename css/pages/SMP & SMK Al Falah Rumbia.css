@@ -1,20 +1,20 @@
 /* ─── CSS Variables ─────────────────────────────────── */
   :root {
-    --green-deep:   #0F301F;
-    --green-mid:    #4F6F52;
-    --green-light:  #1A4D2E;
-    --gold:         #D4AF37;
-    --gold-light:   #E8C33A;
-    --gold-pale:    rgba(212, 175, 55, 0.12);
+    --green-deep:   #0A1F3F; /* UGM Deep Navy */
+    --green-mid:    #1A5276; /* UGM Mid Blue */
+    --green-light:  #003F7D; /* UGM Blue */
+    --gold:         #F0AB00; /* UGM Gold */
+    --gold-light:   #FDB515; /* UGM Light Gold */
+    --gold-pale:    rgba(240, 171, 0, 0.12);
     --cream:        #FFFFFF;
-    --cream-dark:   #F1F5F9;
+    --cream-dark:   #F0F2F5;
     --white:        #FFFFFF;
-    --text-dark:    #0F172A;
-    --text-mid:     #334155;
-    --text-muted:   #64748B;
-    --border:       rgba(212, 175, 55,0.25);
-    --shadow:       0 4px 32px rgba(15,48,31,0.12);
-    --shadow-lg:    0 12px 60px rgba(15,48,31,0.18);
+    --text-dark:    #1A1A2E;
+    --text-mid:     #4A5568;
+    --text-muted:   #718096;
+    --border:       rgba(240, 171, 0, 0.25);
+    --shadow:       0 4px 32px rgba(10,31,63,0.12);
+    --shadow-lg:    0 12px 60px rgba(10,31,63,0.18);
   }
 
   /* ─── Reset & Base ──────────────────────────────────── */
@@ -32,7 +32,7 @@
 
   /* ─── Geometric Pattern SVG bg ─────────────────────── */
   .geo-bg {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233B82F6' stroke-width='0.4' opacity='0.18'%3E%3Cpath d='M30 0 L60 15 L60 45 L30 60 L0 45 L0 15 Z'/%3E%3Cpath d='M30 10 L50 20 L50 40 L30 50 L10 40 L10 20 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F0AB00' stroke-width='0.4' opacity='0.18'%3E%3Cpath d='M30 0 L60 15 L60 45 L30 60 L0 45 L0 15 Z'/%3E%3Cpath d='M30 10 L50 20 L50 40 L30 50 L10 40 L10 20 Z'/%3E%3C/g%3E%3C/svg%3E");
   }
 
   /* ─── Navigation ─────────────────────────────────────── */
@@ -42,24 +42,24 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: linear-gradient(135deg, var(--green-deep) 0%, #1e3330 100%);
+      background: linear-gradient(135deg, #0A1F3F 0%, #003F7D 100%);
       padding: 0 40px;
       height: 64px;
       display: flex;
       align-items: center;
       z-index: 9999;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
-      border-bottom: 2px solid rgba(212, 175, 55, 0.35);
+      border-bottom: 2px solid rgba(240, 171, 0, 0.35);
       transition: all 0.4s ease;
     }
 
     .navbar.scrolled {
       padding: 0 40px;
-      background: rgba(22, 38, 35, 0.97);
+      background: rgba(10, 31, 63, 0.97);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
-      border-bottom-color: rgba(212, 175, 55, 0.5);
+      border-bottom-color: rgba(240, 171, 0, 0.5);
     }
 
     .nav-container {
@@ -154,7 +154,7 @@
 
     .nav-menu a.active {
       color: var(--gold);
-      background: rgba(212, 175, 55, 0.1);
+      background: rgba(240, 171, 0, 0.1);
     }
 
     .nav-cta {
@@ -168,7 +168,7 @@
       text-decoration: none;
       transition: all 0.3s ease !important;
       white-space: nowrap;
-      box-shadow: 0 3px 12px rgba(212, 175, 55, 0.35);
+      box-shadow: 0 3px 12px rgba(240, 171, 0, 0.35);
     }
 
     .nav-cta::after {
@@ -178,7 +178,7 @@
     .nav-cta:hover {
       background: var(--gold-light) !important;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+      box-shadow: 0 6px 20px rgba(240, 171, 0, 0.5) !important;
       color: var(--green-deep) !important;
     }
 
@@ -246,7 +246,7 @@
         right: -100%;
         width: min(280px, 78vw);
         height: 100dvh;
-        background: linear-gradient(160deg, #1a2e2b 0%, #0d1a18 100%);
+        background: linear-gradient(160deg, #0A1F3F 0%, #061229 100%);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -265,7 +265,7 @@
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: rgba(212, 175, 55, 0.7);
+        color: rgba(240, 171, 0, 0.7);
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         margin-bottom: 10px;
         margin-top: 60px;
@@ -291,7 +291,7 @@
 
       .nav-menu a:hover,
       .nav-menu a.active {
-        background: rgba(212, 175, 55, 0.12);
+        background: rgba(240, 171, 0, 0.12);
         color: var(--gold);
       }
 
@@ -353,7 +353,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(40, 68, 63, 0.5));
+    background: linear-gradient(135deg, rgba(10, 31, 63, 0.75), rgba(0, 63, 125, 0.55));
     z-index: -1;
   }
 
@@ -411,7 +411,7 @@
     font-weight: 700; color: var(--green-deep);
     line-height: 1.2;
   }
-  .section-title.light { color: var(--white); }
+  .section-title.light { color: var(--green-deep); }
   .section-rule {
     width: 48px; height: 3px;
     background: linear-gradient(90deg, var(--gold), var(--gold-light));
@@ -421,7 +421,7 @@
     font-size: 16px; color: var(--text-muted); max-width: 560px;
     line-height: 1.8;
   }
-  .section-desc.light { color: rgba(255,255,255,0.65); }
+  .section-desc.light { color: var(--text-muted); }
 
   /* ─── Reveal Animation ───────────────────────────────── */
   .reveal {
@@ -471,73 +471,74 @@
 
   /* ─── Jalur Pendidikan ───────────────────────────────── */
   .jalur-section {
-    background: linear-gradient(160deg, var(--green-deep) 0%, var(--green-mid) 100%);
+    background: var(--cream-dark);
     position: relative; overflow: hidden;
   }
   .jalur-section::before {
     content: '';
     position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233B82F6' stroke-width='0.4' opacity='0.1'%3E%3Cpath d='M30 0 L60 15 L60 45 L30 60 L0 45 L0 15 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23003F7D' stroke-width='0.4' opacity='0.05'%3E%3Cpath d='M30 0 L60 15 L60 45 L30 60 L0 45 L0 15 Z'/%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
   }
   .jalur-header { text-align: center; margin-bottom: 60px; }
   .jalur-header .section-rule { margin: 18px auto 16px; }
   .jalur-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .jalur-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(212, 175, 55,0.25);
+    background: var(--white);
+    border: 1px solid rgba(0, 63, 125, 0.15);
     border-radius: 20px; padding: 36px 32px;
-    backdrop-filter: blur(4px);
-    transition: background 0.3s, border-color 0.3s;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   }
   .jalur-card:hover {
-    background: rgba(255,255,255,0.09);
-    border-color: rgba(212, 175, 55,0.5);
+    border-color: var(--gold);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
   }
   .jalur-card .jalur-num {
     width: 40px; height: 40px; border-radius: 10px;
-    background: rgba(212, 175, 55,0.15);
-    border: 1px solid rgba(212, 175, 55,0.4);
+    background: rgba(240, 171, 0, 0.15);
+    border: 1px solid rgba(240, 171, 0, 0.4);
     color: var(--gold); font-size: 16px; font-weight: 700;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 18px;
   }
   .jalur-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 19px; font-weight: 700; color: var(--gold);
+    font-size: 19px; font-weight: 700; color: var(--green-deep);
     margin-bottom: 16px;
   }
   .jalur-sub {
     font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
-    text-transform: uppercase; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; color: var(--text-mid);
     margin-bottom: 10px; margin-top: 16px;
   }
   .jalur-list { list-style: none; }
   .jalur-list li {
-    font-size: 14px; color: rgba(255,255,255,0.8);
+    font-size: 14px; color: var(--text-dark);
     padding: 6px 0; padding-left: 20px; position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
   .jalur-list li:last-child { border-bottom: none; }
   .jalur-list li::before {
     content: '›';
     position: absolute; left: 0; color: var(--gold); font-weight: 700;
   }
-  .jalur-list li span { color: rgba(255,255,255,0.5); font-size: 12px; }
+  .jalur-list li span { color: var(--text-muted); font-size: 12px; }
   .jalur-card.full { grid-column: 1 / -1; }
   .uni-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px; }
   .uni-item {
-    background: rgba(212, 175, 55,0.1);
-    border: 1px solid rgba(212, 175, 55,0.2);
+    background: rgba(240, 171, 0, 0.1);
+    border: 1px solid rgba(240, 171, 0, 0.2);
     border-radius: 10px; padding: 14px 16px; text-align: center;
     font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 600;
     transition: background 0.2s;
   }
-  .uni-item:hover { background: rgba(212, 175, 55,0.2); }
+  .uni-item:hover { background: rgba(240, 171, 0, 0.2); }
   .uni-item span { display: block; font-size: 11px; color: var(--gold); font-weight: 700; margin-bottom: 4px; }
 
   /* ─── Fasilitas ──────────────────────────────────────── */
-  .fasilitas-section { background: var(--cream-dark); }
+  .fasilitas-section { background: var(--cream); }
   .fasilitas-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .fasilitas-text .section-rule { margin: 18px 0; }
   .fas-list { list-style: none; margin-top: 32px; }
@@ -569,7 +570,7 @@
   .fas-card h4 { font-size: 14px; font-weight: 700; color: var(--green-deep); }
 
   /* ─── Ekstrakurikuler ────────────────────────────────── */
-  .ekstra-section { background: var(--cream); }
+  .ekstra-section { background: var(--cream-dark); }
   .ekstra-header { text-align: center; margin-bottom: 56px; }
   .ekstra-header .section-rule { margin: 18px auto; }
   .ekstra-grid {
@@ -581,7 +582,7 @@
     background: var(--white); border-radius: 16px;
     padding: 28px 20px; text-align: center;
     border: 1px solid var(--cream-dark);
-    box-shadow: 0 2px 12px rgba(15, 41, 77,0.06);
+    box-shadow: 0 2px 12px rgba(10, 31, 63, 0.06);
     transition: all 0.3s;
     position: relative; overflow: hidden;
   }
@@ -599,38 +600,39 @@
 
   /* ─── Pendaftaran ────────────────────────────────────── */
   .daftar-section {
-    background: linear-gradient(175deg, var(--green-deep) 0%, #0d1a18 100%);
+    background: var(--white);
     position: relative; overflow: hidden;
   }
   .daftar-section::before {
     content: ''; position: absolute; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%233B82F6' stroke-width='0.4' opacity='0.08'%3E%3Cpath d='M40 0 L80 20 L80 60 L40 80 L0 60 L0 20 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23003F7D' stroke-width='0.4' opacity='0.05'%3E%3Cpath d='M40 0 L80 20 L80 60 L40 80 L0 60 L0 20 Z'/%3E%3C/g%3E%3C/svg%3E");
     pointer-events: none;
   }
   .daftar-header { text-align: center; margin-bottom: 64px; }
   .daftar-header .section-rule { margin: 18px auto; }
   .daftar-top { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
   .daftar-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(212, 175, 55,0.2);
+    background: var(--white);
+    border: 1px solid rgba(0, 63, 125, 0.15);
     border-radius: 20px; padding: 36px 32px;
+    box-shadow: var(--shadow);
   }
   .daftar-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 20px; font-weight: 700; color: var(--gold);
+    font-size: 20px; font-weight: 700; color: var(--green-deep);
     margin-bottom: 24px; padding-bottom: 16px;
-    border-bottom: 1px solid rgba(212, 175, 55,0.2);
+    border-bottom: 1px solid rgba(0, 63, 125, 0.1);
   }
   .syarat-list { list-style: none; }
   .syarat-list li {
     display: flex; align-items: flex-start; gap: 12px;
-    padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 14px; color: rgba(255,255,255,0.8);
+    padding: 9px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 14px; color: var(--text-dark);
   }
   .syarat-list li:last-child { border-bottom: none; }
   .syarat-list li .s-num {
     width: 24px; height: 24px; flex-shrink: 0;
-    background: rgba(212, 175, 55,0.15); border: 1px solid rgba(212, 175, 55,0.3);
+    background: rgba(240, 171, 0, 0.15); border: 1px solid rgba(240, 171, 0, 0.3);
     color: var(--gold); font-size: 11px; font-weight: 700;
     border-radius: 6px; display: flex; align-items: center; justify-content: center;
   }
@@ -640,8 +642,8 @@
   }
   .waktu-box {
     text-align: center; padding: 24px;
-    background: rgba(212, 175, 55,0.08);
-    border: 1px solid rgba(212, 175, 55,0.25);
+    background: rgba(240, 171, 0, 0.08);
+    border: 1px solid rgba(240, 171, 0, 0.25);
     border-radius: 14px; margin-bottom: 20px;
   }
   .waktu-dates {
@@ -649,38 +651,39 @@
     font-size: 56px; font-weight: 900; color: var(--gold);
     line-height: 1;
   }
-  .waktu-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; }
-  .tempat-info { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.9; }
+  .waktu-label { font-size: 13px; color: var(--text-mid); margin-top: 6px; }
+  .tempat-info { font-size: 14px; color: var(--text-mid); line-height: 1.9; }
   .alur-section-inner { margin-top: 32px; }
   .alur-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .alur-step {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(212, 175, 55,0.2);
+    background: var(--white);
+    border: 1px solid rgba(0, 63, 125, 0.15);
     border-radius: 20px; padding: 36px 28px;
     position: relative; overflow: hidden;
-    transition: background 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow);
   }
-  .alur-step:hover { background: rgba(255,255,255,0.08); }
+  .alur-step:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
   .alur-step-num {
     font-family: 'Playfair Display', serif;
     font-size: 64px; font-weight: 900;
-    color: rgba(212, 175, 55,0.12);
+    color: rgba(0, 63, 125, 0.05);
     position: absolute; top: 12px; right: 20px;
     line-height: 1;
   }
   .alur-icon {
     width: 52px; height: 52px; border-radius: 14px;
-    background: linear-gradient(135deg, rgba(212, 175, 55,0.2), rgba(212, 175, 55,0.1));
-    border: 1px solid rgba(212, 175, 55,0.3);
+    background: linear-gradient(135deg, rgba(240, 171, 0, 0.2), rgba(240, 171, 0, 0.1));
+    border: 1px solid rgba(240, 171, 0, 0.3);
     display: flex; align-items: center; justify-content: center;
     font-size: 22px; margin-bottom: 20px;
   }
   .alur-step h4 {
     font-family: 'Playfair Display', serif;
-    font-size: 17px; font-weight: 700; color: var(--gold);
+    font-size: 17px; font-weight: 700; color: var(--green-deep);
     margin-bottom: 12px;
   }
-  .alur-step p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+  .alur-step p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
 
 
 
@@ -699,7 +702,7 @@
 
   /* ─── Footer ─────────────────────────────────────────── */
     .footer {
-      background:#000; color:#fff;
+      background:#0A1F3F; color:#fff;
       padding:80px 0 40px;
       border-top:1px solid rgba(255,255,255,0.1);
       font-family: Arial, sans-serif;
