@@ -47,6 +47,33 @@
       position: relative;
     }
 
+    /* Scroll Animation Styles (UGM Style) */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                  transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+      will-change: transform, opacity;
+    }
+
+    /* Ketika elemen aktif / masuk ke viewport */
+    .scroll-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Efek keluar ke arah atas (saat scroll ke bawah) */
+    .scroll-animate.exit-up {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+
+    /* Efek keluar ke arah bawah (saat scroll ke atas) */
+    .scroll-animate.exit-down {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
     @media (max-width: 768px) {
       body {
         font-size: 13.5px;

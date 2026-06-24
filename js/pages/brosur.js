@@ -13,6 +13,65 @@ const sections = document.querySelectorAll('section[id], header[id]');
 
     sections.forEach(s => sectionObserver.observe(s));
 
+    // Dual-direction scroll animation logic (UGM Style - Staggered children reveal)
+    const animTargets = document.querySelectorAll(
+      'section > .section-title, section > p, .program-card, .visi-misi-box, .super-combo img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item, .contact-form, .maps-container'
+    );
+    let lastScrollY = window.scrollY;
+
+    const scrollAnimObserver = new IntersectionObserver((entries) => {
+      const isScrollingDown = window.scrollY > lastScrollY;
+      
+      entries.forEach(entry => {
+        const target = entry.target;
+        
+        if (entry.isIntersecting) {
+          const parent = target.parentElement;
+          const siblings = Array.from(parent.querySelectorAll('.program-card, .visi-misi-box, .super-combo img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item'));
+          
+          if (siblings.length > 1 && siblings.includes(target)) {
+            const index = siblings.indexOf(target);
+            // Saat scroll ke bawah: indeks normal (0, 1, 2...)
+            // Saat scroll ke atas: balikkan indeks agar yang teratas/pertama muncul duluan
+            const delayIndex = isScrollingDown ? index : (siblings.length - 1 - index);
+            target.style.transitionDelay = `${delayIndex * 0.1}s`;
+          } else {
+            target.style.transitionDelay = '0s';
+          }
+          
+          target.classList.add('visible');
+          target.classList.remove('exit-up', 'exit-down');
+        } else {
+          target.style.transitionDelay = '0s';
+          target.classList.remove('visible');
+          
+          if (entry.boundingClientRect.top < 0) {
+            // Elemen keluar melewati batas atas layar
+            target.classList.add('exit-up');
+            target.classList.remove('exit-down');
+          } else {
+            // Elemen keluar/belum masuk melewati batas bawah layar
+            target.classList.add('exit-down');
+            target.classList.remove('exit-up');
+          }
+        }
+      });
+      lastScrollY = window.scrollY;
+    }, {
+      threshold: 0.05,
+      rootMargin: '-30px 0px -30px 0px'
+    });
+
+    animTargets.forEach(el => {
+      el.classList.add('scroll-animate');
+      scrollAnimObserver.observe(el);
+    });
+
+    // Update scroll position tracker
+    window.addEventListener('scroll', () => {
+      lastScrollY = window.scrollY;
+    }, { passive: true });
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
