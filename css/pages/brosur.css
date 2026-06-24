@@ -591,11 +591,23 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(28px, 4vw, 44px);
       font-weight: 700;
-      text-align: center;
+      text-align: left;
       margin-bottom: 50px;
       position: relative;
-      padding-bottom: 15px;
+      padding-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
     .section-desc {
       font-size: 17px;
       line-height: 1.8;
@@ -604,34 +616,15 @@
       text-align: center;
     }
 
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
     section:nth-of-type(odd) {
       background: var(--secondary);
       position: relative;
     }
 
     section:nth-of-type(even) {
-      background: var(--primary-dark);
-      color: var(--text-light);
+      background: #E2DDD5;
+      color: var(--text-dark);
       position: relative;
-    }
-
-    section:nth-of-type(even)::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C8972A' stroke-width='0.4' opacity='0.08'%3E%3Cpath d='M30 0 L60 15 L60 45 L30 60 L0 45 L0 15 Z'/%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
     }
 
     .sambutan {
@@ -1020,7 +1013,7 @@
     }
 
     table tbody tr {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(0, 0, 0, 0.03);
       border: 1px solid rgba(212, 175, 55, 0.25);
       border-radius: 10px;
       margin-bottom: 10px;
@@ -1029,7 +1022,7 @@
     }
 
     table tbody tr:nth-child(odd) {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(0, 0, 0, 0.03);
     }
 
     th,
@@ -1080,10 +1073,10 @@
     }
 
     section:nth-of-type(even) .ekskul-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
-      color: var(--text-light);
-      box-shadow: none;
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.08);
+      color: var(--text-dark);
+      box-shadow: var(--shadow-card);
     }
 
     .ekskul-card:hover {
@@ -1106,7 +1099,7 @@
     }
 
     section:nth-of-type(even) .ekskul-card h3 {
-      color: var(--accent);
+      color: var(--primary);
     }
 
     .ekskul-card p {
@@ -1313,9 +1306,9 @@
     }
 
     section:nth-of-type(even) .info-box-premium {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.1);
-      color: var(--text-light);
+      background: #ffffff;
+      border-color: rgba(0, 0, 0, 0.08);
+      color: var(--text-dark);
     }
 
     .info-box-premium:hover {
@@ -1866,9 +1859,9 @@
     }
 
     section:nth-of-type(even) .kegiatan-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(212, 175, 55, 0.3);
-      color: var(--text-light);
+      background: #ffffff;
+      border-color: rgba(212, 175, 55, 0.4);
+      color: var(--text-dark);
     }
 
     .kegiatan-card:hover {
@@ -1889,7 +1882,7 @@
     }
 
     section:nth-of-type(even) .kegiatan-card h3 {
-      color: var(--accent);
+      color: var(--primary);
     }
 
     .kegiatan-list {
