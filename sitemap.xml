@@ -14,13 +14,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Brosur -->
-  <url>
-    <loc>https://alfalahrumbia.com/pages/Brosur.html</loc>
-    <lastmod>2026-05-17</lastmod>
-    <priority>0.9</priority>
-  </url>
-
   <!-- Administrasi -->
   <url>
     <loc>https://alfalahrumbia.com/pages/Adminitrasi.html</loc>
