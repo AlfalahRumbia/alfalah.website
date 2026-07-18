@@ -1,6 +1,6 @@
 // ─── KONFIGURASI ────────────────────────────────────────────────
-    const start  = new Date('2026-05-10T00:00:00Z');
-    const target = new Date('2026-07-27T00:00:00Z');
+    const start  = new Date('2026-07-10T00:00:00Z');
+    const target = new Date('2026-07-24T00:00:00Z');
     // ────────────────────────────────────────────────────────────────
 
     const stepThresholds = [25, 50, 75, 100];

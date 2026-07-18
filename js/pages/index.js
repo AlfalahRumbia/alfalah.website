@@ -15,7 +15,7 @@ const sections = document.querySelectorAll('section[id], header[id]');
 
     // Dual-direction scroll animation logic (UGM Style - Staggered children reveal)
     const animTargets = document.querySelectorAll(
-      'section > .section-title, section > p, .program-card, .visi-misi-box, .super-combo img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item, .contact-form, .maps-container'
+      'section > .section-title, section > p, .program-card, .visi-misi-box, .super-combo img, .gallery-grid-custom img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item, .contact-form, .maps-container, .kegiatan-harian-item'
     );
     let lastScrollY = window.scrollY;
 
@@ -27,7 +27,7 @@ const sections = document.querySelectorAll('section[id], header[id]');
         
         if (entry.isIntersecting) {
           const parent = target.parentElement;
-          const siblings = Array.from(parent.querySelectorAll('.program-card, .visi-misi-box, .super-combo img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item'));
+          const siblings = Array.from(parent.querySelectorAll('.program-card, .visi-misi-box, .super-combo img, .gallery-grid-custom img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item, .kegiatan-harian-item'));
           
           if (siblings.length > 1 && siblings.includes(target)) {
             const index = siblings.indexOf(target);
@@ -89,14 +89,13 @@ const sections = document.querySelectorAll('section[id], header[id]');
 
     
 
-
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
     const lightPrev = document.getElementById('lightPrev');
     const lightNext = document.getElementById('lightNext');
 
-    const galleryImgs = Array.from(document.querySelectorAll('.gallery img, .grid-gallery img, .super-combo img, .carousel-item img'));
+    const galleryImgs = Array.from(document.querySelectorAll('.gallery img, .grid-gallery img, .super-combo img, .carousel-item img, .gallery-grid-custom img'));
     let currentIndex = 0;
 
     galleryImgs.forEach((img, i) => {

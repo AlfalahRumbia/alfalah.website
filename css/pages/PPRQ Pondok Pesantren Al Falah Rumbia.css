@@ -989,3 +989,46 @@
         letter-spacing: 0.5px;
       }
     }
+
+    /* Custom gallery grid layout matching user schema */
+    .gallery-grid-custom {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-grid-custom .gallery-img-item {
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      height: 100%;
+    }
+
+    .gallery-grid-custom .gallery-img-item.featured {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-grid-custom .gallery-img-item img {
+      object-fit: cover !important;
+    }
+
+    @media (max-width: 992px) {
+      .gallery-grid-custom {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .gallery-grid-custom .gallery-img-item.featured {
+        grid-column: span 3;
+        grid-row: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid-custom {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .gallery-grid-custom .gallery-img-item.featured {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
