@@ -20,7 +20,7 @@
 }
 
 html { scroll-behavior:smooth; overflow-x:hidden; }
-body { font-family:'Nunito Sans',sans-serif; color:var(--text-dark); background:var(--secondary); overflow-x:hidden; }
+body { font-family:'Roboto',sans-serif; color:var(--text-dark); background:var(--secondary); overflow-x:hidden; }
 img  { max-width:100%; height:auto; display:block; }
 
 .fade-up {
