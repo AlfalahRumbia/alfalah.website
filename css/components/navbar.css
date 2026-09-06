@@ -1,4 +1,4 @@
-/* ── NAVBAR ── */
+/* ── NAVBAR MASTER STYLES ── */
 .navbar {
   position: fixed;
   top: 0;
@@ -9,7 +9,7 @@
   z-index: 9999;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
   border-bottom: 2px solid rgba(240, 171, 0, 0.35);
-  transition: all 0.4s ease;
+  transition: all 0.35s ease;
 }
 
 .navbar.scrolled {
@@ -23,18 +23,25 @@
 
 .nav-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   overflow: visible;
 }
 
+/* Dua baris pada halaman beranda desktop yang memiliki .nav-top-row */
+.nav-container:has(.nav-top-row) {
+  flex-direction: column;
+}
+
 .nav-brand-name {
   font-family: 'Playfair Display', serif;
   font-size: 15px;
   font-weight: 600;
-  color: var(--text-light);
+  color: var(--text-light, #ffffff);
   letter-spacing: 0.3px;
   white-space: nowrap;
 }
@@ -42,7 +49,7 @@
 .nav-brand-sub {
   font-size: 10px;
   font-weight: 400;
-  color: var(--accent);
+  color: var(--accent, #D4AF37);
   letter-spacing: 0.5px;
   opacity: 0.9;
 }
@@ -72,7 +79,7 @@
 }
 
 .nav-bottom-row {
-  display: none; /* Tidak dipakai lagi, struktur baru langsung pakai ul.nav-menu */
+  display: none; /* Kompatibilitas mundur */
 }
 
 .nav-menu {
@@ -108,7 +115,7 @@
   right: 13px;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--accent, #D4AF37);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
@@ -124,14 +131,14 @@
 }
 
 .nav-menu a.active {
-  color: var(--accent);
+  color: var(--accent, #D4AF37);
   background: rgba(240, 171, 0, 0.1);
 }
 
 .nav-cta {
   display: inline-block;
   padding: 9px 20px;
-  background: var(--accent);
+  background: var(--accent, #D4AF37);
   color: #0A1F3F !important;
   font-weight: 700 !important;
   font-size: 13.5px !important;
@@ -174,7 +181,7 @@
   display: block;
   width: 24px;
   height: 2.5px;
-  background: var(--text-light);
+  background: var(--text-light, #ffffff);
   border-radius: 3px;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
@@ -200,337 +207,26 @@
 }
 
 .nav-menu-overlay {
-  display: none;
+  display: block;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 9997;
+  background: rgba(5, 18, 10, 0.72);
+  z-index: 9998;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .nav-menu-overlay.open {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-/* Mobile responsive menu */
-@media (max-width: 900px) {
-  .navbar,
-  .navbar.scrolled {
-    padding: 0 20px !important;
-    height: 64px !important;
-    min-height: 64px !important;
-    overflow: visible !important;
-  }
-
-  .nav-top-row {
-    height: 64px;
-    width: 100%;
-  }
-
-  /* nav-bottom-row tidak digunakan di mobile */
-  .nav-bottom-row {
-    display: none;
-  }
-
-  .nav-social-wrap {
-    display: none !important;
-  }
-
-  /* Sembunyikan social section mobile di tampilan desktop */
-  .nav-menu-social-divider,
-  .nav-menu-social-section {
-    display: none !important;
-  }
-
-  .hamburger {
-    display: flex;
-    position: relative;
-    z-index: 10001;
-  }
-
-  .nav-logo {
-    height: 48px;
-  }
-
-  /* Mobile: nav-menu menjadi fixed drawer di kanan */
-  #navMenu, .nav-menu {
-    position: fixed !important;
-    top: 64px !important;
-    right: -110% !important;
-    left: auto !important;
-    width: min(320px, 88vw) !important;
-    height: calc(100vh - 64px) !important;
-    background: linear-gradient(180deg, #143D24 0%, #0B2214 100%) !important;
-    border-left: 1px solid rgba(240, 171, 0, 0.3) !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 2px !important;
-    padding: 18px 14px 40px !important;
-    border-top: none !important;
-    height: auto !important;
-    height: calc(100vh - 64px) !important;
-    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.55) !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    z-index: 10000 !important;
-    list-style: none !important;
-    margin: 0 !important;
-  }
-
-  #navMenu.open, .nav-menu.open {
-    right: 0 !important;
-  }
-
-  .nav-menu li {
-    padding: 0;
-    width: 100%;
-    list-style: none;
-  }
-
-  .nav-menu > li > a {
-    font-size: 15px;
-    width: 100%;
-    display: block;
-    padding: 12px 14px;
-    border-radius: 8px;
-    color: rgba(255, 255, 255, 0.9);
-    border-bottom: none;
-    text-decoration: none;
-  }
-
-  .nav-menu > li > a:hover,
-  .nav-menu > li > a.active {
-    background: rgba(240, 171, 0, 0.15);
-    color: var(--accent);
-    transform: translateX(4px);
-  }
-
-  .nav-menu > li > a::after {
-    display: none;
-  }
-
-  /* ── Social Media Section Inside Mobile Menu Drawer ── */
-  .nav-menu-social-divider {
-    display: block !important;
-    width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 16px 0 14px !important;
-    padding: 0 !important;
-  }
-
-  .nav-menu-social-section {
-    display: flex !important;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    padding: 0 2px 20px !important;
-  }
-
-  .nav-social-heading {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent);
-    padding: 0 4px 4px;
-  }
-
-  .nav-social-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-  }
-
-  .nav-social-card {
-    display: flex !important;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 12px !important;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    text-decoration: none !important;
-    color: #ffffff !important;
-    transition: all 0.25s ease;
-    width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  .nav-social-card:hover,
-  .nav-social-card:active {
-    background: rgba(240, 171, 0, 0.15) !important;
-    border-color: rgba(240, 171, 0, 0.4);
-    transform: translateX(4px);
-  }
-
-  .nav-social-card.wa-card {
-    background: rgba(37, 211, 102, 0.1);
-    border-color: rgba(37, 211, 102, 0.3);
-  }
-  .nav-social-card.wa-card:hover {
-    background: rgba(37, 211, 102, 0.2) !important;
-    border-color: #25D366;
-  }
-
-  .nav-social-card.yt-card {
-    background: rgba(255, 0, 0, 0.08);
-    border-color: rgba(255, 0, 0, 0.25);
-  }
-  .nav-social-card.yt-card:hover {
-    background: rgba(255, 0, 0, 0.18) !important;
-    border-color: #ff4d4d;
-  }
-
-  .nav-social-card.fb-card {
-    background: rgba(24, 119, 242, 0.08);
-    border-color: rgba(24, 119, 242, 0.25);
-  }
-  .nav-social-card.fb-card:hover {
-    background: rgba(24, 119, 242, 0.18) !important;
-    border-color: #1877f2;
-  }
-
-  .nav-social-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--accent);
-    flex-shrink: 0;
-  }
-
-  .wa-icon { color: #25D366; background: rgba(37, 211, 102, 0.15); }
-  .yt-icon { color: #ff4d4d; background: rgba(255, 0, 0, 0.15); }
-  .fb-icon { color: #1877f2; background: rgba(24, 119, 242, 0.15); }
-  .ig-icon { color: #e1306c; background: rgba(225, 48, 108, 0.15); }
-  .tt-icon { color: #ffffff; background: rgba(255, 255, 255, 0.12); }
-
-  .nav-social-info {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    overflow: hidden;
-  }
-
-  .nav-social-name {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.2;
-  }
-
-  .nav-social-detail {
-    font-size: 11.5px;
-    color: rgba(255, 255, 255, 0.65);
-    margin-top: 2px;
-  }
-
-  .nav-social-arrow {
-    color: rgba(255, 255, 255, 0.4);
-    transition: transform 0.25s ease, color 0.25s ease;
-    flex-shrink: 0;
-  }
-
-  .nav-social-card:hover .nav-social-arrow {
-    color: var(--accent);
-    transform: translateX(3px);
-  }
-
-  .nav-social-group {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    padding: 10px 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .nav-group-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .nav-group-sublinks {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding-top: 2px;
-  }
-
-  .nav-sublink {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12.5px !important;
-    color: rgba(255, 255, 255, 0.85) !important;
-    text-decoration: none !important;
-    padding: 6px 8px !important;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    background: rgba(255, 255, 255, 0.03);
-    width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  .nav-sublink:hover,
-  .nav-sublink:active {
-    color: var(--accent) !important;
-    background: rgba(240, 171, 0, 0.15) !important;
-    padding-left: 12px !important;
-  }
-
-  .nav-sublink svg {
-    color: rgba(255, 255, 255, 0.35);
-    transition: transform 0.2s ease, color 0.2s ease;
-  }
-
-  .nav-sublink:hover svg {
-    color: var(--accent);
-    transform: translateX(2px);
-  }
-
-  .nav-cta {
-    width: 100%;
-    text-align: center;
-    border-radius: 12px !important;
-    padding: 13px 20px;
-    justify-content: center;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar,
-  .navbar.scrolled {
-    padding: 0 16px !important;
-  }
-
-  .nav-logo {
-    height: 42px;
-  }
-
-  .nav-social-wrap {
-    display: none !important;
-  }
-
-  .nav-cta span {
-    display: none;
-  }
-}
-
-/* ── SOCIAL WIDGET & DROPDOWN ── */
+/* ── SOCIAL WIDGET & DROPDOWN (DESKTOP) ── */
 .nav-social-wrap {
   display: flex;
   align-items: center;
@@ -553,7 +249,7 @@
 }
 
 .social-icon-btn:hover {
-  background: var(--accent);
+  background: var(--accent, #D4AF37);
   color: #1a1a1a;
   transform: translateY(-2px);
 }
@@ -611,4 +307,463 @@
 .social-dropdown:hover .dropdown-content {
   display: block;
   transform: translateY(0);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   ── MOBILE RESPONSIVE NAVBAR (HP & TABLET <= 900px) ──
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .navbar,
+  .navbar.scrolled {
+    padding: 0 18px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    max-height: 64px !important;
+    background: linear-gradient(135deg, #143D24 0%, #0B2214 100%) !important;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.4) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    z-index: 10005 !important; /* Navbar selalu berada di lapisan teratas */
+  }
+
+  .nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 64px !important;
+    width: 100% !important;
+    overflow: visible !important;
+    position: relative !important;
+    z-index: 10005 !important;
+  }
+
+  .nav-top-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 64px !important;
+    min-height: 64px !important;
+  }
+
+  .nav-bottom-row {
+    display: none !important;
+  }
+
+  .nav-social-wrap {
+    display: none !important;
+  }
+
+  .nav-brand {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    z-index: 10006 !important;
+  }
+
+  .nav-logo {
+    height: 44px !important;
+    max-height: 44px !important;
+    width: auto !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) !important;
+  }
+
+  /* Hamburger button mobile */
+  .hamburger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 10px !important;
+    position: relative !important;
+    z-index: 10006 !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hamburger:active,
+  .hamburger.active {
+    background: rgba(212, 175, 55, 0.2) !important;
+    border-color: rgba(212, 175, 55, 0.6) !important;
+  }
+
+  .hamburger span {
+    display: block !important;
+    width: 21px !important;
+    height: 2.2px !important;
+    background: #ffffff !important;
+    border-radius: 2px !important;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transform-origin: center !important;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+    background: #F3E99F !important;
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+    background: #F3E99F !important;
+  }
+
+  /* ── Mobile Fullscreen Menu (Slide from Top to Bottom, Berada Agak ke Bawah) ── */
+  #navMenu,
+  .nav-menu {
+    display: flex !important;
+    position: fixed !important;
+    top: 72px !important; /* Diberi jarak lebih rendah agar bagian atas tidak tertutup navbar */
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: calc(100dvh - 72px) !important;
+    height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px) !important;
+    background: radial-gradient(circle at 50% 0%, #184629 0%, #0F321D 50%, #081C10 100%) !important;
+    border-left: none !important;
+    border-top: none !important;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.4) !important;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.75) !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 30px 18px max(44px, calc(env(safe-area-inset-bottom) + 24px)) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    z-index: 10000 !important; /* Di bawah navbar (10005) */
+    list-style: none !important;
+    margin: 0 !important;
+    -webkit-clip-path: inset(0 0 100% 0) !important;
+    clip-path: inset(0 0 100% 0) !important;
+    transform: translateY(-15px) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: -webkit-clip-path 0.4s cubic-bezier(0.16, 1, 0.3, 1), clip-path 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease, visibility 0.4s ease !important;
+  }
+
+  #navMenu.open,
+  .nav-menu.open {
+    -webkit-clip-path: inset(0 0 0 0) !important;
+    clip-path: inset(0 0 0 0) !important;
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* Judul navigasi di dalam menu layar penuh */
+  #navMenu::before {
+    content: 'MENU NAVIGASI' !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2.5px !important;
+    color: #D4AF37 !important;
+    padding: 6px 4px 12px !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    text-align: left !important;
+  }
+
+  #navMenu > li {
+    width: 100% !important;
+    max-width: 520px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #navMenu > li > a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 11px 16px !important;
+    border-radius: 11px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    text-decoration: none !important;
+    transition: all 0.22s ease !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Indikator panah pada menu */
+  #navMenu > li > a::after {
+    content: '' !important;
+    display: inline-block !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-right: 2px solid rgba(212, 175, 55, 0.45) !important;
+    border-top: 2px solid rgba(212, 175, 55, 0.45) !important;
+    transform: rotate(45deg) !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+    position: static !important;
+    background: none !important;
+    border-radius: 0 !important;
+  }
+
+  #navMenu > li > a:hover,
+  #navMenu > li > a.active {
+    background: rgba(212, 175, 55, 0.16) !important;
+    border-color: rgba(212, 175, 55, 0.45) !important;
+    color: #F8E7A2 !important;
+    padding-left: 20px !important;
+  }
+
+  #navMenu > li > a:hover::after,
+  #navMenu > li > a.active::after {
+    border-color: #D4AF37 !important;
+    transform: translateX(2px) rotate(45deg) !important;
+  }
+
+  /* ── Bagian Media Sosial & Kontak di Menu Layar Penuh ── */
+  .nav-menu-social-divider {
+    display: block !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.4) 0%, rgba(255, 255, 255, 0.08) 100%) !important;
+    margin: 14px 0 12px !important;
+    padding: 0 !important;
+  }
+
+  .nav-menu-social-section {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    padding: 0 0 12px !important;
+    margin: 0 !important;
+  }
+
+  .nav-social-heading {
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #D4AF37 !important;
+    padding: 0 4px 6px !important;
+  }
+
+  .nav-social-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+    width: 100% !important;
+  }
+
+  .nav-social-card {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 9px 12px !important;
+    border-radius: 9px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .nav-social-card:hover,
+  .nav-social-card:active {
+    background: rgba(212, 175, 55, 0.14) !important;
+    border-color: rgba(212, 175, 55, 0.35) !important;
+    transform: translateX(3px) !important;
+  }
+
+  .nav-social-card.wa-card {
+    background: rgba(37, 211, 102, 0.08) !important;
+    border-color: rgba(37, 211, 102, 0.25) !important;
+  }
+  .nav-social-card.wa-card:hover {
+    background: rgba(37, 211, 102, 0.16) !important;
+    border-color: #25D366 !important;
+  }
+
+  .nav-social-card.yt-card {
+    background: rgba(255, 0, 0, 0.07) !important;
+    border-color: rgba(255, 0, 0, 0.22) !important;
+  }
+  .nav-social-card.yt-card:hover {
+    background: rgba(255, 0, 0, 0.15) !important;
+    border-color: #ff4d4d !important;
+  }
+
+  .nav-social-card.fb-card {
+    background: rgba(24, 119, 242, 0.07) !important;
+    border-color: rgba(24, 119, 242, 0.22) !important;
+  }
+  .nav-social-card.fb-card:hover {
+    background: rgba(24, 119, 242, 0.15) !important;
+    border-color: #1877f2 !important;
+  }
+
+  .nav-social-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: var(--accent, #D4AF37) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .wa-icon { color: #25D366 !important; background: rgba(37, 211, 102, 0.15) !important; }
+  .yt-icon { color: #ff4d4d !important; background: rgba(255, 0, 0, 0.15) !important; }
+  .fb-icon { color: #1877f2 !important; background: rgba(24, 119, 242, 0.15) !important; }
+  .ig-icon { color: #e1306c !important; background: rgba(225, 48, 108, 0.15) !important; }
+  .tt-icon { color: #ffffff !important; background: rgba(255, 255, 255, 0.12) !important; }
+
+  .nav-social-info {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    overflow: hidden !important;
+  }
+
+  .nav-social-name {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+  }
+
+  .nav-social-detail {
+    font-size: 11px !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    margin-top: 1px !important;
+  }
+
+  .nav-social-arrow {
+    color: rgba(255, 255, 255, 0.35) !important;
+    transition: transform 0.2s ease, color 0.2s ease !important;
+    flex-shrink: 0 !important;
+  }
+
+  .nav-social-card:hover .nav-social-arrow {
+    color: #D4AF37 !important;
+    transform: translateX(3px) !important;
+  }
+
+  .nav-social-group {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    border-radius: 9px !important;
+    padding: 8px 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+
+  .nav-group-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding-bottom: 5px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .nav-group-sublinks {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3px !important;
+    padding-top: 2px !important;
+  }
+
+  .nav-sublink {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    font-size: 12px !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    padding: 5px 8px !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .nav-sublink:hover,
+  .nav-sublink:active {
+    color: #D4AF37 !important;
+    background: rgba(212, 175, 55, 0.12) !important;
+    padding-left: 11px !important;
+  }
+
+  .nav-sublink svg {
+    color: rgba(255, 255, 255, 0.3) !important;
+    transition: transform 0.2s ease, color 0.2s ease !important;
+  }
+
+  .nav-sublink:hover svg {
+    color: #D4AF37 !important;
+    transform: translateX(2px) !important;
+  }
+
+  .nav-cta {
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 10px !important;
+    padding: 11px 16px !important;
+    justify-content: center !important;
+    display: flex !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar,
+  .navbar.scrolled {
+    padding: 0 14px !important;
+  }
+
+  .nav-logo {
+    height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  #navMenu,
+  .nav-menu {
+    top: 68px !important;
+    height: calc(100dvh - 68px) !important;
+    height: calc(100vh - 68px);
+    max-height: calc(100dvh - 68px) !important;
+    width: 100vw !important;
+    padding: 24px 14px max(40px, calc(env(safe-area-inset-bottom) + 20px)) !important;
+  }
 }

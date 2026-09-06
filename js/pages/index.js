@@ -80,7 +80,7 @@ const sections = document.querySelectorAll('section[id], header[id]');
           try {
             const target = document.querySelector(href);
             if (target) {
-              const offset = 80;
+              const offset = window.innerWidth <= 900 ? 64 : 126;
               const targetPosition = target.offsetTop - offset;
               window.scrollTo({
                 top: targetPosition,

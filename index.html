@@ -19,95 +19,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/global.css?v=4.0">
-  <link rel="stylesheet" href="css/components/navbar.css?v=4.0">
-  <link rel="stylesheet" href="css/components/footer.css?v=4.0">
-  <link rel="stylesheet" href="css/components/Iridescence.css?v=4.0">
-  <link rel="stylesheet" href="css/pages/index.css?v=4.0">
-
-  <style id="mobile-nav-inline-fix">
-    /* ===== MOBILE NAVBAR FIX v4 ===== */
-    @media (max-width: 900px) {
-      .navbar, .navbar.scrolled {
-        height: 64px !important;
-        min-height: 64px !important;
-        max-height: 64px !important;
-        padding: 0 16px !important;
-        overflow: visible !important;
-      }
-      .nav-container {
-        overflow: visible !important;
-      }
-      .nav-top-row {
-        height: 64px !important;
-        min-height: 64px !important;
-      }
-      /* Sembunyikan baris bawah desktop sepenuhnya */
-      .nav-bottom-row {
-        display: none !important;
-      }
-      .nav-social-wrap {
-        display: none !important;
-      }
-      /* Drawer: langsung di bawah navbar, tidak bergantung pada nav-bottom-row */
-      #navMenu {
-        display: flex !important;
-        position: fixed !important;
-        top: 64px !important;
-        right: -110% !important;
-        left: auto !important;
-        width: min(320px, 88vw) !important;
-        height: calc(100vh - 64px) !important;
-        background: linear-gradient(180deg, #143D24 0%, #0B2214 100%) !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 2px !important;
-        padding: 18px 14px 40px !important;
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        z-index: 10000 !important;
-        border-left: 1px solid rgba(240, 171, 0, 0.3) !important;
-        box-shadow: -8px 0 40px rgba(0,0,0,0.55) !important;
-        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        list-style: none !important;
-        margin: 0 !important;
-      }
-      #navMenu.open {
-        right: 0 !important;
-      }
-      #navMenu > li {
-        width: 100% !important;
-        list-style: none !important;
-      }
-      #navMenu > li > a {
-        display: block !important;
-        font-size: 15px !important;
-        font-weight: 600 !important;
-        padding: 12px 14px !important;
-        border-radius: 8px !important;
-        color: rgba(255,255,255,0.92) !important;
-        text-decoration: none !important;
-        transition: background 0.2s, color 0.2s !important;
-      }
-      #navMenu > li > a:hover,
-      #navMenu > li > a.active {
-        background: rgba(240,171,0,0.15) !important;
-        color: #D4AF37 !important;
-      }
-      /* Sembunyikan pseudo-element 'Menu Navigasi' dari navbar.css */
-      #navMenu::before {
-        content: 'MENU NAVIGASI' !important;
-        display: block !important;
-        font-size: 10px !important;
-        font-weight: 700 !important;
-        letter-spacing: 2.5px !important;
-        color: #D4AF37 !important;
-        padding: 0 14px 14px !important;
-        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-        margin-bottom: 6px !important;
-      }
-    }
-  </style>
+    <link rel="stylesheet" href="css/global.css?v=5.0">
+  <link rel="stylesheet" href="css/components/navbar.css?v=9.0">
+  <link rel="stylesheet" href="css/components/footer.css?v=5.0">
+  <link rel="stylesheet" href="css/components/Iridescence.css?v=5.0">
+  <link rel="stylesheet" href="css/pages/index.css?v=5.0">
 </head>
 
 <body>
@@ -195,7 +111,7 @@
                 </span>
                 <div class="nav-social-info">
                   <span class="nav-social-name">YouTube</span>
-                  <span class="nav-social-detail">KH. Muhayat Channel</span>
+                  <span class="nav-social-detail">@kh_muhayat_channel</span>
                 </div>
                 <svg class="nav-social-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
@@ -207,7 +123,7 @@
                 </span>
                 <div class="nav-social-info">
                   <span class="nav-social-name">Facebook</span>
-                  <span class="nav-social-detail">PP. Al-Falah Rumbia</span>
+                  <span class="nav-social-detail">Halaman Resmi</span>
                 </div>
                 <svg class="nav-social-arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </a>
@@ -896,9 +812,9 @@
   </div>
 
 
-    <script src="js/global.js?v=3.0" defer></script>
-  <script src="js/components/navbar.js?v=3.0" defer></script>
-  <script src="js/pages/index.js?v=3.0" defer></script>
+    <script src="js/global.js?v=5.0" defer></script>
+  <script src="js/components/navbar.js?v=5.0" defer></script>
+  <script src="js/pages/index.js?v=5.0" defer></script>
 
 </body>
 

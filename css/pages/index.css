@@ -163,6 +163,14 @@
       margin-top: 126px;
     }
 
+    @media (max-width: 900px) {
+      .hero-header {
+        margin-top: 64px;
+        height: calc(100dvh - 64px);
+        min-height: 420px;
+      }
+    }
+
     .hero-bg {
       position: absolute;
       inset: 0;
