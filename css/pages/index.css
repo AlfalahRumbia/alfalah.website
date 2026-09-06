@@ -110,7 +110,7 @@
       }
 
       .navbar {
-        padding: 8px 5% !important;
+        padding: 0 16px !important;
       }
 
       .nav-logo {
@@ -1366,7 +1366,7 @@
       }
 
       .navbar {
-        padding: 8px 3% !important;
+        padding: 0 14px !important;
       }
     }
 

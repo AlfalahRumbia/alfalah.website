@@ -27,38 +27,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.nav-top-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  width: 100%;
-}
-
-.nav-bottom-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 46px;
-  width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-
-.nav-logo {
-  height: 64px;
-  width: auto;
-  flex-shrink: 0;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-  transition: all 0.3s ease;
+  overflow: visible;
 }
 
 .nav-brand-name {
@@ -78,6 +47,34 @@
   opacity: 0.9;
 }
 
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-logo {
+  height: 64px;
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+  transition: all 0.3s ease;
+}
+
+/* Desktop: nav-menu sebagai baris kedua di dalam nav-container */
+.nav-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+}
+
+.nav-bottom-row {
+  display: none; /* Tidak dipakai lagi, struktur baru langsung pakai ul.nav-menu */
+}
+
 .nav-menu {
   display: flex;
   justify-content: center;
@@ -85,6 +82,10 @@
   list-style: none;
   align-items: center;
   width: 100%;
+  height: 46px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu a {
@@ -216,6 +217,9 @@
   .navbar,
   .navbar.scrolled {
     padding: 0 20px !important;
+    height: 64px !important;
+    min-height: 64px !important;
+    overflow: visible !important;
   }
 
   .nav-top-row {
@@ -223,58 +227,59 @@
     width: 100%;
   }
 
-  /* Menggunakan display: contents agar menu di dalamnya tidak tersembunyi */
+  /* nav-bottom-row tidak digunakan di mobile */
   .nav-bottom-row {
-    display: contents;
+    display: none;
   }
 
   .nav-social-wrap {
     display: none !important;
   }
 
+  /* Sembunyikan social section mobile di tampilan desktop */
+  .nav-menu-social-divider,
+  .nav-menu-social-section {
+    display: none !important;
+  }
+
   .hamburger {
     display: flex;
     position: relative;
-    z-index: 10001; /* Tetap berada di atas drawer sehingga bisa diklik untuk menutup */
+    z-index: 10001;
   }
 
   .nav-logo {
     height: 48px;
   }
 
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: min(300px, 82vw);
-    height: 100dvh;
-    background: linear-gradient(180deg, #143D24 0%, #0B2214 100%);
-    border-left: 1px solid rgba(240, 171, 0, 0.25);
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    padding: 76px 16px 30px;
-    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
-    z-index: 10000;
+  /* Mobile: nav-menu menjadi fixed drawer di kanan */
+  #navMenu, .nav-menu {
+    position: fixed !important;
+    top: 64px !important;
+    right: -110% !important;
+    left: auto !important;
+    width: min(320px, 88vw) !important;
+    height: calc(100vh - 64px) !important;
+    background: linear-gradient(180deg, #143D24 0%, #0B2214 100%) !important;
+    border-left: 1px solid rgba(240, 171, 0, 0.3) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 2px !important;
+    padding: 18px 14px 40px !important;
+    border-top: none !important;
+    height: auto !important;
+    height: calc(100vh - 64px) !important;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.55) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    z-index: 10000 !important;
+    list-style: none !important;
+    margin: 0 !important;
   }
 
-  .nav-menu::before {
-    content: 'Menu Navigasi';
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent);
-    padding: 0 10px 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 8px;
-  }
-
-  .nav-menu.open {
-    right: 0;
+  #navMenu.open, .nav-menu.open {
+    right: 0 !important;
   }
 
   .nav-menu li {

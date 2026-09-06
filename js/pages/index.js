@@ -74,15 +74,22 @@ const sections = document.querySelectorAll('section[id], header[id]');
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offset = 80;
-          const targetPosition = target.offsetTop - offset;
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+        const href = this.getAttribute('href');
+        if (href && href.length > 1 && href.startsWith('#')) {
+          e.preventDefault();
+          try {
+            const target = document.querySelector(href);
+            if (target) {
+              const offset = 80;
+              const targetPosition = target.offsetTop - offset;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          } catch (err) {
+            // Ignore invalid selector
+          }
         }
       });
     });
