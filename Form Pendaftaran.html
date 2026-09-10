@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisata Liburan Pertengahan Tahun — Pondok Pesantren Al-Falah</title>
+    <meta name="description"
+        content="Formulir pendaftaran Wisata Liburan Pertengahan Tahun untuk santri Pondok Pesantren Al-Falah Rumbia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,680&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --forest: #28443F;
+            --forest-deep: #1C332F;
+            --gold: #D4AF37;
+            --amber: #E2A23B;
+            --cream: #FFFCEF;
+            --ink: #1E2A24;
+            --ink-soft: #4A5C55;
+            --line: rgba(30, 42, 36, 0.14);
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--ink);
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        .num {
+            font-family: 'Fraunces', serif;
+            margin: 0;
+            color: var(--forest-deep);
+        }
+
+        p {
+            line-height: 1.65;
+            margin: 0 0 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            background: var(--forest);
+            color: var(--cream);
+            padding: 56px 0 96px;
+            overflow: hidden;
+        }
+
+        .hero .wrap {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow-mark {
+            width: 34px;
+            height: 3px;
+            background: var(--gold);
+            margin-bottom: 22px;
+            border-radius: 2px;
+        }
+
+        .hero h1 {
+            color: var(--cream);
+            font-size: clamp(34px, 7vw, 46px);
+            font-weight: 680;
+            line-height: 1.12;
+            letter-spacing: -0.01em;
+        }
+
+        .hero .org {
+            display: block;
+            margin-top: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .hero p.lede {
+            margin-top: 22px;
+            font-size: 16px;
+            color: rgba(255, 252, 239, 0.82);
+            max-width: 52ch;
+        }
+
+        .hero .fee {
+            margin-top: 26px;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 10px 18px;
+            background: rgba(212, 175, 55, 0.14);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 999px;
+        }
+
+        .fee b {
+            font-size: 18px;
+            color: var(--gold);
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+        }
+
+        .fee span {
+            font-size: 13px;
+            color: rgba(255, 252, 239, 0.75);
+        }
+
+        .horizon {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -2px;
+            width: 100%;
+            height: auto;
+            display: block;
+            z-index: 1;
+        }
+
+        .horizon path {
+            stroke-dasharray: 1400;
+            stroke-dashoffset: 1400;
+            animation: draw 1.8s ease-out forwards;
+        }
+
+        .horizon circle {
+            opacity: 0;
+            animation: fadeIn 1.2s ease-out 0.5s forwards;
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .horizon path {
+                animation: none;
+                stroke-dashoffset: 0;
+            }
+
+            .horizon circle {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
+        /* ---------- Steps ---------- */
+        .section {
+            padding: 52px 0;
+        }
+
+        .section h2 {
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .section>.wrap>p.intro {
+            margin-top: 10px;
+            color: var(--ink-soft);
+            font-size: 15px;
+            max-width: 48ch;
+        }
+
+        .steps {
+            margin-top: 30px;
+        }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            padding: 22px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .step:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .num {
+            flex: none;
+            width: 40px;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .step-body h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--ink);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .step-body p {
+            font-size: 14.5px;
+            color: var(--ink-soft);
+        }
+
+        /* ---------- Notice ---------- */
+        .notice {
+            margin-top: 6px;
+            background: rgba(226, 162, 59, 0.10);
+            border: 1px solid rgba(226, 162, 59, 0.35);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+        }
+
+        .notice h3 {
+            margin: 0 0 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--forest-deep);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .notice ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .notice li {
+            font-size: 14.5px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .notice li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ---------- CTA ---------- */
+        .cta-section {
+            text-align: center;
+            padding: 8px 0 120px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--forest);
+            color: var(--cream);
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 16px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform .18s ease, background .18s ease;
+        }
+
+        .btn:hover {
+            background: var(--forest-deep);
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .cta-section .help {
+            display: block;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--ink-soft);
+        }
+
+        /* ---------- Sticky bar (mobile) ---------- */
+        .sticky-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--cream);
+            border-top: 1px solid var(--line);
+            padding: 12px 20px;
+            display: none;
+            z-index: 10;
+        }
+
+        .sticky-bar .btn {
+            width: 100%;
+            padding: 14px 0;
+        }
+
+        @media (max-width:600px) {
+            .sticky-bar {
+                display: block;
+            }
+
+            .cta-section {
+                padding-bottom: 40px;
+            }
+
+            body {
+                padding-bottom: 74px;
+            }
+        }
+
+        footer {
+            padding: 28px 0 48px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--ink-soft);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="wrap">
+            <div class="eyebrow-mark"></div>
+            <h1>Wisata Liburan<br>Pertengahan Tahun</h1>
+            <span class="org">Pondok Pesantren Al-Falah &middot; Rumbia</span>
+            <p class="lede">Pendaftaran kegiatan wisata liburan bersama untuk santri, bagi yang ingin ikut serta bersama
+                wali atau peserta lainnya.</p>
+            <div class="fee"><b>Rp100.000</b><span>/ orang</span></div>
+        </div>
+
+        <svg class="horizon" viewBox="0 0 640 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="500" cy="30" r="22" fill="#D4AF37" />
+            <path d="M0,90 C 90,55 150,100 230,70 C 310,42 360,88 440,62 C 510,40 560,78 640,55 L640,120 L0,120 Z"
+                fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.55" />
+        </svg>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <h2>Tata cara pendaftaran</h2>
+            <p class="intro">Ikuti empat langkah berikut. Pastikan data diisi dengan teliti sebelum formulir dikirim.
+            </p>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="num">1</div>
+                    <div class="step-body">
+                        <h3>Isi data santri</h3>
+                        <p>Masukkan nama santri dan kategori (putra/putri) dengan benar sesuai identitas.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <div class="step-body">
+                        <h3>Kirim formulir</h3>
+                        <p>Setiap santri hanya dapat didaftarkan satu kali. Periksa kembali sebelum menekan kirim.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <div class="step-body">
+                        <h3>Tagihan terbit otomatis</h3>
+                        <p>Setelah dikirim, tagihan pembayaran akan langsung diproses melalui aplikasi PSP Mobile.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="num">4</div>
+                    <div class="step-body">
+                        <h3>Selesaikan pembayaran</h3>
+                        <p>Buka aplikasi PSP Mobile dan lakukan pembayaran sebesar Rp100.000 per orang.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="notice">
+                <h3>Perlu diperhatikan</h3>
+                <ul>
+                    <li>Data yang sudah dikirim tidak dapat diubah atau dibatalkan.</li>
+                    <li>Pastikan seluruh peserta yang ikut sudah dicantumkan sebelum mengirim formulir.</li>
+                    <li>Pembayaran dilakukan setelah tagihan tersedia di PSP Mobile.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="daftar">
+        <a class="btn" id="ctaMain"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScBPIb1_LNS-6LcQKtH8paaceYqO-sEhSf9gQrgpxekpMRWOw/viewform?usp=sharing&ouid=102870716441920594999"
+            target="_blank" rel="noopener">
+            Isi formulir pendaftaran
+        </a>
+        <span class="help">Formulir akan terbuka di Google Forms</span>
+    </section>
+
+    <footer>
+        &copy; <span id="year"></span> Pondok Pesantren Al-Falah Rumbia
+    </footer>
+
+    <div class="sticky-bar">
+        <a class="btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScBPIb1_LNS-6LcQKtH8paaceYqO-sEhSf9gQrgpxekpMRWOw/viewform?usp=sharing&ouid=102870716441920594999"
+            target="_blank" rel="noopener">
+            Isi formulir pendaftaran
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
