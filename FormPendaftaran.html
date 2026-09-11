@@ -154,15 +154,43 @@
             z-index: 1;
         }
 
-        .horizon path {
-            stroke-dasharray: 1400;
-            stroke-dashoffset: 1400;
-            animation: draw 1.8s ease-out forwards;
+        .horizon .hill-back,
+        .horizon .hill-mid {
+            opacity: 0;
+            animation: fadeIn 1.4s ease-out forwards;
         }
 
-        .horizon circle {
+        .horizon .hill-mid {
+            animation-delay: 0.15s;
+        }
+
+        .horizon .ridge {
+            stroke-dasharray: 1400;
+            stroke-dashoffset: 1400;
+            animation: draw 1.8s ease-out 0.3s forwards;
+        }
+
+        .horizon .sun {
             opacity: 0;
-            animation: fadeIn 1.2s ease-out 0.5s forwards;
+            transform-origin: 500px 46px;
+            animation: fadeIn 1.2s ease-out 0.7s forwards;
+        }
+
+        .horizon .bird {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .horizon .bird-1 {
+            animation-delay: 1.1s;
+        }
+
+        .horizon .bird-2 {
+            animation-delay: 1.25s;
+        }
+
+        .horizon .bird-3 {
+            animation-delay: 1.4s;
         }
 
         @keyframes draw {
@@ -178,14 +206,27 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .horizon path {
+
+            .horizon .ridge,
+            .horizon .hill-back,
+            .horizon .hill-mid,
+            .horizon .sun,
+            .horizon .bird {
                 animation: none;
+                opacity: 1;
                 stroke-dashoffset: 0;
             }
 
-            .horizon circle {
-                animation: none;
-                opacity: 1;
+            .horizon .hill-back {
+                opacity: 0.08;
+            }
+
+            .horizon .hill-mid {
+                opacity: 0.16;
+            }
+
+            .horizon .bird {
+                opacity: 0.6;
             }
         }
 
@@ -288,68 +329,68 @@
         }
 
         .btn {
+            position: relative;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: var(--forest);
+            background: linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
             color: var(--cream);
             font-family: 'Poppins', sans-serif;
             font-size: 16px;
             font-weight: 500;
-            padding: 16px 30px;
+            padding: 17px 32px;
             border-radius: 999px;
             text-decoration: none;
-            border: none;
+            border: 1px solid rgba(212, 175, 55, 0.55);
             cursor: pointer;
-            transition: transform .18s ease, background .18s ease;
+            box-shadow: 0 14px 28px -12px rgba(28, 51, 47, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+        }
+
+        .btn .btn-arrow {
+            width: 18px;
+            height: 18px;
+            flex: none;
+            transition: transform .18s ease;
         }
 
         .btn:hover {
-            background: var(--forest-deep);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            border-color: rgba(212, 175, 55, 0.85);
+            box-shadow: 0 18px 32px -12px rgba(28, 51, 47, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .btn:hover .btn-arrow {
+            transform: translateX(3px);
         }
 
         .btn:active {
             transform: translateY(0);
+            box-shadow: 0 8px 16px -10px rgba(28, 51, 47, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .btn:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px;
         }
 
         .cta-section .help {
             display: block;
-            margin-top: 16px;
+            margin-top: 18px;
             font-size: 13px;
             color: var(--ink-soft);
         }
 
-        /* ---------- Sticky bar (mobile) ---------- */
-        .sticky-bar {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--cream);
-            border-top: 1px solid var(--line);
-            padding: 12px 20px;
-            display: none;
-            z-index: 10;
-        }
-
-        .sticky-bar .btn {
-            width: 100%;
-            padding: 14px 0;
-        }
-
-        @media (max-width:600px) {
-            .sticky-bar {
-                display: block;
-            }
-
+        @media (max-width: 600px) {
             .cta-section {
-                padding-bottom: 40px;
+                padding: 4px 0 64px;
             }
 
-            body {
-                padding-bottom: 74px;
+            .btn {
+                width: 100%;
+                padding: 18px 24px;
+                font-size: 16.5px;
             }
         }
 
@@ -382,9 +423,24 @@
                 wali atau peserta lainnya.</p>
         </div>
 
-        <svg class="horizon" viewBox="0 0 640 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="500" cy="30" r="22" fill="#D4AF37" />
-            <path d="M0,90 C 90,55 150,100 230,70 C 310,42 360,88 440,62 C 510,40 560,78 640,55 L640,120 L0,120 Z"
+        <svg class="horizon" viewBox="0 0 640 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="hill-back"
+                d="M0,140 C 70,110 130,150 210,125 C 290,100 350,140 430,118 C 500,98 560,132 640,112 L640,190 L0,190 Z"
+                fill="#FFFCEF" opacity="0.08" />
+            <path class="hill-mid"
+                d="M0,120 C 80,150 140,95 220,120 C 300,145 370,105 450,128 C 520,148 580,110 640,132 L640,190 L0,190 Z"
+                fill="#D4AF37" opacity="0.16" />
+            <g class="sun">
+                <circle cx="500" cy="46" r="34" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.3" />
+                <circle cx="500" cy="46" r="22" fill="#D4AF37" />
+            </g>
+            <g class="birds" stroke="#FFFCEF" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.6">
+                <path class="bird bird-1" d="M300,44 q7,-9 14,0 q7,-9 14,0" />
+                <path class="bird bird-2" d="M340,64 q6,-7.5 12,0 q6,-7.5 12,0" />
+                <path class="bird bird-3" d="M270,72 q5,-6.5 10,0 q5,-6.5 10,0" />
+            </g>
+            <path class="ridge"
+                d="M0,112 C 90,80 150,120 230,92 C 310,66 360,108 440,84 C 510,64 560,100 640,80 L640,190 L0,190 Z"
                 fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.55" />
         </svg>
     </section>
@@ -456,6 +512,11 @@
             href="https://docs.google.com/forms/d/e/1FAIpQLScBPIb1_LNS-6LcQKtH8paaceYqO-sEhSf9gQrgpxekpMRWOw/viewform?usp=sharing&ouid=102870716441920594999"
             target="_blank" rel="noopener">
             Isi formulir pendaftaran
+            <svg class="btn-arrow" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M4.5 10h11M10.5 5.5 15 10l-4.5 4.5" stroke="currentColor" stroke-width="1.6"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
         </a>
         <span class="help">Formulir akan terbuka di Google Forms</span>
     </section>
@@ -463,14 +524,6 @@
     <footer>
         &copy; <span id="year"></span> Pondok Pesantren Al-Falah Rumbia
     </footer>
-
-    <div class="sticky-bar">
-        <a class="btn"
-            href="https://docs.google.com/forms/d/e/1FAIpQLScBPIb1_LNS-6LcQKtH8paaceYqO-sEhSf9gQrgpxekpMRWOw/viewform?usp=sharing&ouid=102870716441920594999"
-            target="_blank" rel="noopener">
-            Isi formulir pendaftaran
-        </a>
-    </div>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
