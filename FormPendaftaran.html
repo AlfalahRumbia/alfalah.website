@@ -7,11 +7,15 @@
     <title>Wisata Liburan Pertengahan Tahun — Pondok Pesantren Al-Falah</title>
     <meta name="description"
         content="Formulir pendaftaran Wisata Liburan Pertengahan Tahun untuk santri Pondok Pesantren Al-Falah Rumbia.">
+    <link rel="icon" type="image/png" href="assets/images/Properti%20Utama/Logo.png">
+    <link rel="apple-touch-icon" href="assets/images/Properti%20Utama/Logo.png">
+    <meta name="theme-color" content="#1A4D2E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,680&family=Poppins:wght@400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/components/navbar.css?v=12.0">
     <style>
         :root {
             --forest: #28443F;
@@ -69,8 +73,14 @@
             position: relative;
             background: var(--forest);
             color: var(--cream);
-            padding: 56px 0 96px;
+            padding: 130px 0 96px;
             overflow: hidden;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                padding: 100px 0 80px;
+            }
         }
 
         .hero .wrap {
@@ -233,6 +243,11 @@
             color: var(--ink-soft);
         }
 
+        .step-body strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
         /* ---------- Notice ---------- */
         .notice {
             margin-top: 6px;
@@ -349,11 +364,20 @@
 
 <body>
 
+    <nav class="navbar" id="mainNav">
+        <div class="nav-container">
+            <div class="nav-top-row">
+                <a href="index.html" class="nav-brand" aria-label="Beranda Pondok Pesantren Al-Falah">
+                    <img src="assets/images/Properti Utama/Logo Pesantren.png" alt="Logo Al-Falah" class="nav-logo">
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <section class="hero">
         <div class="wrap">
             <div class="eyebrow-mark"></div>
             <h1>Wisata Liburan<br>Pertengahan Tahun</h1>
-            <span class="org">Pondok Pesantren Al-Falah &middot; Rumbia</span>
             <p class="lede">Pendaftaran kegiatan wisata liburan bersama untuk santri, bagi yang ingin ikut serta bersama
                 wali atau peserta lainnya.</p>
         </div>
@@ -368,8 +392,7 @@
     <section class="section">
         <div class="wrap">
             <h2>Tata cara pendaftaran</h2>
-            <p class="intro">Ikuti empat langkah berikut. Pastikan data diisi dengan teliti sebelum formulir dikirim.
-            </p>
+            <p class="intro">Mohon dibaca dengan teliti sebelum mengisi formulir.</p>
 
             <div class="steps">
                 <div class="step">
@@ -383,21 +406,36 @@
                     <div class="num">2</div>
                     <div class="step-body">
                         <h3>Kirim formulir</h3>
-                        <p>Setiap santri hanya dapat didaftarkan satu kali. Periksa kembali sebelum menekan kirim.</p>
+                        <p>Setiap santri hanya dapat didaftarkan satu kali. Periksa kembali data sebelum menekan tombol
+                            <strong>Kirim</strong>.
+                        </p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="num">3</div>
                     <div class="step-body">
                         <h3>Tagihan terbit otomatis</h3>
-                        <p>Setelah dikirim, tagihan pembayaran akan langsung diproses melalui aplikasi PSP Mobile.</p>
+                        <p>Setelah formulir berhasil dikirim, tagihan pembayaran akan muncul secara otomatis di aplikasi
+                            <strong>PSP Mobile</strong>.
+                        </p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="num">4</div>
                     <div class="step-body">
                         <h3>Selesaikan pembayaran</h3>
-                        <p>Buka aplikasi PSP Mobile dan lakukan pembayaran sebesar Rp100.000 per orang.</p>
+                        <p>Buka aplikasi <strong>PSP Mobile</strong>, kemudian lakukan pembayaran melalui menu
+                            <strong>Tagihan</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="num">5</div>
+                    <div class="step-body">
+                        <h3>Pastikan saldo mencukupi</h3>
+                        <p>Lakukan <strong>top up</strong> apabila saldo di PSP Mobile tidak mencukupi untuk melakukan
+                            pembayaran.</p>
                     </div>
                 </div>
             </div>
@@ -436,6 +474,12 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        const mainNav = document.getElementById('mainNav');
+        if (mainNav) {
+            window.addEventListener('scroll', () => {
+                mainNav.classList.toggle('scrolled', window.scrollY > 20);
+            }, { passive: true });
+        }
     </script>
 
 </body>
