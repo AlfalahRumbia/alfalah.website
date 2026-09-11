@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.add('open');
       navOverlay.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
+      navMenu.scrollTop = 0;
       document.body.style.overflow = 'hidden';
       document.documentElement.style.overflow = 'hidden';
     }
