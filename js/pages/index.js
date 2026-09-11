@@ -34,7 +34,7 @@ const sections = document.querySelectorAll('section[id], header[id]');
             // Saat scroll ke bawah: indeks normal (0, 1, 2...)
             // Saat scroll ke atas: balikkan indeks agar yang teratas/pertama muncul duluan
             const delayIndex = isScrollingDown ? index : (siblings.length - 1 - index);
-            target.style.transitionDelay = `${delayIndex * 0.1}s`;
+            target.style.transitionDelay = `${delayIndex * 0.06}s`;
           } else {
             target.style.transitionDelay = '0s';
           }
@@ -59,7 +59,7 @@ const sections = document.querySelectorAll('section[id], header[id]');
       lastScrollY = window.scrollY;
     }, {
       threshold: 0.05,
-      rootMargin: '-30px 0px -30px 0px'
+      rootMargin: '-10px 0px -10px 0px'
     });
 
     animTargets.forEach(el => {

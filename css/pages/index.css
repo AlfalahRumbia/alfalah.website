@@ -54,13 +54,12 @@
       position: relative;
     }
 
-    /* Scroll Animation Styles (UGM Style) */
+    /* Scroll Animation Styles */
     .scroll-animate {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
-                  transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
-      will-change: transform, opacity;
+      transform: translateY(22px);
+      transition: opacity 0.45s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                  transform 0.45s cubic-bezier(0.215, 0.610, 0.355, 1);
     }
 
     /* Ketika elemen aktif / masuk ke viewport */
@@ -72,13 +71,13 @@
     /* Efek keluar ke arah atas (saat scroll ke bawah) */
     .scroll-animate.exit-up {
       opacity: 0;
-      transform: translateY(-30px);
+      transform: translateY(-22px);
     }
 
     /* Efek keluar ke arah bawah (saat scroll ke atas) */
     .scroll-animate.exit-down {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(22px);
     }
 
     @media (max-width: 768px) {
@@ -1981,11 +1980,12 @@
       color: var(--primary);
       margin-bottom: 8px;
       line-height: 1.4;
-      transition: color 0.3s ease;
+      /* Hapus transition di sini agar tidak mentrigger perubahan warna saat animasi scroll */
     }
 
     .kegiatan-harian-item:hover .kegiatan-harian-title {
       color: var(--accent);
+      transition: color 0.3s ease; /* Transisi warna HANYA aktif saat hover nyata */
     }
 
     .kegiatan-harian-desc {
