@@ -486,6 +486,10 @@
       position: relative;
     }
 
+    #kegiatan {
+      background: var(--secondary) !important;
+    }
+
     .sambutan {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -1934,15 +1938,29 @@
       overflow: hidden;
       box-shadow: var(--shadow-card);
       border: 1.5px solid rgba(212, 175, 55, 0.25);
-      transition: var(--transition);
       text-decoration: none;
       color: inherit;
     }
 
-    .kegiatan-harian-item:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--accent);
+    @media (hover: hover) and (pointer: fine) {
+      .kegiatan-harian-item {
+        transition: var(--transition);
+      }
+
+      .kegiatan-harian-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--accent);
+      }
+
+      .kegiatan-harian-item:hover .kegiatan-harian-img-wrapper img {
+        transform: scale(1.06);
+      }
+
+      .kegiatan-harian-item:hover .kegiatan-harian-title {
+        color: var(--accent);
+        transition: color 0.3s ease;
+      }
     }
 
     .kegiatan-harian-img-wrapper {
@@ -1958,10 +1976,6 @@
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
-    }
-
-    .kegiatan-harian-item:hover .kegiatan-harian-img-wrapper img {
-      transform: scale(1.06);
     }
 
     .kegiatan-harian-info {
@@ -1980,12 +1994,6 @@
       color: var(--primary);
       margin-bottom: 8px;
       line-height: 1.4;
-      /* Hapus transition di sini agar tidak mentrigger perubahan warna saat animasi scroll */
-    }
-
-    .kegiatan-harian-item:hover .kegiatan-harian-title {
-      color: var(--accent);
-      transition: color 0.3s ease; /* Transisi warna HANYA aktif saat hover nyata */
     }
 
     .kegiatan-harian-desc {
