@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       hamburger.setAttribute('aria-expanded', 'true');
       navMenu.scrollTop = 0;
       document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
     }
 
     function closeMenu() {
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       navOverlay.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
     }
 
     hamburger.addEventListener('click', (e) => {
