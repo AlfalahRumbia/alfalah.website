@@ -59,8 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scrolling navbar state
   const navbar = document.getElementById('mainNav');
   if (navbar) {
+    let isScrolled = false;
+
     const handleScroll = () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
+      const nextIsScrolled = window.scrollY > 40;
+      if (nextIsScrolled === isScrolled) return;
+
+      isScrolled = nextIsScrolled;
+      navbar.classList.toggle('scrolled', isScrolled);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
