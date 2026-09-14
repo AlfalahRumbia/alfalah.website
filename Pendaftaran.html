@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1A4D2E">
+  <meta name="description" content="Portal pendaftaran santri dan siswa baru Pondok Pesantren Al-Falah Rumbia.">
+  <title>Pendaftaran | Pondok Pesantren Al-Falah Rumbia</title>
+  <link rel="icon" type="image/png" href="assets/images/Properti%20Utama/Logo.png">
+  <link rel="apple-touch-icon" href="assets/images/Properti%20Utama/Logo.png">
+  <link rel="stylesheet" href="css/global.css?v=5.0">
+  <link rel="stylesheet" href="css/components/navbar.css?v=13.0">
+  <link rel="stylesheet" href="css/components/footer.css?v=5.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Professional Styling Similar to Administrasi */
+    :root {
+      --reg-ink: #17231b;
+      --reg-muted: #647269;
+      --reg-surface: #ffffff;
+      --reg-wash: #f3f6f1;
+      --reg-line: #dce5db;
+      --reg-green: #1a4d2e;
+      --reg-gold: #d4af37;
+      --reg-shadow: 0 18px 50px rgba(20, 56, 34, 0.1);
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--reg-wash);
+      color: var(--reg-ink);
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .reg-page {
+      position: relative;
+      isolation: isolate;
+      min-height: 100vh;
+      padding: 164px 24px 84px;
+      overflow: hidden;
+    }
+
+    .reg-page::before,
+    .reg-page::after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .reg-page::before {
+      width: 460px;
+      height: 460px;
+      top: 70px;
+      right: -180px;
+      background: rgba(212, 175, 55, 0.12);
+    }
+
+    .reg-page::after {
+      width: 360px;
+      height: 360px;
+      bottom: -170px;
+      left: -130px;
+      background: rgba(26, 77, 46, 0.08);
+    }
+
+    .reg-shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .reg-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 48px;
+    }
+
+    .reg-intro {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(30px, 5vw, 58px);
+      border-radius: 24px;
+      background: linear-gradient(130deg, #123b24 0%, #1a4d2e 65%, #28633d 100%);
+      color: #fff;
+      box-shadow: 0 24px 60px rgba(20, 56, 34, 0.2);
+    }
+
+    .reg-intro::after {
+      content: '';
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -70px;
+      bottom: -100px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #f5d978;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 2px;
+      background: var(--reg-gold);
+    }
+
+    .reg-intro h1 {
+      max-width: 620px;
+      margin: 0 0 16px;
+      font-family: 'Lora', serif;
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .reg-intro p {
+      max-width: 560px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .reg-note {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+      padding: 28px;
+      border: 1px solid var(--reg-line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--reg-shadow);
+    }
+
+    .note-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 14px;
+      background: #edf4e9;
+      color: var(--reg-green);
+    }
+
+    .note-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .reg-note h2 {
+      margin: 28px 0 8px;
+      font-family: 'Lora', serif;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .reg-note p {
+      margin: 0;
+      color: var(--reg-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: 'Lora', serif;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.2;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--reg-line);
+    }
+    
+    .section-wrapper {
+      margin-bottom: 48px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      padding: 28px 24px;
+      border: 1px solid var(--reg-line);
+      border-radius: 16px;
+      border-top: 4px solid var(--card-accent, var(--reg-green));
+      background: var(--reg-surface);
+      color: inherit;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(20, 56, 34, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover,
+    .card:focus-visible {
+      transform: translateY(-6px);
+      border-color: var(--card-accent, var(--reg-green));
+      box-shadow: var(--reg-shadow);
+      outline: none;
+    }
+
+    .card.offline { --card-accent: #b7762d; }
+    .card.online { --card-accent: #1a4d2e; }
+
+    .card-icon {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 13px;
+      background: color-mix(in srgb, var(--card-accent) 12%, white);
+      color: var(--card-accent);
+    }
+
+    .card-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .card-title {
+      margin: 0 0 8px;
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .card-desc {
+      flex: 1;
+      margin: 0;
+      color: var(--reg-muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 22px 0 0;
+      color: var(--card-accent, var(--reg-green));
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .card-link span {
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover .card-link span,
+    .card:focus-visible .card-link span {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 900px) {
+      .reg-page { padding-top: 96px; }
+      .reg-hero { grid-template-columns: 1fr; }
+      .reg-note { min-height: auto; }
+    }
+
+    @media (max-width: 560px) {
+      .reg-page { padding: 88px 16px 56px; }
+      .reg-intro { border-radius: 18px; }
+      .reg-note { border-radius: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-menu-overlay" id="navOverlay"></div>
+  <nav class="navbar" id="mainNav">
+    <div class="nav-container">
+      <div class="nav-top-row">
+        <a href="index.html" class="nav-brand">
+          <img src="assets/images/Properti Utama/Logo Pesantren.png" alt="Logo Al-Falah" class="nav-logo">
+        </a>
+
+        <div class="nav-social-wrap">
+          <a href="#" target="_blank" class="social-icon-btn" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <div class="social-dropdown">
+            <button class="social-icon-btn" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="https://www.instagram.com/pp.alfalah_rumbia/" target="_blank">pp.alfalah_rumbia</a>
+              <a href="https://www.instagram.com/alfalahputri_rumbia/" target="_blank">alfalahputri_rumbia</a>
+            </div>
+          </div>
+          <div class="social-dropdown">
+            <button class="social-icon-btn" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </button>
+            <div class="dropdown-content">
+              <a href="https://www.tiktok.com/@pon.pes_alfalah" target="_blank">pon.pes_alfalah</a>
+              <a href="https://www.tiktok.com/@alfalahputrirumbia" target="_blank">alfalahputrirumbia</a>
+              <a href="https://www.tiktok.com/@alfalahfababead123" target="_blank">alfalahfababead123</a>
+            </div>
+          </div>
+          <a href="https://youtube.com/@kh_muhayat_channel" target="_blank" class="social-icon-btn" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88-.46 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+          <a href="https://wa.me/6285832155052" target="_blank" class="social-icon-btn" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="./Pendaftaran.html" class="active">Pendaftaran</a></li>
+        <li><a href="./Adminitrasi.html">Administrasi</a></li>
+        <li><a href="./ProgramPendidikan.html">Program Pendidikan</a></li>
+        <li><a href="kegiatan.html">Kegiatan</a></li>
+        <li><a href="fasilitas.html">Fasilitas</a></li>
+        <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+        <li class="nav-mobile-footer">
+          <div class="nav-mobile-socials">
+            <a href="https://www.instagram.com/pp.alfalah_rumbia/" target="_blank" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="https://youtube.com/@kh_muhayat_channel" target="_blank" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88-.46 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+            <a href="https://www.tiktok.com/@pon.pes_alfalah" target="_blank" aria-label="TikTok"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg></a>
+            <a href="https://wa.me/6285832155052" target="_blank" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="reg-page">
+    <div class="reg-shell">
+      <section class="reg-hero" aria-labelledby="page-title">
+        <div class="reg-intro">
+          <span class="eyebrow">Penerimaan Baru</span>
+          <h1 id="page-title">Pendaftaran Santri & Siswa</h1>
+          <p>Selamat datang di portal pendaftaran Pondok Pesantren Al-Falah Rumbia. Silakan pilih jalur dan jenjang pendaftaran yang sesuai dengan tujuan Anda.</p>
+        </div>
+        <aside class="reg-note">
+          <div class="note-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <h2>Pendaftaran Aman</h2>
+            <p>Pastikan Anda mengisi data pendaftaran melalui tautan resmi yang tersedia pada halaman ini.</p>
+          </div>
+        </aside>
+      </section>
+
+      <div id="sections"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+      <div class="footer-content">
+        <div class="footer-identity">
+          <img src="assets/images/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo"
+            style="width: 80px; margin-bottom: 25px;">
+          <h2>Pondok Pesantren Al-Falah</h2>
+          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan bermanfaat bagi umat.</p>
+        </div>
+
+        <div class="footer-social-section">
+          <h4
+            style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
+            Social Media</h4>
+          <ul class="social-list-extended">
+            <li><a href="https://www.instagram.com/pp.alfalah_rumbia/">Alfalah Putra Instagram Account</a></li>
+            <li><a href="https://www.instagram.com/alfalahputri_rumbia/">Alfalah Putri Instagram Account</a></li>
+            <li><a href="https://www.tiktok.com/@pon.pes_alfalah">Alfalah Putra TikTok Account</a></li>
+            <li><a href="https://www.tiktok.com/@alfalahputrirumbia">Alfalah Putri TikTok Account</a></li>
+            <li><a href="https://www.tiktok.com/@alfalahfababead123">TikTok LIVE</a></li>
+            <li><a href="https://youtube.com/@kh_muhayat_channel">YouTube Channel</a></li>
+            <li><a href="https://wa.me/6285832155052">WhatsApp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-utility-section">
+          <h4
+            style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
+            Support</h4>
+          <ul class="utility-list-extended">
+            <li><a href="pages/maintenance.html">For Media</a></li>
+            <li><a href="pages/contact.html">Contact PP.ALFALAH</a></li>
+            <li><a href="pages/Privacy Policy.html">Privacy Policy</a></li>
+            <li><a href="pages/Terms And Conditions.html">Terms and Conditions</a></li>
+            <li><a href="pages/Disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Pondok Pesantren Al-Falah Teluk Dalem Ilir Rumbia. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/global.js?v=5.0" defer></script>
+  <script src="js/components/navbar.js?v=7.0" defer></script>
+  <script>
+    const sections = document.getElementById('sections');
+
+    const sectionData = [
+      {
+        title: 'Pondok Pesantren',
+        online: { link: 'ponpes-online.html' },
+        offline: { link: 'ponpes-offline.html' },
+      },
+      {
+        title: 'SMP AL FALAH',
+        online: { link: 'smp-online.html' },
+        offline: { link: 'smp-offline.html' },
+      },
+      {
+        title: 'SMK AL FALAH',
+        online: { link: 'smk-online.html' },
+        offline: { link: 'smk-offline.html' },
+      },
+      {
+        title: 'SALUT Al Falah',
+        online: { link: 'salut-online.html' },
+        offline: { link: 'salut-offline.html' },
+      },
+    ];
+
+    function createCard(text, data, isOffline) {
+      const card = document.createElement('a');
+      card.className = 'card ' + (isOffline ? 'offline' : 'online');
+      card.href = data.link || '#';
+      
+      const iconOnline = '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="m10 9 5 3-5 3v-6z"></path>';
+      const iconOffline = '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>';
+      
+      card.innerHTML = `
+        <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${isOffline ? iconOffline : iconOnline}</svg></div>
+        <h3 class="card-title">${text}</h3>
+        <p class="card-desc">${isOffline ? 'Pendaftaran dengan mengisi formulir fisik' : 'Pendaftaran praktis secara daring'}</p>
+        <p class="card-link">Lanjut daftar <span aria-hidden="true">&#8594;</span></p>
+      `;
+      return card;
+    }
+
+    sectionData.forEach((data) => {
+      const section = document.createElement('div');
+      section.className = 'section-wrapper';
+
+      const heading = document.createElement('div');
+      heading.className = 'section-heading';
+      heading.innerHTML = `<h2>${data.title}</h2>`;
+
+      const row = document.createElement('div');
+      row.className = 'grid';
+      row.appendChild(createCard('Daftar Online', data.online, false));
+      row.appendChild(createCard('Daftar Offline', data.offline, true));
+
+      section.appendChild(heading);
+      section.appendChild(row);
+      sections.appendChild(section);
+    });
+  </script>
+</body>
+
+</html>

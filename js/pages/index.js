@@ -48,11 +48,6 @@ const sections = document.querySelectorAll('section[id], header[id]');
       scrollAnimObserver.observe(el);
     });
 
-    // Update scroll position tracker
-    window.addEventListener('scroll', () => {
-      lastScrollY = window.scrollY;
-    }, { passive: true });
-
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
