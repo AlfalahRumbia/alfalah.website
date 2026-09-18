@@ -96,7 +96,7 @@
 }
 
 .nav-menu a {
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   text-decoration: none;
   font-weight: 600;
   font-size: 13px;
@@ -242,7 +242,7 @@
   height: 36px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -385,12 +385,12 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 44px !important;
-    height: 44px !important;
+    width: 32px !important;
+    height: 32px !important;
     padding: 0 !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(212, 175, 55, 0.3) !important;
-    border-radius: 10px !important;
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 4px !important;
     position: relative !important;
     z-index: 10006 !important;
     cursor: pointer !important;
@@ -400,14 +400,14 @@
 
   .hamburger:active,
   .hamburger.active {
-    background: rgba(212, 175, 55, 0.2) !important;
-    border-color: rgba(212, 175, 55, 0.6) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #ffffff !important;
   }
 
   .hamburger span {
     display: block !important;
-    width: 21px !important;
-    height: 2.2px !important;
+    width: 16px !important;
+    height: 2px !important;
     background: #ffffff !important;
     border-radius: 2px !important;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
