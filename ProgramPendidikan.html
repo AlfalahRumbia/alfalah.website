@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" href="assets/images/Properti%20Utama/Logo.png">
   <link rel="stylesheet" href="css/global.css?v=5.0">
   <link rel="stylesheet" href="css/components/navbar.css?v=13.0">
-  <link rel="stylesheet" href="css/components/footer.css?v=5.0">
+  <link rel="stylesheet" href="css/components/footer.css?v=10.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -228,22 +228,6 @@
       border-color: var(--card-accent, var(--prog-green));
       box-shadow: var(--prog-shadow);
       outline: none;
-    }
-
-    .card:nth-child(2) {
-      --card-accent: #b7762d;
-    }
-
-    .card:nth-child(3) {
-      --card-accent: #38698a;
-    }
-
-    .card:nth-child(4) {
-      --card-accent: #835c8b;
-    }
-
-    .card:nth-child(5) {
-      --card-accent: #b0453f;
     }
 
     .card-icon {
@@ -483,11 +467,11 @@
     const grid = document.getElementById('grid');
     // Ubah "link" ke halaman program masing-masing yang nanti kamu buat.
     const cardData = [
-      { title: 'Pondok Pesantren', desc: 'Program pendidikan diniyah dan kepesantrenan Al-Falah', link: 'program-ponpes.html', icon: '<path d="m3 10 9-6 9 6"></path><path d="M5 10v9h14v-9M9 19v-5h6v5"></path>' },
-      { title: 'SMP Al-Falah', desc: 'Program pendidikan Sekolah Menengah Pertama Al-Falah', link: 'program-smp.html', icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path>' },
-      { title: 'SMK Al-Falah', desc: 'Program pendidikan Sekolah Menengah Kejuruan Al-Falah', link: 'program-smk.html', icon: '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M8 5V3h8v2M8 12h8M10 9h4"></path>' },
-      { title: 'Salut Al-Falah', desc: 'Program Sentra Layanan Universitas Terbuka Al-Falah', link: 'program-salut.html', icon: '<circle cx="12" cy="12" r="9"></circle><path d="M8 12h8M12 8v8"></path>' },
-      { title: 'Tahfidz Al-Qur\'an', desc: 'Program unggulan penghafalan Al-Qur\'an Al-Falah', link: 'program-tahfidz.html', icon: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15Z"></path><path d="M9 7h6M9 11h6"></path>' }
+      { title: 'MISRIU', desc: 'Program pendidikan diniyah dan kepesantrenan Al-Falah', link: 'program-ponpes.html', image: 'assets/images/Logo/MISRIU.jpg' },
+      { title: 'PPRQ', desc: 'Program unggulan penghafalan Al-Qur\'an Al-Falah', link: 'program-pprq.html', image: 'assets/images/Logo/PPRQ.png' },
+      { title: 'SMP Al-Falah', desc: 'Program pendidikan Sekolah Menengah Pertama Al-Falah', link: 'program-smp.html', image: 'assets/images/Logo/SMP.jpg' },
+      { title: 'SMK Al-Falah', desc: 'Program pendidikan Sekolah Menengah Kejuruan Al-Falah', link: 'program-smk.html', image: 'assets/images/Logo/SMK.jpg' },
+      { title: 'Salut Al Falah', desc: 'Program Sentra Layanan Universitas Terbuka Al-Falah', link: 'program-salut.html', image: 'assets/images/Logo/Salut.jpg' }
     ];
 
     function createCard(data) {
@@ -495,7 +479,9 @@
       card.className = 'card';
       card.href = data.link;
       card.innerHTML = `
-        <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${data.icon}</svg></div>
+        <div class="card-icon" aria-hidden="true" style="background: transparent; width: 64px; height: 64px; margin-bottom: 20px;">
+          <img src="${data.image}" alt="Logo ${data.title}" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
         <h3 class="card-title">${data.title}</h3>
         <p class="card-desc">${data.desc}</p>
         <p class="card-link">Buka halaman <span aria-hidden="true">&#8594;</span></p>
@@ -509,43 +495,11 @@
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
       <div class="footer-content">
         <div class="footer-identity">
-          <img src="assets/images/Properti Utama/Logo Browser.png" alt="Logo Al-Falah" class="footer-logo"
-            style="width: 80px; margin-bottom: 25px;">
-          <h2>Pondok Pesantren Al-Falah</h2>
-          <p>Mencetak generasi Islam yang berilmu, berakhlak, dan bermanfaat bagi umat.</p>
-        </div>
-
-        <div class="footer-social-section">
-          <h4
-            style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
-            Social Media</h4>
-          <ul class="social-list-extended">
-            <li><a href="https://www.instagram.com/pp.alfalah_rumbia/">Alfalah Putra Instagram Account</a></li>
-            <li><a href="https://www.instagram.com/alfalahputri_rumbia/">Alfalah Putri Instagram Account</a></li>
-            <li><a href="https://www.tiktok.com/@pon.pes_alfalah">Alfalah Putra TikTok Account</a></li>
-            <li><a href="https://www.tiktok.com/@alfalahputrirumbia">Alfalah Putri TikTok Account</a></li>
-            <li><a href="https://www.tiktok.com/@alfalahfababead123">TikTok LIVE</a></li>
-            <li><a href="https://youtube.com/@kh_muhayat_channel">YouTube Channel</a></li>
-            <li><a href="https://wa.me/6285832155052">WhatsApp</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-utility-section">
-          <h4
-            style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; color: var(--accent);">
-            Support</h4>
-          <ul class="utility-list-extended">
-            <li><a href="pages/maintenance.html">For Media</a></li>
-            <li><a href="pages/contact.html">Contact PP.ALFALAH</a></li>
-            <li><a href="pages/Privacy Policy.html">Privacy Policy</a></li>
-            <li><a href="pages/Terms And Conditions.html">Terms and Conditions</a></li>
-            <li><a href="pages/Disclaimer.html">Disclaimer</a></li>
-          </ul>
+          <img src="assets/images/Logo/Logo Footer.png" alt="Logo Al-Falah" class="footer-logo">
         </div>
       </div>
-
       <div class="footer-bottom">
-        © 2026 Pondok Pesantren Al-Falah Teluk Dalem Ilir Rumbia. All Rights Reserved.
+        © 2026 Pondok Pesantren Al-Falah Rumbia. All Rights Reserved.
       </div>
     </div>
   </footer>
