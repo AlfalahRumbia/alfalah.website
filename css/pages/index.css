@@ -12,11 +12,11 @@
   /* Deeper Forest */
   --primary-mid: #4F6F52;
   /* Sage Green */
-  --secondary: #FEFBF3;
+  --secondary: #FFFFFF;
   /* Cleaner, brighter cream */
-  --secondary-dark: #F5EFE6;
+  --secondary-dark: #F5F5F5;
   /* Warm grey-cream */
-  --surface-alt: #F3EFE5;
+  --surface-alt: #FFFFFF;
   /* Refined alternate section tint */
   --accent: #D4AF37;
   /* Brighter Gold */
@@ -43,7 +43,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  overscroll-behavior: none;
 }
 
 body {
@@ -52,7 +51,6 @@ body {
   color: var(--text-dark);
   line-height: 1.75;
   overflow-x: hidden;
-  overscroll-behavior: none;
   background: var(--secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
