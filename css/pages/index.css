@@ -6,6 +6,7 @@
 }
 
 :root {
+  color-scheme: light only;
   --primary: #1A4D2E;
   /* Rich Forest Green */
   --primary-dark: #0F301F;
@@ -43,6 +44,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  color-scheme: light only;
 }
 
 body {

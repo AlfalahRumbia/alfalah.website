@@ -1,7 +1,7 @@
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
 :root {
-  color-scheme: light;
+  color-scheme: light only;
   --primary:      #003F7D; /* UGM Navy Blue */
   --primary-dark: #0A1F3F; /* Deep Navy */
   --primary-mid:  #1A5276; /* Mid Blue */
