@@ -13,12 +13,12 @@
   /* Deeper Forest */
   --primary-mid: #4F6F52;
   /* Sage Green */
-  --secondary: #FEFBF3;
-  /* Cleaner, brighter cream */
-  --secondary-dark: #F5EFE6;
-  /* Warm grey-cream */
-  --surface-alt: #F3EFE5;
-  /* Refined alternate section tint */
+  --secondary: #FFFFFF;
+  /* Clean white background */
+  --secondary-dark: #FAFAFA;
+  /* Very subtle light gray */
+  --surface-alt: #FFFFFF;
+  /* Same white for all sections */
   --accent: #D4AF37;
   /* Brighter Gold */
   --accent-soft: rgba(212, 175, 55, 0.12);
@@ -53,7 +53,7 @@ body {
   color: var(--text-dark);
   line-height: 1.75;
   overflow-x: hidden;
-  background: var(--secondary);
+  background: #FFFFFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -512,18 +512,18 @@ section {
 }
 
 section:nth-of-type(odd) {
-  background: var(--secondary);
+  background: #FFFFFF;
   position: relative;
 }
 
 section:nth-of-type(even) {
-  background: var(--surface-alt);
+  background: #FFFFFF;
   color: var(--text-dark);
   position: relative;
 }
 
 #kegiatan {
-  background: var(--secondary) !important;
+  background: #FFFFFF !important;
 }
 
 .sambutan {
