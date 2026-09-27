@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -42,6 +43,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overscroll-behavior: none;
 }
 
 body {
@@ -50,6 +52,7 @@ body {
   color: var(--text-dark);
   line-height: 1.75;
   overflow-x: hidden;
+  overscroll-behavior: none;
   background: var(--secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

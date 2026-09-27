@@ -1,4 +1,4 @@
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
 :root {
   --primary:      #003F7D; /* UGM Navy Blue */
@@ -19,8 +19,8 @@
   --transition:   0.32s ease;
 }
 
-html { scroll-behavior:smooth; overflow-x:hidden; }
-body { font-family:'Roboto',sans-serif; color:var(--text-dark); background:var(--secondary); overflow-x:hidden; }
+html { scroll-behavior:smooth; overflow-x:hidden; overscroll-behavior:none; }
+body { font-family:'Roboto',sans-serif; color:var(--text-dark); background:var(--secondary); overflow-x:hidden; overscroll-behavior:none; }
 img  { max-width:100%; height:auto; display:block; }
 
 .fade-up {
