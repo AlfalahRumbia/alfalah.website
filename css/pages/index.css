@@ -6,7 +6,8 @@
 }
 
 :root {
-  color-scheme: light only;
+  color-scheme: only light !important;
+  supported-color-schemes: light;
   --primary: #1A4D2E;
   /* Rich Forest Green */
   --primary-dark: #0F301F;
@@ -44,7 +45,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  color-scheme: light only;
+  color-scheme: only light !important;
+  background-color: #FFFFFF !important;
 }
 
 body {
@@ -53,10 +55,11 @@ body {
   color: var(--text-dark);
   line-height: 1.75;
   overflow-x: hidden;
-  background: #FFFFFF;
+  background-color: #FFFFFF !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  color-scheme: only light !important;
 }
 
 img {
@@ -68,6 +71,7 @@ img {
 section {
   padding: 40px 8% 50px;
   position: relative;
+  background-color: #FFFFFF !important;
 }
 
 /* Scroll Animation Styles */
@@ -76,6 +80,7 @@ section {
   transform: translateY(22px);
   transition: opacity 0.45s cubic-bezier(0.215, 0.610, 0.355, 1),
     transform 0.45s cubic-bezier(0.215, 0.610, 0.355, 1);
+  will-change: opacity, transform;
 }
 
 /* Ketika elemen aktif / masuk ke viewport */
@@ -97,6 +102,18 @@ section {
 }
 
 @media (max-width: 768px) {
+  html {
+    scroll-behavior: auto !important; /* Hilangkan touch friction delay saat swipe di HP */
+  }
+
+  /* Elemen di HP langsung tampil seketika tanpa delay transisi atau efek blank */
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
   body {
     font-size: 13.5px;
   }
@@ -1734,7 +1751,6 @@ section:nth-of-type(even) .info-box-premium {
 }
 
 @media (hover: none) {
-
   .super-combo img,
   .fasilitas-item img,
   .gallery img,
@@ -1746,18 +1762,67 @@ section:nth-of-type(even) .info-box-premium {
     transform: none !important;
     filter: grayscale(0%) !important;
     transition: none !important;
+    box-shadow: var(--shadow-card) !important;
   }
 
-  .program-card:hover,
-  .info-box:hover {
+  .program-card,
+  .program-card:hover {
+    transform: none !important;
+    border-color: rgba(15, 48, 31, 0.08) !important;
+    box-shadow: var(--shadow-card) !important;
+  }
+
+  .program-card:hover .program-card-cover img {
+    transform: none !important;
+  }
+
+  .program-card:hover .program-card-footer {
+    color: var(--primary) !important;
+  }
+
+  .registration-card,
+  .registration-card:hover {
+    transform: none !important;
+    border-color: rgba(212, 175, 55, 0.25) !important;
+    box-shadow: 0 10px 30px rgba(15, 48, 31, 0.04) !important;
+  }
+
+  .registration-card:hover::before {
+    transform: scaleX(0) !important;
+  }
+
+  .registration-card:hover .registration-icon-wrapper {
+    background: rgba(212, 175, 55, 0.1) !important;
+    color: var(--primary) !important;
+    transform: none !important;
+  }
+
+  .visi-misi-box:hover,
+  .kegiatan-card:hover,
+  .info-box:hover,
+  .info-box-premium:hover,
+  .kegiatan-harian-item:hover {
+    transform: none !important;
+    border-color: var(--border-soft) !important;
+    box-shadow: var(--shadow-card) !important;
+  }
+
+  .stat-item:hover .stat-icon {
+    background: rgba(212, 175, 55, 0.08) !important;
+    color: var(--accent) !important;
     transform: none !important;
   }
 
   .btn-primary:hover,
   .btn-submit:hover,
   .back-to-top:hover,
-  .carousel-button:hover {
+  .carousel-button:hover,
+  .admin-cta-btn:hover {
     transform: none !important;
+  }
+
+  .btn-offline:hover {
+    background: #ffffff !important;
   }
 }
 

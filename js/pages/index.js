@@ -13,40 +13,34 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 sections.forEach(s => sectionObserver.observe(s));
 
-// Scroll animation logic (Reveal once)
-const animTargets = document.querySelectorAll(
-  'section > .section-title, section > p, .program-card, .visi-misi-box, .super-combo img, .gallery-grid-custom img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item, .contact-form, .maps-container'
-);
+// Scroll animation logic: Hanya aktif pada Desktop dengan mouse untuk mencegah delay scrolling di HP
+const isMobileDevice = window.innerWidth <= 768 || window.matchMedia('(hover: none)').matches;
 
-const scrollAnimObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const target = entry.target;
+if (!isMobileDevice) {
+  const animTargets = document.querySelectorAll(
+    'section > .section-title, section > p, .program-card, .visi-misi-box, .super-combo img, .gallery-grid-custom img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item, .contact-form, .maps-container'
+  );
 
-    if (entry.isIntersecting) {
-      const parent = target.parentElement;
-      const siblings = Array.from(parent.querySelectorAll('.program-card, .visi-misi-box, .super-combo img, .gallery-grid-custom img, .kegiatan-card, table tbody tr, .grid-gallery img, .info-box-premium, .fasilitas-item'));
+  const scrollAnimObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const target = entry.target;
 
-      if (siblings.length > 1 && siblings.includes(target)) {
-        const index = siblings.indexOf(target);
-        target.style.transitionDelay = `${Math.min(index * 0.05, 0.2)}s`;
-      } else {
-        target.style.transitionDelay = '0s';
+      if (entry.isIntersecting) {
+        target.classList.add('visible');
+        target.classList.remove('exit-up', 'exit-down');
+        scrollAnimObserver.unobserve(target);
       }
-
-      target.classList.add('visible');
-      target.classList.remove('exit-up', 'exit-down');
-      scrollAnimObserver.unobserve(target);
-    }
+    });
+  }, {
+    threshold: 0.05,
+    rootMargin: '40px 0px 0px 0px'
   });
-}, {
-  threshold: 0.05,
-  rootMargin: '20px 0px 0px 0px'
-});
 
-animTargets.forEach(el => {
-  el.classList.add('scroll-animate');
-  scrollAnimObserver.observe(el);
-});
+  animTargets.forEach(el => {
+    el.classList.add('scroll-animate');
+    scrollAnimObserver.observe(el);
+  });
+}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
