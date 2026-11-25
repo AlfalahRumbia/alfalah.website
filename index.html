@@ -13,3627 +13,2500 @@
   <meta name="theme-color" content="#1A4D2E">
   <meta name="description"
     content="Pondok Pesantren Al-Falah - Pusat pengembangan keilmuan Islam dan dakwah multikultural. Memadukan prinsip ilmiyah-amaliyah dalam suasana pesantren yang damai dan penuh keberkahan.">
-  <link rel="canonical" href="https://alfalahrumbia.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="id_ID">
-  <meta property="og:site_name" content="Pondok Pesantren Al-Falah Rumbia">
-  <meta property="og:title" content="Pondok Pesantren Al-Falah Rumbia">
-  <meta property="og:description"
-    content="Pusat pengembangan keilmuan Islam dan dakwah multikultural di Teluk Dalem Ilir, Rumbia, Lampung Tengah.">
-  <meta property="og:url" content="https://alfalahrumbia.com/">
-  <meta property="og:image" content="https://alfalahrumbia.com/assets/images/Properti%20Utama/Logo.png">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="assets/images/Properti%20Utama/Logo.png">
   <meta name="keywords"
     content="pondok pesantren, al-falah, rumbia, lampung tengah, pesantren salafiyah, madrasah diniyah">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
-    /* ===== global.css ===== */
+    /* =========================================================
+       TEMA — ubah warna cukup di sini
+       ========================================================= */
+    :root {
+      --g-950: #0B2616;
+      --g-900: #123A22;
+      --g-800: #1A4D2E;
+      --g-700: #22643C;
+      --g-600: #2E7D4F;
+      --g-400: #5DB37E;
+      --g-100: #E5F3EA;
+      --g-50: #F3F9F5;
+      --gold: #C9A227;
+      --gold-100: #FBF4DE;
+      --ink: #15261C;
+      --muted: #5D6E64;
+      --line: #E2EBE5;
+      --white: #fff;
+      --grad: linear-gradient(135deg, var(--g-900) 0%, var(--g-800) 50%, var(--g-600) 120%);
+      --radius: 10px;
+      --shadow-sm: 0 2px 8px rgba(26, 77, 46, .07);
+      --shadow: 0 12px 32px rgba(26, 77, 46, .13);
+      --shadow-lg: 0 24px 60px rgba(11, 38, 22, .25);
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --serif: 'Lora', Georgia, serif;
+    }
+
     *,
     *::before,
     *::after {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    :root {
-      color-scheme: only light !important;
-      supported-color-schemes: light;
-      --primary: #1A4D2E;
-      /* Rich Forest Green */
-      --primary-dark: #0F301F;
-      /* Deep Forest */
-      --primary-mid: #4F6F52;
-      /* Sage Green */
-      --secondary: #FFFFFF;
-      /* Clean White */
-      --secondary-dark: #FAFAFA;
-      /* Light Gray */
-      --accent: #D4AF37;
-      /* Gold */
-      --accent-soft: rgba(212, 175, 55, 0.12);
-      --accent-border: rgba(212, 175, 55, 0.3);
-      --text-dark: #0D1B1E;
-      --text-mid: #4A5D59;
-      --text-light: #fff;
-      --radius: 20px;
-      --radius-sm: 10px;
-      --shadow-card: 0 4px 32px rgba(15, 48, 31, 0.07);
-      --shadow-hover: 0 12px 60px rgba(15, 48, 31, 0.14);
-      --transition: 0.32s ease;
-    }
-
-    html {
-      overflow-x: hidden;
-      color-scheme: only light !important;
-      background-color: #FFFFFF !important;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: var(--text-dark);
-      background-color: #FFFFFF !important;
-      overflow-x: hidden;
-      color-scheme: only light !important;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fade-up:nth-child(2) {
-      transition-delay: .10s;
-    }
-
-    .fade-up:nth-child(3) {
-      transition-delay: .20s;
-    }
-
-    .fade-up:nth-child(4) {
-      transition-delay: .30s;
-    }
-
-    /* ===== navbar.css ===== */
-    /* ── NAVBAR MASTER STYLES ── */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: linear-gradient(135deg, #1A4D2E 0%, #0F301F 100%);
-      padding: 0 40px;
-      z-index: 9999;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
-      border-bottom: 2px solid rgba(240, 171, 0, 0.35);
-      transition: all 0.35s ease;
-    }
-
-    .navbar.scrolled {
-      padding: 0 40px;
-      background: rgba(26, 77, 46, 0.97);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
-      border-bottom-color: rgba(240, 171, 0, 0.5);
-    }
-
-    .nav-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      overflow: visible;
-    }
-
-    /* Dua baris pada halaman beranda desktop yang memiliki .nav-top-row */
-    .nav-container:has(.nav-top-row) {
-      flex-direction: column;
-    }
-
-    .nav-brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text-light, #ffffff);
-      letter-spacing: 0.3px;
-      white-space: nowrap;
-    }
-
-    .nav-brand-sub {
-      font-size: 10px;
-      font-weight: 400;
-      color: var(--accent, #D4AF37);
-      letter-spacing: 0.5px;
-      opacity: 0.9;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .nav-logo {
-      height: 64px;
-      width: auto;
-      flex-shrink: 0;
-      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-      transition: all 0.3s ease;
-    }
-
-    /* Desktop: nav-menu sebagai baris kedua di dalam nav-container */
-    .nav-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
-      width: 100%;
-    }
-
-    .nav-bottom-row {
-      display: none;
-      /* Kompatibilitas mundur */
-    }
-
-    .nav-menu {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      list-style: none;
-      align-items: center;
-      width: 100%;
-      height: 46px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 7px 13px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      position: relative;
-      white-space: nowrap;
-    }
-
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: 3px;
-      left: 13px;
-      right: 13px;
-      width: 0;
-      height: 2px;
-      background: var(--accent, #D4AF37);
-      border-radius: 2px;
-      transition: width 0.3s ease;
-    }
-
-    .nav-menu a:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .nav-menu a:hover::after,
-    .nav-menu a.active::after {
-      width: calc(100% - 26px);
-    }
-
-    .nav-menu a.active {
-      color: var(--accent, #D4AF37);
-      background: rgba(240, 171, 0, 0.1);
-    }
-
-    .nav-cta {
-      display: inline-block;
-      padding: 9px 20px;
-      background: var(--accent, #D4AF37);
-      color: #0A1F3F !important;
-      font-weight: 700 !important;
-      font-size: 13.5px !important;
-      border-radius: 50px !important;
-      text-decoration: none;
-      transition: all 0.3s ease !important;
-      white-space: nowrap;
-      box-shadow: 0 3px 12px rgba(240, 171, 0, 0.35);
-    }
-
-    .nav-cta::after {
-      display: none !important;
-    }
-
-    .nav-cta:hover {
-      background: #FDB515 !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(240, 171, 0, 0.5) !important;
-      color: #0A1F3F !important;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 6px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .hamburger:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2.5px;
-      background: var(--text-light, #ffffff);
-      border-radius: 3px;
-      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      transform-origin: center;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: translateY(7.5px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: translateY(-7.5px) rotate(-45deg);
-    }
-
-    /* Sembunyikan social section mobile di tampilan desktop */
-    .nav-menu-social-divider,
-    .nav-menu-social-section,
-    .nav-mobile-footer {
-      display: none !important;
-    }
-
-    .nav-menu-overlay {
-      display: block;
-      position: fixed;
-      inset: 0;
-      background: rgba(5, 18, 10, 0.72);
-      z-index: 9998;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity 0.35s ease, visibility 0.35s ease;
-    }
-
-    .nav-menu-overlay.open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    /* ── SOCIAL WIDGET & DROPDOWN (DESKTOP) ── */
-    .nav-social-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .social-icon-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      color: #ffffff;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-    }
-
-    .social-icon-btn:hover {
-      background: var(--accent, #D4AF37);
-      color: #1a1a1a;
-      transform: translateY(-2px);
-    }
-
-    .social-dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      top: 100%;
-      margin-top: 8px;
-      background: #ffffff;
-      min-width: 175px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
-      border-radius: 12px;
-      padding: 8px 0;
-      z-index: 10000;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-    }
-
-    .dropdown-content::before {
-      content: '';
-      position: absolute;
-      top: -6px;
-      right: 12px;
-      width: 12px;
-      height: 12px;
-      background: #ffffff;
-      transform: rotate(45deg);
-      border-left: 1px solid rgba(0, 0, 0, 0.08);
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .dropdown-content a {
-      color: #1a1a1a;
-      padding: 10px 16px;
-      text-decoration: none;
-      display: block;
-      font-size: 13.5px;
-      font-weight: 600;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .dropdown-content a:hover {
-      background: rgba(212, 175, 55, 0.1);
-      color: #1A4D2E;
-    }
-
-    .social-dropdown:hover .dropdown-content {
-      display: block;
-      transform: translateY(0);
-    }
-
-
-    /* ═══════════════════════════════════════════════════════
-   ── MOBILE RESPONSIVE NAVBAR (HP & TABLET <= 900px) ──
-   ═══════════════════════════════════════════════════════ */
-    @media (max-width: 900px) {
-
-      /* ── Satu sumber kebenaran untuk tinggi navbar mobile ── */
-      :root {
-        --navbar-h: 64px;
-      }
-
-      .navbar,
-      .navbar.scrolled {
-        padding: 0 18px !important;
-        height: var(--navbar-h) !important;
-        min-height: var(--navbar-h) !important;
-        max-height: var(--navbar-h) !important;
-        background: linear-gradient(135deg, #143D24 0%, #0B2214 100%) !important;
-        border-bottom: 2px solid transparent !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        overflow: visible !important;
-        display: flex !important;
-        align-items: center !important;
-        z-index: 10005 !important;
-        /* Navbar selalu berada di lapisan teratas */
-      }
-
-      .nav-container {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        height: var(--navbar-h) !important;
-        width: 100% !important;
-        overflow: visible !important;
-        position: relative !important;
-        z-index: 10005 !important;
-      }
-
-      .nav-top-row {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        width: 100% !important;
-        height: var(--navbar-h) !important;
-        min-height: var(--navbar-h) !important;
-      }
-
-      .nav-bottom-row {
-        display: none !important;
-      }
-
-      .nav-social-wrap {
-        display: none !important;
-      }
-
-      .nav-brand {
-        display: flex !important;
-        align-items: center !important;
-        height: 100% !important;
-        z-index: 10006 !important;
-      }
-
-      .nav-logo {
-        height: 44px !important;
-        max-height: 44px !important;
-        width: auto !important;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4)) !important;
-      }
-
-      /* Hamburger button mobile */
-      .hamburger {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 32px !important;
-        height: 32px !important;
-        padding: 0 !important;
-        background: transparent !important;
-        border: 1px solid rgba(255, 255, 255, 0.8) !important;
-        border-radius: 4px !important;
-        position: relative !important;
-        z-index: 10006 !important;
-        cursor: pointer !important;
-        transition: all 0.25s ease !important;
-        flex-shrink: 0 !important;
-      }
-
-      .hamburger:active,
-      .hamburger.active {
-        background: rgba(255, 255, 255, 0.1) !important;
-        border-color: #ffffff !important;
-      }
-
-      .hamburger span {
-        display: block !important;
-        width: 16px !important;
-        height: 2px !important;
-        background: #ffffff !important;
-        border-radius: 2px !important;
-        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        transform-origin: center !important;
-      }
-
-      .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg) !important;
-        background: #F3E99F !important;
-      }
-
-      .hamburger.active span:nth-child(2) {
-        opacity: 0 !important;
-        transform: scaleX(0) !important;
-      }
-
-      .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg) !important;
-        background: #F3E99F !important;
-      }
-
-      /* ── Mobile Fullscreen Menu (Desain Elegan Ala UGM) ── */
-      #navMenu,
-      .nav-menu {
-        display: flex !important;
-        position: fixed !important;
-        top: var(--navbar-h) !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100vw !important;
-        height: calc(100dvh - var(--navbar-h)) !important;
-        height: calc(100vh - var(--navbar-h));
-        max-height: calc(100dvh - var(--navbar-h)) !important;
-        background: #0B2416 !important;
-        background: linear-gradient(180deg, #0F2E1D 0%, #07190F 100%) !important;
-        border-left: none !important;
-        border-top: none !important;
-        border-bottom: none !important;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8) !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        justify-content: flex-start !important;
-        gap: 0 !important;
-        padding: 20px 0 max(32px, calc(env(safe-area-inset-bottom) + 20px)) !important;
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        overscroll-behavior: contain !important;
-        z-index: 10000 !important;
-        list-style: none !important;
-        margin: 0 !important;
-        transform: translateY(-8px) !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-        pointer-events: none !important;
-        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.24s ease, visibility 0.28s ease !important;
-      }
-
-      #navMenu.open,
-      .nav-menu.open {
-        transform: translateY(0) !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-      }
-
-      #navMenu>li {
-        width: 100% !important;
-        list-style: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-      }
-
-      #navMenu>li>a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        min-height: 52px !important;
-        padding: 13px 26px !important;
-        font-size: 16px !important;
-        font-weight: 600 !important;
-        color: #ffffff !important;
-        background: transparent !important;
-        border: none !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
-        border-radius: 0 !important;
-        text-decoration: none !important;
-        transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease !important;
-        box-sizing: border-box !important;
-      }
-
-      /* Indikator panah chevron kanan ala UGM */
-      #navMenu>li>a::after {
-        content: '' !important;
-        display: inline-block !important;
-        width: 8px !important;
-        height: 8px !important;
-        border-right: 2px solid rgba(255, 255, 255, 0.45) !important;
-        border-top: 2px solid rgba(255, 255, 255, 0.45) !important;
-        transform: rotate(45deg) !important;
-        transition: transform 0.2s ease, border-color 0.2s ease !important;
-        position: static !important;
-        background: none !important;
-        border-radius: 0 !important;
-        flex-shrink: 0 !important;
-      }
-
-      #navMenu>li>a:hover,
-      #navMenu>li>a:active,
-      #navMenu>li>a.active {
-        background: rgba(255, 255, 255, 0.05) !important;
-        color: #F8E7A2 !important;
-        padding-left: 30px !important;
-      }
-
-      #navMenu>li>a:hover::after,
-      #navMenu>li>a:active::after,
-      #navMenu>li>a.active::after {
-        border-color: #D4AF37 !important;
-        transform: translateX(3px) rotate(45deg) !important;
-      }
-
-      /* Highlight item khusus (Pendaftaran warna emas ala menu Pendaftaran UGM) */
-      #navMenu>li>a.nav-highlight {
-        color: #F0AB00 !important;
-        font-weight: 700 !important;
-      }
-
-      #navMenu>li>a.nav-highlight::after {
-        border-color: #F0AB00 !important;
-      }
-
-      /* Tombol Back pada halaman subpage */
-      .nav-cta {
-        width: calc(100% - 52px) !important;
-        margin: 12px 26px !important;
-        text-align: center !important;
-        border-radius: 8px !important;
-        padding: 12px 16px !important;
-        justify-content: center !important;
-        display: flex !important;
-        gap: 8px !important;
-        align-items: center !important;
-      }
-
-      /* ── Footer Menu Mobile (Ikon Sosial Horizontal & Tautan Bawah Ala UGM) ── */
-      .nav-mobile-footer {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        margin-top: auto !important;
-        /* Mendorong footer ke bagian paling bawah */
-        padding: 36px 24px 16px !important;
-        width: 100% !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
-        box-sizing: border-box !important;
-        flex-shrink: 0 !important;
-      }
-
-      .nav-mobile-socials {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 22px !important;
-        width: 100% !important;
-        margin-bottom: 20px !important;
-      }
-
-      .nav-mobile-socials a {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 40px !important;
-        height: 40px !important;
-        border-radius: 50% !important;
-        color: rgba(255, 255, 255, 0.9) !important;
-        background: rgba(255, 255, 255, 0.08) !important;
-        text-decoration: none !important;
-        transition: all 0.2s ease !important;
-      }
-
-      .nav-mobile-socials a:hover,
-      .nav-mobile-socials a:active {
-        color: #0B2416 !important;
-        background: #F0AB00 !important;
-        transform: translateY(-2px) !important;
-      }
-
-      .nav-mobile-sublinks {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        flex-wrap: wrap !important;
-        gap: 12px !important;
-        width: 100% !important;
-      }
-
-      .nav-mobile-sublinks a {
-        color: rgba(255, 255, 255, 0.65) !important;
-        font-size: 13px !important;
-        font-weight: 500 !important;
-        text-decoration: none !important;
-        transition: color 0.2s ease !important;
-      }
-
-      .nav-mobile-sublinks a:hover,
-      .nav-mobile-sublinks a:active {
-        color: #F0AB00 !important;
-      }
-
-      .nav-mobile-sublinks .sublink-dot {
-        color: rgba(255, 255, 255, 0.25) !important;
-        font-size: 10px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .navbar,
-      .navbar.scrolled {
-        padding: 0 16px !important;
-        height: var(--navbar-h) !important;
-        min-height: var(--navbar-h) !important;
-        max-height: var(--navbar-h) !important;
-      }
-
-      .nav-logo {
-        height: 38px !important;
-        max-height: 38px !important;
-      }
-
-      #navMenu,
-      .nav-menu {
-        top: var(--navbar-h) !important;
-        height: calc(100dvh - var(--navbar-h)) !important;
-        height: calc(100vh - var(--navbar-h));
-        max-height: calc(100dvh - var(--navbar-h)) !important;
-        width: 100vw !important;
-        padding: 16px 0 max(24px, calc(env(safe-area-inset-bottom) + 16px)) !important;
-        gap: 0 !important;
-      }
-
-      #navMenu>li>a {
-        min-height: 48px !important;
-        padding: 12px 20px !important;
-        font-size: 15px !important;
-      }
-
-      .nav-mobile-footer {
-        padding: 28px 16px 14px !important;
-      }
-
-      .nav-mobile-socials {
-        gap: 16px !important;
-        margin-bottom: 14px !important;
-      }
-
-      .nav-mobile-socials a {
-        width: 36px !important;
-        height: 36px !important;
-      }
-
-      .nav-mobile-sublinks {
-        gap: 8px !important;
-      }
-
-      .nav-mobile-sublinks a {
-        font-size: 12px !important;
-      }
-    }
-
-    /* ===== footer.css ===== */
-    /* ── FOOTER ── */
-    .footer {
-      background: #000000;
-      color: #fff;
-      padding: 80px 0 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-family: 'Roboto', sans-serif;
-    }
-
-    .footer-content {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .footer-identity {
-      width: 100%;
-      text-align: center;
-    }
-
-    .footer-logo {
-      width: 450px;
-      max-width: 90%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
-      font-weight: 400;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* ── MOBILE ── */
-    @media (max-width: 992px) {
-      .footer {
-        padding: 40px 0 30px;
-        overflow-x: hidden;
-      }
-
-      .footer-content {
-        margin-bottom: 20px;
-      }
-
-      .footer-logo {
-        width: 180px;
-        max-width: 60%;
-      }
-
-      .footer-bottom {
-        font-size: 10px;
-        padding-top: 20px;
-      }
-    }
-
-    /* ===== index.css ===== */
-    /* ==========================================================
-   index.css — Tampilan awal (Beranda)  · v11
-   Catatan: aturan untuk navbar (.nav-*, .hamburger, .navbar) dan
-   footer sengaja dipertahankan persis seperti versi sebelumnya.
-   ========================================================== */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    :root {
-      color-scheme: only light !important;
-      supported-color-schemes: light;
-      --primary: #1A4D2E;
-      /* Rich Forest Green */
-      --primary-dark: #0F301F;
-      /* Deeper Forest */
-      --primary-mid: #4F6F52;
-      /* Sage Green */
-      --secondary: #FFFFFF;
-      --secondary-dark: #FAFAFA;
-      --surface-alt: #FFFFFF;
-      --accent: #D4AF37;
-      /* Gold (dekorasi) */
-      --cream: #FAF7EC;
-      --accent-text: #8A6A12;
-      /* Gold gelap untuk teks kecil (kontras AA di atas putih) */
-      --accent-soft: rgba(212, 175, 55, 0.12);
-      --accent-border: rgba(212, 175, 55, 0.3);
-      --text-dark: #0D1B1E;
-      --text-mid: #4A5D59;
-      --text-light: #fff;
-      --radius: 20px;
-      --radius-sm: 14px;
-      --radius-lg: 26px;
-      --border-soft: 1px solid rgba(15, 48, 31, 0.08);
-      --shadow-card: 0 4px 28px rgba(15, 48, 31, 0.07);
-      --shadow-hover: 0 20px 48px rgba(15, 48, 31, 0.14);
-      --transition: 0.32s cubic-bezier(0.22, 0.9, 0.3, 1);
-      --fs-hero-title: clamp(32px, 5.5vw, 56px);
-      --fs-hero-sub: clamp(15px, 2vw, 18px);
-      --fs-section-title: clamp(26px, 3.5vw, 36px);
-      --fs-card-title: clamp(18px, 2.2vw, 22px);
-      --fs-body: 16px;
-      --fs-small: 14px;
     }
 
     html {
       scroll-behavior: smooth;
-      overflow-x: hidden;
-      color-scheme: only light !important;
-      background-color: #FFFFFF !important;
+      scroll-padding-top: 84px;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
-      font-size: var(--fs-body);
-      color: var(--text-dark);
-      line-height: 1.75;
-      overflow-x: hidden;
-      background-color: #FFFFFF !important;
+      margin: 0;
+      overflow-x: clip;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      color-scheme: only light !important;
     }
 
-    img {
+    img,
+    svg {
       max-width: 100%;
-      height: auto;
       display: block;
     }
 
-    section {
-      padding: 40px 8% 50px;
-      position: relative;
-      background-color: #FFFFFF !important;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    /* Beri ruang agar judul section tidak tertutup navbar saat lompat ke #id */
-    section[id] {
-      scroll-margin-top: 130px;
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--serif);
+      line-height: 1.22;
+      margin: 0;
+      color: var(--g-900);
     }
 
-    /* Teks khusus pembaca layar / mesin pencari */
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
+    p {
+      margin: 0;
+    }
+
+    ul {
+      margin: 0;
       padding: 0;
-      margin: -1px;
+      list-style: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin-inline: auto;
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 8px;
+      background: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      z-index: 100;
+    }
+
+    .skip:focus {
+      left: 8px;
+    }
+
+    /* Foto: latar hijau muda saat gambar belum termuat */
+    .ph {
+      background: linear-gradient(135deg, #d6ecdf, #eef6f1);
       overflow: hidden;
-      clip: rect(0, 0, 0, 0);
+    }
+
+    .ph img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    /* ---------- Tombol ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .01em;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s, background .2s, color .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex: none;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--g-950);
+      box-shadow: 0 8px 22px rgba(201, 162, 39, .35);
+    }
+
+    .btn-gold:hover {
+      background: #b8921c;
+    }
+
+    .btn-green {
+      background: var(--g-800);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(26, 77, 46, .3);
+    }
+
+    .btn-green:hover {
+      background: var(--g-900);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, .6);
+      color: #fff;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, .14);
+    }
+
+    .btn-outline {
+      border-color: var(--g-800);
+      color: var(--g-800);
+    }
+
+    .btn-outline:hover {
+      background: var(--g-800);
+      color: #fff;
+    }
+
+    /* ---------- Navbar ---------- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--g-800);
+      border-bottom: 3px solid var(--gold);
+      transition: box-shadow .25s, background .25s;
+    }
+
+    .nav.scrolled {
+      background: var(--g-900);
+      box-shadow: 0 8px 24px rgba(11, 38, 22, .28);
+    }
+
+    .nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 20px;
+    }
+
+    .brand img {
+      height: 48px;
+      width: auto;
+      max-width: 220px;
+      object-fit: contain;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .menu a {
+      padding: 9px 13px;
+      border-radius: 8px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #dcebe1;
+      transition: background .2s, color .2s;
       white-space: nowrap;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+    }
+
+    .menu .btn {
+      margin-left: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: var(--g-950);
+    }
+
+    .menu .btn:hover {
+      background: #b8921c;
+      color: var(--g-950);
+    }
+
+    .menu-social {
+      display: none;
+    }
+
+    .burger {
+      display: none;
+      width: 46px;
+      height: 46px;
       border: 0;
+      background: rgba(255, 255, 255, .12);
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
     }
 
-    /* ---------- Animasi muncul saat scroll (desktop) ---------- */
-    .scroll-animate {
+    .burger span {
+      width: 22px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 2px;
+      transition: transform .25s, opacity .25s;
+    }
+
+    .burger[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .burger[aria-expanded="true"] span:nth-child(2) {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.45s cubic-bezier(0.215, 0.610, 0.355, 1),
-        transform 0.45s cubic-bezier(0.215, 0.610, 0.355, 1);
-      will-change: opacity, transform;
     }
 
-    .scroll-animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ---------- Mobile (≤768px) — termasuk aturan navbar lama ---------- */
-    @media (max-width: 768px) {
-      html {
-        scroll-behavior: auto !important;
-      }
-
-      .scroll-animate {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-        will-change: auto !important;
-      }
-
-      body {
-        font-size: 13.5px;
-      }
-
-      section {
-        padding: 35px 5%;
-      }
-
-      section[id] {
-        scroll-margin-top: 70px;
-      }
-
-      .section-title {
-        font-size: 24px !important;
-        margin-bottom: 30px !important;
-      }
-
-      .hero-header {
-        margin-top: 64px !important;
-      }
-
-      .navbar {
-        padding: 0 16px !important;
-      }
-
-      .nav-logo {
-        height: 36px !important;
-      }
-
-      .nav-brand-name {
-        font-size: 13px !important;
-      }
-
-      .nav-brand-sub {
-        font-size: 9px !important;
-      }
-
-      .program-card h3 {
-        font-size: 16px !important;
-      }
-
-      .visi-misi-box strong {
-        font-size: 16px !important;
-      }
+    .burger[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
     }
 
     /* ---------- Hero ---------- */
-    .hero-header {
+    .hero {
       position: relative;
-      width: 100%;
-      aspect-ratio: 2666 / 1000;
-      display: block;
-      overflow: hidden;
-      margin-top: 126px;
-      background: var(--primary-dark);
-      /* PERBAIKAN: membuat stacking context sendiri supaya gambar tidak
-     tertutup background putih <body> (penyebab hero tampak kosong) */
+      min-height: min(86vh, 760px);
+      display: flex;
+      align-items: center;
+      color: #fff;
       isolation: isolate;
-    }
-
-    @media (max-width: 900px) {
-      .hero-header {
-        margin-top: 64px;
-        min-height: auto;
-      }
+      overflow: hidden;
     }
 
     .hero-bg {
       position: absolute;
       inset: 0;
+      z-index: -2;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1;
+      transform: scale(1.04);
+      animation: zoom 18s ease-out forwards;
+      background: var(--g-800);
     }
 
-    /* ---------- Judul section ---------- */
-    .section-title {
-      font-family: 'Lora', serif;
-      font-size: var(--fs-section-title);
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      text-align: left;
-      margin-bottom: 50px;
-      position: relative;
-      padding-bottom: 0;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      color: var(--primary-dark);
+    @keyframes zoom {
+      to {
+        transform: scale(1);
+      }
     }
 
-    .section-title::before {
-      content: '';
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 2px;
-      background: linear-gradient(90deg, rgba(212, 175, 55, 0.5), rgba(212, 175, 55, 0));
-      border-radius: 2px;
-    }
-
-    /* ---------- Visi & Misi ---------- */
-    .visi-misi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .visi-misi-box {
-      padding: 40px;
-      border-top: 4px solid var(--accent);
-      background: #ffffff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-card);
-      transition: var(--transition);
-    }
-
-    .visi-misi-box:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .visi-misi-box strong {
-      font-family: 'Lora', serif;
-      font-size: var(--fs-card-title);
-      display: block;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-      color: var(--primary);
-    }
-
-    .visi-misi-box p {
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* ---------- Kartu program & pendidikan formal ---------- */
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .program-card {
-      background: #ffffff;
-      border-radius: var(--radius);
-      text-align: left;
-      transition: var(--transition);
-      border: var(--border-soft);
-      box-shadow: var(--shadow-card);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .program-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent-border);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .program-card-cover {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-      background: var(--primary-dark);
-    }
-
-    .program-card-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition);
-    }
-
-    .program-card:hover .program-card-cover img {
-      transform: scale(1.06);
-    }
-
-    .program-card-body {
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .program-card-body h3 {
-      font-family: 'Lora', serif;
-      font-size: var(--fs-card-title);
-      margin-bottom: 15px;
-      color: var(--primary);
-      text-align: left;
-    }
-
-    .program-card-body p {
-      font-size: 15px;
-      color: var(--text-mid);
-      text-align: left;
-      margin-bottom: 30px;
-    }
-
-    .program-card-footer {
-      margin-top: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding-top: 15px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 14px;
-      transition: var(--transition);
-    }
-
-    .program-card:hover .program-card-footer {
-      color: var(--accent-text);
-    }
-
-    .card-link-overlay {
+    .hero::before {
+      content: "";
       position: absolute;
       inset: 0;
-      z-index: 5;
-      cursor: pointer;
-      border-radius: var(--radius);
+      z-index: -1;
+      background: linear-gradient(100deg, rgba(11, 38, 22, .92) 0%, rgba(18, 58, 34, .78) 45%, rgba(26, 77, 46, .35) 100%);
     }
 
-    .card-link-overlay:focus-visible,
-    .registration-btn:focus-visible,
-    .admin-cta-btn:focus-visible,
-    .maps-link:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 3px;
+    .hero .container {
+      padding-block: 90px 130px;
     }
 
-    /* ---------- Kegiatan Pesantren (tahunan / bulanan / mingguan) ---------- */
-    .kegiatan-subtitle {
-      font-family: 'Lora', serif;
-      font-size: 24px;
+    .hero-inner {
+      max-width: 640px;
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(40px, 6.4vw, 76px);
+      margin: 0 0 22px;
       font-weight: 700;
-      color: var(--primary);
-      text-align: left;
-      margin-bottom: 22px;
-      line-height: 1.3;
+      letter-spacing: -.015em;
+      line-height: 1.05;
     }
 
-    .kegiatan-cards {
+    .hero h1 .kicker {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 50px;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font);
+      font-size: clamp(13px, 1.3vw, 15px);
+      font-weight: 800;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: #e9c955;
+      margin-bottom: 18px;
     }
 
-    .kegiatan-card-item {
-      flex: 0 0 calc((100% - 72px) / 4);
-      min-width: 0;
-      background: #ffffff;
-      border-radius: var(--radius);
-      border: var(--border-soft);
-      box-shadow: var(--shadow-card);
-      overflow: hidden;
-      transition: var(--transition);
+    .hero h1 .kicker::before {
+      content: "";
+      width: 44px;
+      height: 3px;
+      background: var(--gold);
+      flex: none;
     }
 
-    .kegiatan-card-img {
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: var(--primary-dark);
+    .hero p.lead {
+      border-left: 3px solid rgba(255, 255, 255, .35);
+      padding-left: 18px;
     }
 
-    .kegiatan-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: zoom-in;
-      transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
-    }
-
-    .kegiatan-card-title {
-      font-family: 'Lora', serif;
+    .hero p.lead {
       font-size: 18px;
-      font-weight: 700;
-      color: var(--primary);
-      text-align: center;
-      padding: 16px 14px 18px;
-      line-height: 1.4;
+      color: #dcebe1;
+      max-width: 560px;
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      .kegiatan-card-item:hover {
-        transform: translateY(-6px);
-        border-color: var(--accent-border);
-        box-shadow: var(--shadow-hover);
-      }
-
-      .kegiatan-card-item:hover .kegiatan-card-img img {
-        transform: scale(1.06);
-      }
-    }
-
-    /* ---------- Pendaftaran ---------- */
-    .registration-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .registration-card {
-      background: #ffffff;
-      border: 1.5px solid rgba(212, 175, 55, 0.25);
-      border-radius: 20px;
-      padding: 40px 30px;
-      text-align: center;
-      transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-      box-shadow: 0 10px 30px rgba(15, 48, 31, 0.04);
+    .hero-cta {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+      gap: 14px;
+      margin-top: 34px;
+      flex-wrap: wrap;
     }
 
-    .registration-card::before {
-      content: '';
+    .hero-wave {
       position: absolute;
-      top: 0;
       left: 0;
+      right: 0;
+      bottom: -1px;
+      line-height: 0;
+    }
+
+    .hero-wave svg {
       width: 100%;
-      height: 4px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transition: transform 0.35s ease;
-      transform-origin: left;
-    }
-
-    .registration-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .registration-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .registration-icon-wrapper {
-      width: 70px;
       height: 70px;
-      background: rgba(212, 175, 55, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      margin-bottom: 25px;
-      transition: all 0.35s ease;
     }
 
-    .registration-card:hover .registration-icon-wrapper {
-      background: var(--primary);
-      color: var(--accent);
-      transform: scale(1.1);
-    }
-
-    .registration-card h3 {
-      font-family: 'Lora', serif;
-      font-size: var(--fs-card-title);
-      color: var(--primary);
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    .registration-card p {
-      font-size: 15px;
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin-bottom: 30px;
-      flex-grow: 1;
-    }
-
-    .registration-btn {
-      width: 100%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 14.5px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .btn-online {
-      background: var(--primary);
-      color: #ffffff;
-      border: 2px solid var(--primary);
-      box-shadow: 0 5px 15px rgba(26, 77, 46, 0.2);
-    }
-
-    .btn-online:hover {
-      background: var(--accent);
-      color: var(--text-dark);
-      border-color: var(--accent);
-      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
-    }
-
-    .btn-offline {
-      background: #ffffff;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-offline:hover {
-      background: rgba(26, 77, 46, 0.05);
-      transform: translateY(-2px);
-    }
-
-    /* ---------- Administrasi ---------- */
-    .admin-showcase-box {
-      max-width: 900px;
-      margin: 40px auto 0;
-      background: #ffffff;
-      border: 1.5px solid rgba(212, 175, 55, 0.25);
-      border-radius: 24px;
-      padding: 50px;
-      position: relative;
-      box-shadow: 0 15px 40px rgba(15, 48, 31, 0.05);
-      overflow: hidden;
-    }
-
-    .admin-showcase-box::after {
-      content: '';
-      position: absolute;
-      right: -50px;
-      bottom: -50px;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .admin-showcase-content {
+    /* ---------- Highlight strip ---------- */
+    .highlights {
+      margin-top: -70px;
       position: relative;
       z-index: 2;
-      text-align: center;
     }
 
-    .admin-showcase-content h3 {
-      font-family: 'Lora', serif;
-      font-size: var(--fs-card-title);
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .admin-showcase-content p {
-      font-size: 16px;
-      color: var(--text-mid);
-      max-width: 720px;
-      margin: 0 auto 30px;
-      line-height: 1.8;
-    }
-
-    .admin-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 16px 45px;
-      background: linear-gradient(135deg, var(--accent) 0%, #b89328 100%);
-      color: var(--text-dark);
-      font-weight: 700;
-      font-size: 15.5px;
+    .hl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #fff;
       border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
-      transition: all 0.32s ease;
-    }
-
-    .admin-cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
-    }
-
-    /* ---------- Lokasi ---------- */
-    .maps-container {
-      border-radius: var(--radius);
+      border-top: 4px solid var(--gold);
+      box-shadow: var(--shadow);
       overflow: hidden;
-      box-shadow: var(--shadow-hover);
-      border: var(--border-soft);
-      position: relative;
-      width: 100%;
-      padding-bottom: 45%;
-      height: 0;
-      background: #eef2ef;
     }
 
-    .maps-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100% !important;
-      height: 100% !important;
+    .hl {
+      display: flex;
+      gap: 16px;
+      padding: 28px 26px;
+      border-right: 1px solid var(--line);
+    }
+
+    .hl:last-child {
       border: 0;
     }
 
-    .maps-info {
+    .hl .ic {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--g-100);
+      color: var(--g-700);
+      flex: none;
+    }
+
+    .hl:nth-child(2) .ic {
+      background: var(--gold-100);
+      color: #9a7a12;
+    }
+
+    .hl .ic svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .hl b {
+      display: block;
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--g-900);
+    }
+
+    .hl span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ---------- Section umum ---------- */
+    section {
+      padding-block: 92px;
+    }
+
+    .sec-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .sec-head h2 {
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+
+    .sec-head h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--gold);
+      margin: 18px auto 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--g-700);
+      background: var(--g-100);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .sec-head h2 {
+      font-size: clamp(30px, 4vw, 44px);
+    }
+
+    .bg-soft {
+      background: var(--g-50);
+    }
+
+    .sub-head {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 22px;
+      gap: 14px;
+      margin: 0 0 24px;
     }
 
-    .maps-address {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--text-mid);
-      font-size: 15px;
-      line-height: 1.6;
+    .sub-head h3 {
+      font-size: 22px;
+      padding-left: 14px;
+      border-left: 4px solid var(--gold);
+      line-height: 1.2;
     }
 
-    .maps-address svg {
-      color: var(--primary);
-      flex-shrink: 0;
-      margin-top: 3px;
+    .sub-head::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
     }
 
-    .maps-link {
-      display: inline-flex;
-      align-items: center;
-      padding: 12px 26px;
+    /* ---------- Visi Misi ---------- */
+    .vm {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--g-800);
       border-radius: 12px;
-      border: 2px solid var(--primary);
-      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+      max-width: 1040px;
+      margin-inline: auto;
+    }
+
+    .vm-item {
+      padding: 48px 52px;
+    }
+
+    .vm-item+.vm-item {
+      border-left: 1px solid var(--line);
+    }
+
+    .vm-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--g-700);
+      margin-bottom: 22px;
+    }
+
+    .vm-label::before {
+      content: "";
+      width: 32px;
+      height: 3px;
+      background: var(--gold);
+      flex: none;
+    }
+
+    .vm-item p {
+      font-family: var(--serif);
+      font-size: 21px;
+      line-height: 1.6;
+      color: var(--g-900);
+    }
+
+    /* ---------- Program cards ---------- */
+    .cards {
+      display: grid;
+      gap: 26px;
+    }
+
+    .cards-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pcard {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+
+    .pcard:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: transparent;
+    }
+
+    .pcard .ph {
+      aspect-ratio: 16/10;
+    }
+
+    .cards-2 .pcard .ph {
+      aspect-ratio: 16/9;
+    }
+
+    .pcard:hover .ph img {
+      transform: scale(1.06);
+    }
+
+    .pcard-body {
+      padding: 26px 26px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .pcard .label {
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--g-600);
+    }
+
+    .pcard h3 {
+      font-size: 22px;
+    }
+
+    .pcard p {
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .pcard .more {
+      margin-top: auto;
+      padding-top: 8px;
+      color: var(--g-700);
       font-weight: 700;
       font-size: 14.5px;
-      text-decoration: none;
-      transition: all 0.3s ease;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
     }
 
-    .maps-link:hover {
-      background: var(--primary);
-      color: #ffffff;
+    .pcard .more svg {
+      width: 16px;
+      height: 16px;
+      transition: transform .2s;
+    }
+
+    .pcard:hover .more svg {
+      transform: translateX(4px);
+    }
+
+    .card-link {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      border-radius: 12px;
+    }
+
+    .formal {
+      margin-top: 64px;
+    }
+
+    /* ---------- Kegiatan ---------- */
+    .act-group+.act-group {
+      margin-top: 52px;
+    }
+
+    .act-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 22px;
+    }
+
+    .act {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3.3;
+      cursor: zoom-in;
+      background: var(--g-100);
+    }
+
+    .act .ph {
+      position: absolute;
+      inset: 0;
+    }
+
+    .act::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(11, 38, 22, .88));
+      pointer-events: none;
+    }
+
+    .act:hover .ph img {
+      transform: scale(1.06);
+    }
+
+    .act h4 {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      z-index: 2;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    /* ---------- Timeline harian ---------- */
+    .timeline {
+      position: relative;
+      max-width: 920px;
+      margin-inline: auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 118px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(var(--g-400), var(--gold));
+      opacity: .45;
+    }
+
+    .tl {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .tl-time {
+      text-align: right;
+      font-weight: 800;
+      color: var(--g-800);
+      font-size: 15px;
+      line-height: 1.25;
+      position: relative;
+    }
+
+    .tl-time small {
+      display: block;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
+    .tl-time::after {
+      content: "";
+      position: absolute;
+      right: -27px;
+      top: 50%;
+      width: 14px;
+      height: 14px;
+      margin-top: -7px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--g-600);
+    }
+
+    .tl-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      padding-right: 20px;
+      transition: box-shadow .2s, transform .2s;
+    }
+
+    .tl-card:hover {
+      box-shadow: var(--shadow-sm);
+      transform: translateX(4px);
+    }
+
+    .tl-card .ph {
+      width: 96px;
+      height: 72px;
+      border-radius: 6px;
+      flex: none;
+      cursor: zoom-in;
+    }
+
+    .tl-card h4 {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--g-900);
+      line-height: 1.4;
+    }
+
+    /* ---------- Fasilitas ---------- */
+    .fas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .fas {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: zoom-in;
+      background: var(--g-100);
+    }
+
+    .fas .ph {
+      position: absolute;
+      inset: 0;
+    }
+
+    .fas::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(11, 38, 22, .85));
+      pointer-events: none;
+    }
+
+    .fas:hover .ph img {
+      transform: scale(1.06);
+    }
+
+    .fas h4 {
+      position: absolute;
+      left: 20px;
+      bottom: 16px;
+      right: 20px;
+      z-index: 2;
+      color: #fff;
+      font-size: 19px;
+    }
+
+    /* ---------- Pendaftaran ---------- */
+    .reg {
+      background: var(--grad);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .reg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .07;
+      background-image: radial-gradient(#fff 1.2px, transparent 1.2px);
+      background-size: 26px 26px;
+    }
+
+    .reg .sec-head h2 {
+      color: #fff;
+    }
+
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      max-width: 960px;
+      margin-inline: auto;
+    }
+
+    .reg-card {
+      background: #fff;
+      color: var(--ink);
+      border-radius: 14px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .reg-card .ic {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--g-100);
+      color: var(--g-700);
+    }
+
+    .reg-card:nth-child(2) .ic {
+      background: var(--gold-100);
+      color: #9a7a12;
+    }
+
+    .reg-card .ic svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .reg-card h3 {
+      font-size: 24px;
+    }
+
+    .reg-card p {
+      color: var(--muted);
+    }
+
+    .reg-card .btn {
+      margin-top: auto;
+      align-self: flex-start;
+    }
+
+    /* ---------- Administrasi ---------- */
+    .admin {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 30px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 46px;
+      border-left: 5px solid var(--g-700);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .admin::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      right: -120px;
+      top: -140px;
+      background: var(--g-100);
+      z-index: 0;
+    }
+
+    .admin>* {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
+    }
+
+    .admin h3 {
+      font-size: clamp(24px, 2.8vw, 30px);
+      margin-bottom: 14px;
+    }
+
+    .admin p {
+      color: var(--muted);
+      font-size: 16.5px;
+    }
+
+    .admin ul {
+      display: grid;
+      gap: 10px;
+    }
+
+    .admin li {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-weight: 700;
+      color: var(--g-900);
+      background: var(--g-50);
+      border: 1px solid var(--line);
+      padding: 12px 16px;
+      border-radius: 12px;
+    }
+
+    .admin li svg {
+      width: 20px;
+      height: 20px;
+      color: var(--g-600);
+      flex: none;
+    }
+
+    .admin .btn {
+      margin-top: 24px;
+    }
+
+    /* ---------- Lokasi ---------- */
+    .loc {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 28px;
+    }
+
+    .loc>* {
+      min-width: 0;
+    }
+
+    .loc-info {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .ci {
+      display: flex;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .ci .ic {
+      width: 48px;
+      height: 48px;
+      flex: none;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--g-100);
+      color: var(--g-700);
+    }
+
+    .ci .ic svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .ci b {
+      display: block;
+      color: var(--g-900);
+      margin-bottom: 2px;
+    }
+
+    .ci span,
+    .ci a {
+      color: var(--muted);
+      font-size: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .ci a:hover {
+      color: var(--g-700);
+    }
+
+    .map {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      min-height: 400px;
+      background: var(--g-100);
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--g-950);
+      color: #b5cbbd;
+      padding-top: 70px;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 44px;
+      padding-bottom: 50px;
+    }
+
+    .foot-logo {
+      height: 64px;
+      width: auto;
+      max-width: 260px;
+      object-fit: contain;
+    }
+
+    footer p {
+      margin-top: 18px;
+      font-size: 14.5px;
+      max-width: 360px;
+    }
+
+    footer h4 {
+      color: #fff;
+      font-family: var(--font);
+      font-size: 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    footer ul {
+      columns: 2;
+      column-gap: 32px;
+    }
+
+    footer li {
+      break-inside: avoid;
+      margin-bottom: 10px;
+      font-size: 14.5px;
+      overflow-wrap: anywhere;
+    }
+
+    footer li a {
+      transition: color .2s, padding .2s;
+    }
+
+    footer li a:hover {
+      color: #f1d77c;
+      padding-left: 4px;
+    }
+
+    .foot-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding-block: 22px;
+      text-align: center;
+      font-size: 13.5px;
+      color: #86a392;
+    }
+
+    /* ---------- Floating ---------- */
+    .wa-float {
+      position: fixed;
+      right: 22px;
+      bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+      z-index: 60;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 26px rgba(37, 211, 102, .45);
+      transition: transform .2s;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.08);
+    }
+
+    .wa-float svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .to-top {
+      position: fixed;
+      right: 28px;
+      bottom: calc(94px + env(safe-area-inset-bottom, 0px));
+      z-index: 60;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 0;
+      background: var(--g-800);
+      color: #fff;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity .25s, transform .25s;
+    }
+
+    .to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    .to-top svg {
+      width: 20px;
+      height: 20px;
     }
 
     /* ---------- Lightbox ---------- */
     .lightbox {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.95);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 99999;
-      padding: 20px;
+      z-index: 100;
+      background: rgba(6, 20, 12, .94);
+      display: grid;
+      place-items: center;
+      padding: 60px 70px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s, visibility .25s;
     }
 
     .lightbox.open {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
     }
 
-    .lightbox-figure {
-      max-width: 90%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
+    .lightbox figure {
+      margin: 0;
+      display: grid;
+      gap: 14px;
+      justify-items: center;
+      max-height: 100%;
     }
 
     .lightbox img {
       max-width: 100%;
-      max-height: 82vh;
-      border-radius: 10px;
-      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+      max-height: calc(100vh - 160px);
+      max-height: calc(100dvh - 160px);
+      border-radius: 12px;
+      object-fit: contain;
     }
 
     .lightbox figcaption {
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 15px;
+      color: #e3efe7;
+      font-weight: 600;
       text-align: center;
     }
 
-    .lightbox .close {
+    .lb-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      font-size: 24px;
+      border: 0;
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       cursor: pointer;
-      border-radius: 50%;
-      transition: var(--transition);
-    }
-
-    .lightbox .close:hover {
-      background: var(--accent);
-      color: var(--text-dark);
-    }
-
-    .lightbox .nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-      border: none;
-      padding: 15px 20px;
-      font-size: 30px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: var(--transition);
-    }
-
-    .lightbox .nav:hover {
-      background: var(--accent);
-      color: var(--text-dark);
-    }
-
-    .lightbox .nav.prev {
-      left: 20px;
-    }
-
-    .lightbox .nav.next {
-      right: 20px;
-    }
-
-    .lightbox button:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    /* ---------- Navbar (dipertahankan dari versi sebelumnya) ---------- */
-    @media (max-width: 480px) {
-      .nav-cta span {
-        display: none;
-      }
-
-      .nav-container {
-        gap: 10px;
-      }
-
-      .navbar {
-        padding: 0 14px !important;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .hamburger {
-        display: flex;
-      }
-
-      .nav-brand-name {
-        font-size: 12px;
-      }
-
-      .nav-brand-sub {
-        font-size: 10px;
-      }
-
-      .nav-logo {
-        height: 36px;
-      }
-
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: min(280px, 78vw);
-        height: 100dvh;
-        background: linear-gradient(160deg, #1a2e2b 0%, #0d1a18 100%);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        padding: 0;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -6px 0 40px rgba(0, 0, 0, 0.5);
-        overflow-y: auto;
-        z-index: 9998;
-      }
-
-      .nav-menu::before {
-        content: 'Menu Navigasi';
-        display: block;
-        padding: 24px 20px 18px;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(212, 175, 55, 0.7);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        margin-bottom: 10px;
-        margin-top: 60px;
-      }
-
-      .nav-menu.open {
-        right: 0;
-      }
-
-      .nav-menu li {
-        padding: 0 12px;
-      }
-
-      .nav-menu a {
-        font-size: 15px;
-        width: 100%;
-        display: block;
-        padding: 13px 14px;
-        border-radius: 10px;
-        color: rgba(255, 255, 255, 0.88);
-        border-bottom: none;
-      }
-
-      .nav-menu a:hover,
-      .nav-menu a.active {
-        background: rgba(212, 175, 55, 0.12);
-        color: var(--accent);
-      }
-
-      .nav-menu li:last-child {
-        padding: 16px 12px 8px;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        margin-top: 8px;
-      }
-
-      .nav-cta {
-        width: 100%;
-        text-align: center;
-        border-radius: 12px !important;
-        padding: 13px 20px;
-        justify-content: center;
-        display: flex;
-        gap: 8px;
-        align-items: center;
-      }
-
-      .nav-menu-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        z-index: 9997;
-        backdrop-filter: blur(4px);
-      }
-
-      .nav-menu-overlay.open {
-        display: block;
-      }
-    }
-
-    /* ---------- Responsif konten ---------- */
-    @media (max-width: 992px) {
-      section {
-        padding: 60px 6%;
-      }
-
-      .kegiatan-card-item {
-        flex-basis: calc((100% - 48px) / 3);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .program-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .visi-misi-box {
-        padding: 28px 24px;
-      }
-
-      .kegiatan-subtitle {
-        font-size: 18px;
-        margin-bottom: 15px;
-      }
-
-      .kegiatan-cards {
-        gap: 12px;
-        margin-bottom: 32px;
-      }
-
-      .kegiatan-card-item {
-        flex-basis: calc((100% - 12px) / 2);
-      }
-
-      .kegiatan-card-title {
-        font-size: 14px;
-        padding: 12px 8px 14px;
-      }
-
-
-
-
-
-
-
-
-
-      .admin-showcase-box {
-        padding: 30px 20px;
-      }
-
-      .admin-showcase-content h3 {
-        font-size: 20px;
-      }
-
-      .admin-showcase-content p {
-        font-size: 14px;
-      }
-
-      .admin-cta-btn {
-        width: 100%;
-        padding: 14px 20px;
-        font-size: 14.5px;
-      }
-
-      .registration-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .registration-card {
-        padding: 30px 20px;
-      }
-
-      .maps-container {
-        padding-bottom: 75%;
-      }
-
-      .maps-info {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .maps-link {
-        justify-content: center;
-      }
-
-      .lightbox .nav {
-        padding: 10px 14px;
-        font-size: 24px;
-      }
-
-      .lightbox .nav.prev {
-        left: 8px;
-      }
-
-      .lightbox .nav.next {
-        right: 8px;
-      }
-    }
-
-    @media (max-width: 600px) {}
-
-    @media (max-width: 480px) {
-      section {
-        padding: 50px 5%;
-      }
-
-      .maps-container {
-        padding-bottom: 100%;
-      }
-    }
-
-    /* ---------- Perangkat sentuh: matikan efek hover ---------- */
-    @media (hover: none) {
-
-      .fasilitas-item img,
-      .fasilitas-item img:hover {
-        transform: none !important;
-        transition: none !important;
-        box-shadow: var(--shadow-card) !important;
-      }
-
-      .program-card,
-      .program-card:hover {
-        transform: none !important;
-        border-color: rgba(15, 48, 31, 0.08) !important;
-        box-shadow: var(--shadow-card) !important;
-      }
-
-      .program-card:hover .program-card-cover img {
-        transform: none !important;
-      }
-
-      .program-card:hover .program-card-footer {
-        color: var(--primary) !important;
-      }
-
-      .registration-card,
-      .registration-card:hover {
-        transform: none !important;
-        border-color: rgba(212, 175, 55, 0.25) !important;
-        box-shadow: 0 10px 30px rgba(15, 48, 31, 0.04) !important;
-      }
-
-      .registration-card:hover::before {
-        transform: scaleX(0) !important;
-      }
-
-      .registration-card:hover .registration-icon-wrapper {
-        background: rgba(212, 175, 55, 0.1) !important;
-        color: var(--primary) !important;
-        transform: none !important;
-      }
-
-      .visi-misi-box:hover {
-        transform: none !important;
-        box-shadow: var(--shadow-card) !important;
-      }
-
-      .admin-cta-btn:hover,
-      .btn-offline:hover {
-        transform: none !important;
-      }
-
-      .btn-offline:hover {
-        background: #ffffff !important;
-      }
-    }
-
-    /* ---------- Hormati preferensi "kurangi gerakan" ---------- */
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto !important;
-      }
-
-      .scroll-animate {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-
-      .program-card,
-      .visi-misi-box,
-      .kegiatan-card-item,
-      .kegiatan-harian-item,
-      .registration-card,
-      .program-card-cover img,
-      .kegiatan-card-img img,
-      .kegiatan-harian-img-wrapper img {
-        transition: none !important;
-        transform: none !important;
-      }
-    }
-
-
-    /* ==========================================================
-   v12 — Penyegaran desain isi halaman
-   ========================================================== */
-
-    /* ---------- Pita warna antar section ---------- */
-    section#pendidikan-formal,
-    section#kegiatan-harian,
-    section#pendaftaran {
-      background-color: var(--cream) !important;
-    }
-
-    /* ---------- Akses cepat (menumpuk di bawah hero) ---------- */
-    section.quick-links {
-      background-color: transparent !important;
-      padding: 0 8%;
-      margin-top: -52px;
-      z-index: 3;
-    }
-
-    .quick-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      max-width: 1210px;
-      margin: 0 auto;
+      place-items: center;
+      transition: background .2s;
     }
 
-    .quick-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 18px 20px;
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      box-shadow: 0 14px 40px rgba(15, 48, 31, 0.12);
-      text-decoration: none;
-      color: var(--text-dark);
-      transition: var(--transition);
+    .lb-btn:hover {
+      background: rgba(255, 255, 255, .25);
     }
 
-    .quick-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-      box-shadow: var(--shadow-hover);
+    .lb-btn svg {
+      width: 24px;
+      height: 24px;
     }
 
-    .quick-card:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    .quick-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: var(--primary);
-      color: #E9C95C;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .quick-text strong {
-      display: block;
-      font-size: 15px;
-      line-height: 1.3;
-      color: var(--primary-dark);
-    }
-
-    .quick-text small {
-      display: block;
-      font-size: 12.5px;
-      color: var(--text-mid);
-      line-height: 1.4;
-      margin-top: 2px;
-    }
-
-    /* ---------- Visi & Misi (pita hijau) ---------- */
-    section#visi-misi {
-      background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 100%) !important;
-      margin-top: 50px;
-      padding-top: 60px;
-      padding-bottom: 70px;
-    }
-
-    #visi-misi .section-title {
-      color: #ffffff;
-    }
-
-    #visi-misi .visi-misi-box {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-top: 4px solid var(--accent);
-      box-shadow: none;
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    #visi-misi .visi-misi-box:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    #visi-misi .visi-misi-box strong {
-      color: #E9C95C;
-    }
-
-    .visi-misi-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: rgba(212, 175, 55, 0.16);
-      color: #E9C95C;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-    }
-
-    /* ---------- Badge pada kartu program ---------- */
-    .program-card-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(15, 48, 31, 0.88);
-      color: #F1D977;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      line-height: 1.3;
-    }
-
-    /* ---------- Kegiatan Harian: grid 2 kolom, kartu horizontal ---------- */
-    .kegiatan-harian-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 1210px;
-      margin: 0 auto;
-    }
-
-    .kegiatan-harian-item {
-      display: flex;
-      align-items: stretch;
-      background: #ffffff;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-      border: var(--border-soft);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .kegiatan-harian-item {
-        transition: var(--transition);
-      }
-
-      .kegiatan-harian-item:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--accent-border);
-      }
-
-      .kegiatan-harian-item:hover .kegiatan-harian-img-wrapper img {
-        transform: scale(1.06);
-      }
-    }
-
-    .kegiatan-harian-img-wrapper {
-      width: 150px;
-      min-width: 150px;
-      min-height: 130px;
-      position: relative;
-      overflow: hidden;
-      background: var(--primary-dark);
-    }
-
-    .kegiatan-harian-img-wrapper img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: zoom-in;
-      transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
-    }
-
-    .kegiatan-harian-info {
-      padding: 18px 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 8px;
-      flex-grow: 1;
-      text-align: left;
-    }
-
-    .kegiatan-harian-title {
-      font-family: 'Lora', serif;
-      font-size: clamp(16px, 1.5vw, 18px);
-      font-weight: 700;
-      color: var(--primary);
-      line-height: 1.4;
-    }
-
-    .kegiatan-harian-time {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      width: fit-content;
-      background: var(--accent-soft);
-      padding: 4px 12px 4px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--accent-text);
-    }
-
-    .kegiatan-harian-time svg {
-      flex-shrink: 0;
-    }
-
-    /* ---------- Fasilitas: keterangan di atas gambar ---------- */
-    .fasilitas-gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .fasilitas-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow-card);
-      background: var(--primary-dark);
-      text-align: left;
-    }
-
-    .fasilitas-item img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-      margin: 0;
-      border-radius: 0;
-      box-shadow: none;
-      cursor: zoom-in;
-      transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
-    }
-
-    .fasilitas-item img:hover {
-      transform: scale(1.06);
-      box-shadow: none;
-    }
-
-    .fasilitas-name {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: 0;
-      padding: 38px 16px 14px;
-      background: linear-gradient(to top, rgba(5, 20, 12, 0.85), rgba(5, 20, 12, 0));
-      color: #ffffff;
-      font-size: 16px;
-      font-weight: 700;
-      pointer-events: none;
-    }
-
-    /* ---------- Langkah pendaftaran ---------- */
-    .reg-badge {
-      display: table;
-      margin: 0 auto 30px;
-      background: var(--accent-soft);
-      border: 1px solid var(--accent-border);
-      color: var(--accent-text);
-      font-weight: 700;
-      font-size: 14px;
-      padding: 8px 18px;
-      border-radius: 999px;
-      text-align: center;
-      line-height: 1.5;
-    }
-
-    .reg-steps {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .reg-step {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 18px;
-      border: var(--border-soft);
-      box-shadow: var(--shadow-card);
-    }
-
-    .reg-step-num {
-      flex-shrink: 0;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #E9C95C;
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .reg-step strong {
-      display: block;
-      font-size: 15px;
-      color: var(--primary-dark);
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-
-    .reg-step p {
-      font-size: 13px;
-      color: var(--text-mid);
-      line-height: 1.55;
-    }
-
-    /* ---------- Ajakan WhatsApp ---------- */
-    section.cta-wa {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%) !important;
-      padding: 56px 8%;
-    }
-
-    .cta-wa-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .cta-wa-text h2 {
-      font-family: 'Lora', serif;
-      font-size: clamp(22px, 3vw, 30px);
-      color: #ffffff;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    }
-
-    .cta-wa-text p {
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 560px;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .cta-wa-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #e6c34f 0%, var(--accent) 100%);
-      color: var(--text-dark);
-      font-weight: 700;
-      font-size: 15.5px;
-      padding: 15px 30px;
-      border-radius: 14px;
-      text-decoration: none;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-      transition: var(--transition);
-    }
-
-    .cta-wa-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .cta-wa-btn:focus-visible {
-      outline: 3px solid #ffffff;
-      outline-offset: 3px;
-    }
-
-    /* ---------- Tombol kembali ke atas ---------- */
-    .back-to-top {
-      position: fixed;
+    .lb-close {
+      top: 18px;
       right: 18px;
-      bottom: 18px;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: none;
-      background: var(--primary);
-      color: #E9C95C;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 900;
+    }
+
+    .lb-prev {
+      left: 16px;
+      top: 50%;
+      margin-top: -25px;
+    }
+
+    .lb-next {
+      right: 16px;
+      top: 50%;
+      margin-top: -25px;
+    }
+
+    /* ---------- Reveal ---------- */
+    .reveal {
       opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+      transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s ease;
     }
 
-    .back-to-top.show {
+    .reveal.in {
       opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+      transform: none;
     }
 
-    .back-to-top:hover {
-      background: var(--accent);
-      color: var(--text-dark);
+    .d1 {
+      transition-delay: .08s;
     }
 
-    .back-to-top:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 3px;
+    .d2 {
+      transition-delay: .16s;
     }
 
-    /* ---------- Responsif v12 ---------- */
-    @media (max-width: 992px) {
-      section.quick-links {
-        padding: 0 6%;
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1060px) {
+      .burger {
+        display: flex;
       }
 
-      .quick-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .menu {
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 0;
+        right: 0;
+        background: var(--g-900);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px 5% 24px;
+        gap: 2px;
+        border-bottom: 3px solid var(--gold);
+        box-shadow: 0 16px 32px rgba(11, 38, 22, .35);
+        transform: translateY(-12px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity .25s, transform .25s, visibility .25s;
+        max-height: calc(100vh - 76px);
+        max-height: calc(100dvh - 76px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
       }
 
-      .reg-steps {
-        grid-template-columns: repeat(2, 1fr);
+      .menu.open {
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+        pointer-events: auto;
       }
 
-      section.cta-wa {
-        padding: 44px 6%;
+      .menu a {
+        padding: 14px 16px;
+        border-radius: 12px;
       }
 
-      .kegiatan-harian-container {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      section.quick-links {
-        margin-top: -26px;
+      .menu .btn {
+        margin: 10px 0 0;
       }
 
-      .quick-grid {
+      .menu-social {
+        display: flex;
+        justify-content: center;
         gap: 10px;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, .14);
       }
 
-      .quick-card {
-        padding: 12px 12px;
-        gap: 10px;
-        border-radius: 14px;
+      .menu-social a {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, .1);
+        color: #fff;
+        border-radius: 50%;
       }
 
-      .quick-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 11px;
-      }
-
-      .quick-icon svg {
+      .menu-social svg {
         width: 20px;
         height: 20px;
       }
 
-      .quick-text strong {
-        font-size: 13px;
+      .cards-3 {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .quick-text small {
-        font-size: 11px;
+      .fas-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      section#visi-misi {
-        margin-top: 30px;
-        padding-top: 45px;
-        padding-bottom: 50px;
-      }
-
-      .visi-misi-icon {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 14px;
-      }
-
-      .kegiatan-harian-container {
-        gap: 12px;
-      }
-
-      .kegiatan-harian-item {
-        border-radius: 16px;
-      }
-
-      .kegiatan-harian-img-wrapper {
-        width: 104px;
-        min-width: 104px;
-        min-height: 104px;
-      }
-
-      .kegiatan-harian-info {
-        padding: 12px 14px;
-        gap: 6px;
-      }
-
-      .kegiatan-harian-title {
-        font-size: 15px;
-      }
-
-      .kegiatan-harian-time {
-        font-size: 12px;
-        padding: 3px 10px 3px 8px;
-      }
-
-      .fasilitas-gallery {
-        gap: 10px;
-      }
-
-      .fasilitas-name {
-        font-size: 12.5px;
-        padding: 28px 10px 9px;
-      }
-
-      .reg-steps {
-        gap: 10px;
-      }
-
-      .reg-step {
-        padding: 14px;
-      }
-
-      .reg-badge {
-        font-size: 12.5px;
-        margin-bottom: 20px;
-      }
-
-      .cta-wa-inner {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: left;
-        gap: 20px;
-      }
-
-      .cta-wa-text p {
-        font-size: 14px;
-      }
-
-      .cta-wa-btn {
-        width: 100%;
-      }
-
-      .back-to-top {
-        right: 14px;
-        bottom: 14px;
-        width: 42px;
-        height: 42px;
+      .loc,
+      .admin {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 600px) {
-      .fasilitas-gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .fasilitas-item:last-child:nth-child(odd) {
-        grid-column: 1 / -1;
-      }
-
-      .fasilitas-item:last-child:nth-child(odd) img {
-        aspect-ratio: 16 / 9;
-      }
-    }
-
-    @media (max-width: 480px) {
-      section.quick-links {
-        padding: 0 5%;
-      }
-
-      .quick-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .reg-steps {
+    @media (max-width: 760px) {
+      .hl-grid {
         grid-template-columns: 1fr;
       }
 
-      section.cta-wa {
-        padding: 38px 5%;
+      .hl {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 20px 22px;
+      }
+
+      .vm,
+      .cards-2,
+      .cards-3,
+      .reg-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vm-item+.vm-item {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: 90%;
+      }
+
+      .nav .container {
+        height: 68px;
+      }
+
+      .menu {
+        max-height: calc(100vh - 68px);
+        max-height: calc(100dvh - 68px);
+      }
+
+      .brand img {
+        height: 40px;
+        max-width: 170px;
+      }
+
+      .burger {
+        width: 44px;
+        height: 44px;
+      }
+
+      .btn {
+        padding: 13px 22px;
+        font-size: 14.5px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero .container {
+        padding-block: 56px 110px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+        margin: 0 0 18px;
+      }
+
+      .hero h1 .kicker {
+        letter-spacing: .24em;
+        margin-bottom: 14px;
+      }
+
+      .hero h1 .kicker::before {
+        width: 28px;
+      }
+
+      .hero p.lead {
+        font-size: 16px;
+      }
+
+      .hero-cta {
+        margin-top: 26px;
+      }
+
+      .hero-cta .btn {
+        flex: 1 1 100%;
+      }
+
+      .hero-wave svg {
+        height: 40px;
+      }
+
+      .highlights {
+        margin-top: -56px;
+      }
+
+      section {
+        padding-block: 62px;
+      }
+
+      .sec-head {
+        margin-bottom: 32px;
+      }
+
+      .vm-item {
+        padding: 30px 24px;
+      }
+
+      .vm-item p {
+        font-size: 18px;
+      }
+
+      .vm-label {
+        margin-bottom: 16px;
+      }
+
+      .sec-head h2 {
+        font-size: 28px;
+      }
+
+      .sec-head h2::after {
+        width: 48px;
+        margin-top: 14px;
+      }
+
+      .tag {
+        font-size: 11.5px;
+        padding: 5px 12px;
+        margin-bottom: 12px;
+      }
+
+      .sub-head h3 {
+        font-size: 21px;
+      }
+
+      .pcard-body {
+        padding: 22px;
+      }
+
+      .pcard h3 {
+        font-size: 20px;
+      }
+
+      .formal {
+        margin-top: 48px;
+      }
+
+      .act-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .act {
+        aspect-ratio: 1/1.1;
+      }
+
+      .act h4 {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 15.5px;
+      }
+
+      .timeline::before {
+        left: 7px;
+      }
+
+      .tl {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-left: 30px;
+      }
+
+      .tl-time {
+        text-align: left;
+        font-size: 14px;
+      }
+
+      .tl-time small {
+        display: inline;
+        margin-left: 6px;
+      }
+
+      .tl-time::after {
+        right: auto;
+        left: -30px;
+      }
+
+      .tl-card {
+        gap: 14px;
+        padding-right: 14px;
+      }
+
+      .tl-card .ph {
+        width: 80px;
+        height: 64px;
+      }
+
+      .tl-card h4 {
+        font-size: 15px;
+      }
+
+      .tl-card:hover {
+        transform: none;
+      }
+
+      .fas-grid {
+        gap: 12px;
+      }
+
+      .fas {
+        aspect-ratio: 1/1.05;
+      }
+
+      .fas h4 {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        font-size: 15.5px;
+      }
+
+      .reg-card {
+        padding: 28px 22px;
+      }
+
+      .reg-card .btn {
+        align-self: stretch;
+      }
+
+      .admin {
+        padding: 30px 22px;
+      }
+
+      .admin .btn {
+        width: 100%;
+      }
+
+      .ci {
+        padding: 16px;
+        gap: 14px;
+      }
+
+      .map,
+      .map iframe {
+        min-height: 300px;
+      }
+
+      footer {
+        padding-top: 52px;
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-bottom: 36px;
+      }
+
+      .foot-logo {
+        height: 54px;
+      }
+
+      .wa-float {
+        width: 52px;
+        height: 52px;
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      }
+
+      .wa-float svg {
+        width: 27px;
+        height: 27px;
+      }
+
+      .to-top {
+        width: 42px;
+        height: 42px;
+        right: 21px;
+        bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+      }
+
+      .lightbox {
+        padding: 64px 12px 90px;
+      }
+
+      .lb-prev,
+      .lb-next {
+        top: auto;
+        bottom: 20px;
+        margin: 0;
+      }
+
+      .lb-prev {
+        left: calc(50% - 60px);
+      }
+
+      .lb-next {
+        right: calc(50% - 60px);
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .act-grid,
+      .fas-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .act,
+      .fas {
+        aspect-ratio: 16/10;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
 
-      .quick-card,
-      .cta-wa-btn,
-      .back-to-top,
-      .fasilitas-item img {
-        transition: none !important;
-        transform: none !important;
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .hero-bg {
+        animation: none;
+        transform: none;
       }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip" href="#konten">Lewati ke konten utama</a>
 
-  <div class="nav-menu-overlay" id="navOverlay"></div>
-  <nav class="navbar" id="mainNav">
-    <div class="nav-container">
-      <div class="nav-top-row">
-        <a href="index.html" class="nav-brand">
-          <img src="assets/images/Properti Utama/Logo Pesantren.png" alt="Logo Al-Falah" class="nav-logo">
-        </a>
+  <!-- IKON -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="m8 12 3 3 5-6" />
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z" />
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z" />
+      </symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="m22 10-10-5L2 10l10 5z" />
+        <path d="M6 12v5c3 2 9 2 12 0v-5" />
+        <path d="M22 10v6" />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+      </symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
+      </symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+      </symbol>
+      <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <path d="M14 2v6h6M16 13H8M16 17H8" />
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path
+          d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+      </symbol>
+      <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="m1 6 7-4 8 4 7-4v16l-7 4-8-4-7 4zM8 2v16M16 6v16" />
+      </symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      </symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4zM17.5 6.5h.01" />
+      </symbol>
+      <symbol id="i-tt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+      </symbol>
+      <symbol id="i-yt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path
+          d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2C5.1 20 12 20 12 20s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z" />
+        <path d="m9.75 15 5.75-3-5.75-3z" />
+      </symbol>
+      <symbol id="i-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path
+          d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z" />
+      </symbol>
+    </defs>
+  </svg>
 
-        <div class="nav-social-wrap">
-          <a href="#" target="_blank" class="social-icon-btn" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-
-          <div class="social-dropdown">
-            <button class="social-icon-btn" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </button>
-            <div class="dropdown-content">
-              <a href="https://www.instagram.com/pp.alfalah_rumbia/" target="_blank">pp.alfalah_rumbia</a>
-              <a href="https://www.instagram.com/alfalahputri_rumbia/" target="_blank">alfalahputri_rumbia</a>
-            </div>
-          </div>
-
-          <div class="social-dropdown">
-            <button class="social-icon-btn" aria-label="TikTok">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-              </svg>
-            </button>
-            <div class="dropdown-content">
-              <a href="https://www.tiktok.com/@pon.pes_alfalah" target="_blank">pon.pes_alfalah</a>
-              <a href="https://www.tiktok.com/@alfalahputrirumbia" target="_blank">alfalahputrirumbia</a>
-              <a href="https://www.tiktok.com/@alfalahfababead123" target="_blank">alfalahfababead123</a>
-            </div>
-          </div>
-
-          <a href="https://youtube.com/@kh_muhayat_channel" target="_blank" class="social-icon-btn"
-            aria-label="YouTube">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
-              </path>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-            </svg>
-          </a>
-
-          <a href="https://wa.me/6285832155052" target="_blank" class="social-icon-btn" aria-label="WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-              </path>
-            </svg>
-          </a>
+  <!-- NAVBAR -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Pondok Pesantren Al-Falah Rumbia — beranda">
+        <img src="assets/images/Properti Utama/Logo Pesantren.png" alt="Logo Pondok Pesantren Al-Falah Rumbia">
+      </a>
+      <button class="burger" id="burger" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu" id="menu" aria-label="Navigasi utama">
+        <a href="index.html" class="active">Beranda</a>
+        <a href="./Pendaftaran.html">Pendaftaran</a>
+        <a href="./Adminitrasi.html">Administrasi</a>
+        <a href="./ProgramPendidikan.html">Program Pendidikan</a>
+        <a href="kegiatan.html">Kegiatan</a>
+        <a href="fasilitas.html">Fasilitas</a>
+        <a href="ekstrakurikuler.html">Ekstrakurikuler</a>
+        <a href="#pendaftaran" class="btn btn-gold">Daftar Santri</a>
+        <div class="menu-social">
+          <a href="https://www.instagram.com/pp.alfalah_rumbia/" target="_blank" rel="noopener"
+            aria-label="Instagram"><svg>
+              <use href="#i-ig" />
+            </svg></a>
+          <a href="https://www.tiktok.com/@pon.pes_alfalah" target="_blank" rel="noopener" aria-label="TikTok"><svg>
+              <use href="#i-tt" />
+            </svg></a>
+          <a href="https://youtube.com/@kh_muhayat_channel" target="_blank" rel="noopener" aria-label="YouTube"><svg>
+              <use href="#i-yt" />
+            </svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg>
+              <use href="#i-fb" />
+            </svg></a>
+          <a href="https://wa.me/6285832155052" target="_blank" rel="noopener" aria-label="WhatsApp"><svg>
+              <use href="#i-wa" />
+            </svg></a>
         </div>
-
-        <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="./Pendaftaran.html">Pendaftaran</a></li>
-        <li><a href="./Adminitrasi.html">Administrasi</a></li>
-        <li><a href="./ProgramPendidikan.html">Program Pendidikan</a></li>
-        <li><a href="#kegiatan">Kegiatan</a></li>
-        <li><a href="#fasilitas">Fasilitas</a></li>
-
-        <li class="nav-mobile-footer">
-          <div class="nav-mobile-socials">
-            <a href="https://www.instagram.com/pp.alfalah_rumbia/" target="_blank" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </a>
-            <a href="https://youtube.com/@kh_muhayat_channel" target="_blank" aria-label="YouTube">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
-                </path>
-                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-              </svg>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-              </svg>
-            </a>
-            <a href="https://www.tiktok.com/@pon.pes_alfalah" target="_blank" aria-label="TikTok">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-              </svg>
-            </a>
-            <a href="https://wa.me/6285832155052" target="_blank" aria-label="WhatsApp">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-                </path>
-              </svg>
-            </a>
-          </div>
-        </li>
-      </ul>
+      </nav>
     </div>
-  </nav>
-
-  <header class="hero-header" id="beranda">
-    <h1 class="sr-only">Pondok Pesantren Al-Falah Rumbia</h1>
-    <img src="assets/images/Properti Utama/Hero.jpeg"
-      alt="Pondok Pesantren Al-Falah Rumbia, Teluk Dalem Ilir, Lampung Tengah" class="hero-bg" width="2666"
-      height="1000" fetchpriority="high">
   </header>
 
   <main id="konten">
 
-    <section class="quick-links" aria-label="Akses cepat">
-      <div class="quick-grid">
-        <a class="quick-card" href="#pendaftaran">
-          <span class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="9" y1="13" x2="15" y2="13"></line>
-              <line x1="9" y1="17" x2="15" y2="17"></line>
-            </svg></span>
-          <span class="quick-text"><strong>Pendaftaran</strong><small>Santri baru 2026/2027</small></span>
-        </a>
-        <a class="quick-card" href="Adminitrasi.html">
-          <span class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-              <line x1="2" y1="10" x2="22" y2="10"></line>
-              <line x1="6" y1="15" x2="10" y2="15"></line>
-            </svg></span>
-          <span class="quick-text"><strong>Biaya Administrasi</strong><small>Rincian biaya &amp;
-              persyaratan</small></span>
-        </a>
-        <a class="quick-card" href="#program">
-          <span class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-              <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"></path>
-              <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"></path>
-            </svg></span>
-          <span class="quick-text"><strong>Program Pendidikan</strong><small>PPRQ, MISRIU, SMP &amp; SMK</small></span>
-        </a>
-        <a class="quick-card"
-          href="https://wa.me/6285832155052?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20Pondok%20Pesantren%20Al-Falah."
-          target="_blank" rel="noopener noreferrer">
-          <span class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-              <path
-                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-              </path>
-            </svg></span>
-          <span class="quick-text"><strong>Hubungi Kami</strong><small>Tanya via WhatsApp</small></span>
-        </a>
+    <!-- HERO -->
+    <section class="hero" id="beranda" style="padding:0">
+      <img src="assets/images/Properti Utama/Hero.jpeg" alt="" class="hero-bg" fetchpriority="high">
+      <div class="container">
+        <div class="hero-inner">
+          <h1><span class="kicker">Pondok Pesantren</span>Al-Falah Rumbia</h1>
+          <p class="lead">Pusat pengembangan keilmuan Islam dan dakwah multikultural. Memadukan prinsip ilmiyah-amaliyah
+            dalam suasana pesantren yang damai dan penuh keberkahan.</p>
+          <div class="hero-cta">
+            <a href="#pendaftaran" class="btn btn-gold">Daftar Santri Baru <svg>
+                <use href="#i-arrow" />
+              </svg></a>
+            <a href="#program" class="btn btn-ghost">Lihat Program</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+          <path d="M0 70V40C240 0 480 0 720 25s480 35 720 5v40z" fill="#fff" />
+        </svg>
       </div>
     </section>
 
+    <!-- HIGHLIGHT -->
+    <div class="highlights">
+      <div class="container">
+        <div class="hl-grid reveal">
+          <div class="hl"><span class="ic"><svg>
+                <use href="#i-book" />
+              </svg></span>
+            <div><b>Tahfidz Al-Qur'an</b><span>Hafalan dengan metode tasmi' &amp; murajaah</span></div>
+          </div>
+          <div class="hl"><span class="ic"><svg>
+                <use href="#i-moon" />
+              </svg></span>
+            <div><b>Kajian Kitab Salaf</b><span>Metode sorogan untuk pemahaman mendalam</span></div>
+          </div>
+          <div class="hl"><span class="ic"><svg>
+                <use href="#i-cap" />
+              </svg></span>
+            <div><b>Pendidikan Formal</b><span>SMP dan SMK Al Falah</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISI MISI -->
     <section id="visi-misi">
-      <h2 class="section-title">Visi &amp; Misi</h2>
-      <div class="visi-misi-grid">
-        <div class="visi-misi-box">
-          <span class="visi-misi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-              <circle cx="12" cy="12" r="3"></circle>
-            </svg></span>
-          <strong>VISI</strong>
-          <p>Mencetak para santri sebagai kader ahlus sunnah wal jama'ah an Nahdliyah yang teguh dalam prinsip
-            ilmiyah-amaliyah dan amaliyah-ilmiyah serta berakhlaqul karimah.</p>
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Visi &amp; Misi</h2>
         </div>
-        <div class="visi-misi-box">
-          <span class="visi-misi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-              <line x1="4" y1="22" x2="4" y2="15"></line>
-            </svg></span>
-          <strong>MISI</strong>
-          <p>Menjadikan Al Falah sebagai rujukan pengembangan keilmuan keislaman dan da'wah multi kultural.</p>
+        <div class="vm reveal">
+          <div class="vm-item">
+            <span class="vm-label">Visi</span>
+            <p>Mencetak para santri sebagai kader ahlus sunnah wal jama'ah an Nahdliyah yang teguh dalam prinsip
+              ilmiyah-amaliyah dan amaliyah-ilmiyah serta berakhlaqul karimah.</p>
+          </div>
+          <div class="vm-item">
+            <span class="vm-label">Misi</span>
+            <p>Menjadikan Al Falah sebagai rujukan pengembangan keilmuan keislaman dan da'wah multi kultural.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="program">
-      <h2 class="section-title">Program Pendidikan</h2>
-      <div class="program-grid">
-        <article class="program-card">
-          <div class="program-card-cover">
-            <img loading="lazy" decoding="async" src="assets/images/PPRQ/Dokumentasi Ziyadah.jpeg"
-              alt="Kegiatan ziyadah santri PPRQ Al-Falah">
-            <span class="program-card-badge">Tahfidz Al-Qur'an</span>
-          </div>
-          <div class="program-card-body">
-            <h3>PPRQ Al-Falah</h3>
-            <p>Program Pendidikan hafalan Al-Qur'an dengan metode tasmi' dan murajaah.</p>
-            <div class="program-card-footer">
-              <span>Selengkapnya</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+    <!-- PROGRAM PENDIDIKAN -->
+    <section class="bg-soft" id="program">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Program Pendidikan</h2>
+        </div>
+
+        <div class="cards cards-2">
+          <article class="pcard reveal">
+            <div class="ph"><img loading="lazy" src="assets/images/PPRQ/Dokumentasi Ziyadah.jpeg"
+                alt="Santri PPRQ Al-Falah saat setoran hafalan"></div>
+            <div class="pcard-body">
+              <span class="label">Pesantren</span>
+              <h3>PPRQ Al-Falah</h3>
+              <p>Program Pendidikan hafalan Al-Qur'an dengan metode tasmi' dan murajaah.</p>
+              <span class="more">Selengkapnya <svg>
+                  <use href="#i-arrow" />
+                </svg></span>
             </div>
-          </div>
-          <a href="pages/PPRQ%20Pondok%20Pesantren%20Al%20Falah%20Rumbia.html" class="card-link-overlay"
-            aria-label="Selengkapnya tentang PPRQ Al-Falah"></a>
-        </article>
-        <article class="program-card">
-          <div class="program-card-cover">
-            <img loading="lazy" decoding="async" src="assets/images/Galeri Kegiatan Harian/Kegiatan Misriu 3.jpg"
-              alt="Kegiatan belajar MISRIU Al-Falah">
-            <span class="program-card-badge">Kajian Kitab Salaf</span>
-          </div>
-          <div class="program-card-body">
-            <h3>MISRIU Al-Falah</h3>
-            <p>Program Pendidikan Pengkajian kitab-kitab salaf dengan metode sorogan untuk pemahaman mendalam.</p>
-            <div class="program-card-footer">
-              <span>Selengkapnya</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
+            <a href="pages/PPRQ Pondok Pesantren Al Falah Rumbia.html" class="card-link"
+              aria-label="Selengkapnya tentang PPRQ Al-Falah"></a>
+          </article>
+          <article class="pcard reveal d1">
+            <div class="ph"><img loading="lazy" src="assets/images/Galeri Kegiatan Harian/Kegiatan Misriu 3.jpg"
+                alt="Kegiatan pengajian kitab MISRIU Al-Falah"></div>
+            <div class="pcard-body">
+              <span class="label">Pesantren</span>
+              <h3>MISRIU Al-Falah</h3>
+              <p>Program Pendidikan Pengkajian kitab-kitab salaf dengan metode sorogan untuk pemahaman mendalam.</p>
+              <span class="more">Selengkapnya <svg>
+                  <use href="#i-arrow" />
+                </svg></span>
             </div>
+            <a href="pages/Misriu Pondok Pesantren Al Falah Rumbia.html" class="card-link"
+              aria-label="Selengkapnya tentang MISRIU Al-Falah"></a>
+          </article>
+        </div>
+
+        <div class="formal" id="pendidikan-formal">
+          <div class="sub-head reveal">
+            <h3>Pendidikan Formal</h3>
           </div>
-          <a href="pages/Misriu%20Pondok%20Pesantren%20Al%20Falah%20Rumbia.html" class="card-link-overlay"
-            aria-label="Selengkapnya tentang MISRIU Al-Falah"></a>
-        </article>
+          <div class="cards cards-2">
+            <article class="pcard reveal">
+              <div class="ph"><img loading="lazy" src="assets/images/SMP &amp; SMK/SMK &amp; SMP (1).jpeg"
+                  alt="Gedung SMP Al Falah"></div>
+              <div class="pcard-body">
+                <span class="label">Jenjang Pertama</span>
+                <h3>SMP Al Falah</h3>
+                <p>Pendidikan formal jenjang pertama yang memadukan kurikulum nasional dengan pembinaan nilai-nilai
+                  kepesantrenan untuk mencetak generasi berkarakter dan berdaya saing.</p>
+                <span class="more">Selengkapnya <svg>
+                    <use href="#i-arrow" />
+                  </svg></span>
+              </div>
+              <a href="pages/SMP &amp; SMK Al Falah Rumbia.html" class="card-link"
+                aria-label="Selengkapnya tentang SMP Al Falah"></a>
+            </article>
+            <article class="pcard reveal d1">
+              <div class="ph"><img loading="lazy" src="assets/images/SMP &amp; SMK/SMK &amp; SMP (1).jpeg"
+                  alt="Gedung SMK Al Falah"></div>
+              <div class="pcard-body">
+                <span class="label">Menengah Kejuruan</span>
+                <h3>SMK Al Falah</h3>
+                <p>Pendidikan formal jenjang menengah kejuruan yang memadukan kurikulum nasional dengan pembinaan
+                  nilai-nilai kepesantrenan untuk mencetak generasi berkarakter dan berdaya saing.</p>
+                <span class="more">Selengkapnya <svg>
+                    <use href="#i-arrow" />
+                  </svg></span>
+              </div>
+              <a href="pages/SMP &amp; SMK Al Falah Rumbia.html" class="card-link"
+                aria-label="Selengkapnya tentang SMK Al Falah"></a>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="pendidikan-formal">
-      <h2 class="section-title">Pendidikan Formal</h2>
-      <div class="program-grid">
-        <article class="program-card">
-          <div class="program-card-cover">
-            <img loading="lazy" decoding="async" src="assets/images/SMP &amp; SMK/SMK &amp; SMP (1).jpeg"
-              alt="Gedung SMP dan SMK Al Falah">
-            <span class="program-card-badge">Jenjang Pertama</span>
-          </div>
-          <div class="program-card-body">
-            <h3>SMP Al Falah</h3>
-            <p>Pendidikan formal jenjang pertama yang memadukan kurikulum nasional dengan pembinaan nilai-nilai
-              kepesantrenan untuk mencetak generasi berkarakter dan berdaya saing.</p>
-            <div class="program-card-footer">
-              <span>Selengkapnya</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-          </div>
-          <a href="pages/SMK%20Al%20Falah%20Rumbia.html" class="card-link-overlay"
-            aria-label="Selengkapnya tentang SMP Al Falah"></a>
-        </article>
-        <article class="program-card">
-          <div class="program-card-cover">
-            <img loading="lazy" decoding="async" src="assets/images/SMP &amp; SMK/SMK &amp; SMP (1).jpeg"
-              alt="Gedung SMP dan SMK Al Falah">
-            <span class="program-card-badge">Kejuruan</span>
-          </div>
-          <div class="program-card-body">
-            <h3>SMK Al Falah</h3>
-            <p>Pendidikan formal jenjang menengah kejuruan yang memadukan kurikulum nasional dengan pembinaan
-              nilai-nilai kepesantrenan untuk mencetak generasi berkarakter dan berdaya saing.</p>
-            <div class="program-card-footer">
-              <span>Selengkapnya</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </div>
-          </div>
-          <a href="pages/SMK%20Al%20Falah%20Rumbia.html" class="card-link-overlay"
-            aria-label="Selengkapnya tentang SMK Al Falah"></a>
-        </article>
-      </div>
-    </section>
-
+    <!-- KEGIATAN PESANTREN -->
     <section id="kegiatan">
-      <h2 class="section-title">Kegiatan Pesantren</h2>
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Kegiatan Pesantren</h2>
+        </div>
 
-      <h3 class="kegiatan-subtitle">Kegiatan Tahunan</h3>
-      <div class="kegiatan-cards">
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Kegiatan Pesantren/Kegiatan Tahunan/Haul Akbar 1.jpeg" alt="Haul Akbar">
+        <div class="act-group">
+          <div class="sub-head reveal">
+            <h3>Kegiatan Tahunan</h3>
           </div>
-          <figcaption class="kegiatan-card-title">Haul Akbar</figcaption>
-        </figure>
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Kegiatan Pesantren/Kegiatan Tahunan/Pra Haflah 1.jpeg" alt="Pra Haflah">
+          <div class="act-grid">
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy"
+                  src="assets/images/Kegiatan Pesantren/Kegiatan Tahunan/Haul Akbar 1.jpeg" alt="Haul Akbar"></div>
+              <h4>Haul Akbar</h4>
+            </figure>
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy"
+                  src="assets/images/Kegiatan Pesantren/Kegiatan Tahunan/Pra Haflah 1.jpeg" alt="Pra Haflah"></div>
+              <h4>Pra Haflah</h4>
+            </figure>
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy"
+                  src="assets/images/Kegiatan Pesantren/Kegiatan Tahunan/Haflah Akhirussanah 1.JPG"
+                  alt="Haflah Akhirussanah"></div>
+              <h4>Haflah Akhirussanah</h4>
+            </figure>
           </div>
-          <figcaption class="kegiatan-card-title">Pra Haflah</figcaption>
-        </figure>
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Kegiatan Pesantren/Kegiatan Tahunan/Haflah Akhirussanah 1.JPG"
-              alt="Haflah Akhirussanah">
+        </div>
+        <div class="act-group">
+          <div class="sub-head reveal">
+            <h3>Kegiatan Bulanan</h3>
           </div>
-          <figcaption class="kegiatan-card-title">Haflah Akhirussanah</figcaption>
-        </figure>
-      </div>
-
-      <h3 class="kegiatan-subtitle">Kegiatan Bulanan</h3>
-      <div class="kegiatan-cards">
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async" src="assets/images/Kegiatan Bulanan/Kegiatan Bulanan 1.jpg"
-              alt="Manakib">
+          <div class="act-grid">
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy" src="assets/images/Kegiatan Bulanan/Kegiatan Bulanan 1.jpg"
+                  alt="Manakib"></div>
+              <h4>Manakib</h4>
+            </figure>
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy" src="assets/images/Ekstrakulikuler/Khitobah 1.jpeg" alt="Khitobah">
+              </div>
+              <h4>Khitobah</h4>
+            </figure>
           </div>
-          <figcaption class="kegiatan-card-title">Manakib</figcaption>
-        </figure>
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async" src="assets/images/Ekstrakulikuler/Khitobah 1.jpeg" alt="Khitobah">
+        </div>
+        <div class="act-group">
+          <div class="sub-head reveal">
+            <h3>Kegiatan Mingguan</h3>
           </div>
-          <figcaption class="kegiatan-card-title">Khitobah</figcaption>
-        </figure>
-      </div>
-
-      <h3 class="kegiatan-subtitle">Kegiatan Mingguan</h3>
-      <div class="kegiatan-cards">
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Kegiatan Pesantren/Kegiatan Mingguan/Tahlil &amp; Yasinan 1.jpeg"
-              alt="Tahlil dan Yasinan">
+          <div class="act-grid">
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy"
+                  src="assets/images/Kegiatan Pesantren/Kegiatan Mingguan/Tahlil &amp; Yasinan 1.jpeg"
+                  alt="Tahlil &amp; Yasinan"></div>
+              <h4>Tahlil &amp; Yasinan</h4>
+            </figure>
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy" src="assets/images/Kegiatan Mingguan/Kegiatan Mingguan 2.jpg"
+                  alt="Lalaran Kubro"></div>
+              <h4>Lalaran Kubro</h4>
+            </figure>
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy"
+                  src="assets/images/Kegiatan Pesantren/Kegiatan Mingguan/Dzibaiyah 1.jpeg" alt="Dzibaiyah"></div>
+              <h4>Dzibaiyah</h4>
+            </figure>
+            <figure class="act zoom" style="margin:0">
+              <div class="ph"><img loading="lazy" src="assets/images/Kegiatan Pesantren/Kegiatan Mingguan/Ziarah 1.jpeg"
+                  alt="Ziarah"></div>
+              <h4>Ziarah</h4>
+            </figure>
           </div>
-          <figcaption class="kegiatan-card-title">Tahlil &amp; Yasinan</figcaption>
-        </figure>
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async" src="assets/images/Kegiatan Mingguan/Kegiatan Mingguan 2.jpg"
-              alt="Lalaran Kubro">
-          </div>
-          <figcaption class="kegiatan-card-title">Lalaran Kubro</figcaption>
-        </figure>
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Kegiatan Pesantren/Kegiatan Mingguan/Dzibaiyah 1.jpeg" alt="Dzibaiyah">
-          </div>
-          <figcaption class="kegiatan-card-title">Dzibaiyah</figcaption>
-        </figure>
-        <figure class="kegiatan-card-item">
-          <div class="kegiatan-card-img">
-            <img loading="lazy" decoding="async" src="assets/images/Kegiatan Pesantren/Kegiatan Mingguan/Ziarah 1.jpeg"
-              alt="Ziarah">
-          </div>
-          <figcaption class="kegiatan-card-title">Ziarah</figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
-    <section id="kegiatan-harian">
-      <h2 class="section-title">Kegiatan Harian</h2>
-      <div class="kegiatan-harian-container">
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async" src="assets/images/Galeri Kegiatan Harian/Mujahadah 1.jpg"
-              alt="Mujahadah dan pembacaan Surah Al-Waqiah">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Mujahadah &amp; Pembacaan Surah Al-Waqiah</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>03.30 - 04.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async" src="assets/images/Galeri Kegiatan Harian/Pengajian Al-Quran 1.jpg"
-              alt="Pengajian Al-Qur'an">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Pengajian Al-Qur'an</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>05.30 - 07.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async" src="assets/images/Galeri Kegiatan Harian/Pengajian Kitab Tafsir 1.jpg"
-              alt="Pengajian Kitab Tafsir">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Pengajian Kitab Tafsir</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>06.30 - 07.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Galeri Kegiatan Harian/Kegiatan Sekolah Formal 1.jpeg" alt="Kegiatan sekolah formal">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Kegiatan Sekolah Formal</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>07.30 - 12.00 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Galeri Kegiatan Harian/Sholat Dzuhur Berjama'ah 1.jpg" alt="Sholat Dzuhur berjama'ah">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Persiapan Sholat Dzuhur Berjama'ah &amp; Sholat Dzuhur Berjama'ah</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>12.00 - 12.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async" src="assets/images/Kegiatan Harian/Kegiatan Harian 6.PNG"
-              alt="Kegiatan Syawir">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Kegiatan Syawir</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>13.30 - 14.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Galeri Kegiatan Harian/Sholat Ashar Berjama'ah 1.jpg" alt="Sholat Ashar berjama'ah">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Persiapan Sholat Ashar Berjama'ah &amp; Sholat Ashar Berjama'ah</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>15.00 - 16.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Galeri Kegiatan Harian/Pengajian Kitab Ta'limul Muta'allimin 1.jpeg"
-              alt="Pengajian Kitab Ta'limul Muta'allimin">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Pengajian Kitab Ta'limul Muta'allimin</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>16.30 - 17.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Galeri Kegiatan Harian/Sholat Magrib Berjama'ah 1.jpeg" alt="Sholat Magrib berjama'ah">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Persiapan Sholat Magrib Berjama'ah &amp; Sholat Magrib Berjama'ah</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>17.30 - 18.30 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Galeri Kegiatan Harian/Pembacaan Surah Yasin, Ar Roman, Al-Waqiah, &amp; Asmaul Husna 1.png"
-              alt="Pembacaan Surah Yasin, Ar Roman, Al-Waqiah, dan Asmaul Husna">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Pembacaan Surah Yasin, Ar Roman, Al-Waqiah, &amp; Asmaul Husna</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>18.30 - 19.15 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async"
-              src="assets/images/Galeri Kegiatan Harian/Sholat Isha Berjama'ah 1.jpeg" alt="Sholat Isya berjama'ah">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Persiapan Sholat Isya Berjama'ah &amp; Sholat Isya Berjama'ah</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>19.15 - 20.00 WIB</span></div>
-          </div>
-        </article>
-        <article class="kegiatan-harian-item">
-          <div class="kegiatan-harian-img-wrapper">
-            <img loading="lazy" decoding="async" src="assets/images/Galeri Kegiatan Harian/Kegiatan Misriu 1.jpg"
-              alt="Kegiatan MISRIU malam hari">
-          </div>
-          <div class="kegiatan-harian-info">
-            <h4 class="kegiatan-harian-title">Kegiatan Misriu</h4>
-            <div class="kegiatan-harian-time"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg><span>20.00 - 22.30 WIB</span></div>
-          </div>
-        </article>
+    <!-- KEGIATAN HARIAN -->
+    <section class="bg-soft" id="harian">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Kegiatan Harian</h2>
+        </div>
+        <ol class="timeline" style="padding:0;margin-block:0">
+          <li class="tl reveal">
+            <div class="tl-time">03.30<small>– 04.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy" src="assets/images/Galeri Kegiatan Harian/Mujahadah 1.jpg"
+                  alt="Mujahadah &amp; Pembacaan Surah Al-Waqiah"></div>
+              <h4>Mujahadah &amp; Pembacaan Surah Al-Waqiah</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">05.30<small>– 07.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Pengajian Al-Quran 1.jpg" alt="Pengajian Al-Qur'an"></div>
+              <h4>Pengajian Al-Qur'an</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">06.30<small>– 07.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Pengajian Kitab Tafsir 1.jpg" alt="Pengajian Kitab Tafsir">
+              </div>
+              <h4>Pengajian Kitab Tafsir</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">07.30<small>– 12.00 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Kegiatan Sekolah Formal 1.jpeg"
+                  alt="Kegiatan Sekolah Formal"></div>
+              <h4>Kegiatan Sekolah Formal</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">12.00<small>– 12.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Sholat Dzuhur Berjama'ah 1.jpg"
+                  alt="Sholat Dzuhur Berjama'ah"></div>
+              <h4>Persiapan Sholat Dzuhur Berjama'ah &amp; Sholat Dzuhur Berjama'ah</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">13.30<small>– 14.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy" src="assets/images/Kegiatan Harian/Kegiatan Harian 6.PNG"
+                  alt="Kegiatan Syawir"></div>
+              <h4>Kegiatan Syawir</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">15.00<small>– 16.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Sholat Ashar Berjama'ah 1.jpg"
+                  alt="Sholat Ashar Berjama'ah"></div>
+              <h4>Persiapan Sholat Ashar Berjama'ah &amp; Sholat Ashar Berjama'ah</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">16.30<small>– 17.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Pengajian Kitab Ta'limul Muta'allimin 1.jpeg"
+                  alt="Pengajian Kitab Ta'limul Muta'allimin"></div>
+              <h4>Pengajian Kitab Ta'limul Muta'allimin</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">17.30<small>– 18.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Sholat Magrib Berjama'ah 1.jpeg"
+                  alt="Sholat Magrib Berjama'ah"></div>
+              <h4>Persiapan Sholat Magrib Berjama'ah &amp; Sholat Magrib Berjama'ah</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">18.30<small>– 19.15 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Pembacaan Surah Yasin, Ar Roman, Al-Waqiah, &amp; Asmaul Husna 1.png"
+                  alt="Pembacaan Surah Yasin, Ar Rohman, Al-Waqiah, dan Asmaul Husna"></div>
+              <h4>Pembacaan Surah Yasin, Ar Roman, Al-Waqiah, &amp; Asmaul Husna</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">19.15<small>– 20.00 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy"
+                  src="assets/images/Galeri Kegiatan Harian/Sholat Isha Berjama'ah 1.jpeg" alt="Sholat Isya Berjama'ah">
+              </div>
+              <h4>Persiapan Sholat Isya Berjama'ah &amp; Sholat Isya Berjama'ah</h4>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <div class="tl-time">20.00<small>– 22.30 WIB</small></div>
+            <div class="tl-card">
+              <div class="ph zoom"><img loading="lazy" src="assets/images/Galeri Kegiatan Harian/Kegiatan Misriu 1.jpg"
+                  alt="Kegiatan Misriu"></div>
+              <h4>Kegiatan Misriu</h4>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
+    <!-- FASILITAS -->
     <section id="fasilitas">
-      <h2 class="section-title">Fasilitas</h2>
-      <div class="fasilitas-gallery">
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Masjid.jpg" alt="Masjid">
-          <figcaption class="fasilitas-name">Masjid</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Kantin Putra.jpg" alt="Kantin Putra">
-          <figcaption class="fasilitas-name">Kantin Putra</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Aula Putra.jpg" alt="Aula Putra">
-          <figcaption class="fasilitas-name">Aula Putra</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Asrama Putra.jpg" alt="Asrama Putra">
-          <figcaption class="fasilitas-name">Asrama Putra</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Kantor Putri.jpg" alt="Kantor Putri">
-          <figcaption class="fasilitas-name">Kantor Putri</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Kantin Putri.jpeg" alt="Kantin Putri">
-          <figcaption class="fasilitas-name">Kantin Putri</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Aula Putri.jpg" alt="Aula Putri">
-          <figcaption class="fasilitas-name">Aula Putri</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Asrama Formal Putri.jpg"
-            alt="Asrama Formal Putri">
-          <figcaption class="fasilitas-name">Asrama Formal Putri</figcaption>
-        </figure>
-        <figure class="fasilitas-item">
-          <img loading="lazy" decoding="async" src="assets/images/Fasilitas/Asrama Tahfidz Putri.jpg"
-            alt="Asrama Tahfidz Putri">
-          <figcaption class="fasilitas-name">Asrama Tahfidz Putri</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="pendaftaran">
-      <h2 class="section-title">Pendaftaran Santri Baru</h2>
-      <p class="reg-badge">Penerimaan Santri Baru Tahun Ajaran 2026/2027</p>
-      <ol class="reg-steps">
-        <li class="reg-step"><span class="reg-step-num">1</span>
-          <div><strong>Isi Formulir</strong>
-            <p>Isi data diri dan data orang tua secara online atau offline.</p>
-          </div>
-        </li>
-        <li class="reg-step"><span class="reg-step-num">2</span>
-          <div><strong>Verifikasi WhatsApp</strong>
-            <p>Pihak pondok menghubungi untuk konfirmasi data pendaftaran.</p>
-          </div>
-        </li>
-        <li class="reg-step"><span class="reg-step-num">3</span>
-          <div><strong>Sowan Dewan Masyayikh</strong>
-            <p>Calon santri hadir bersama wali untuk bersilaturahmi.</p>
-          </div>
-        </li>
-        <li class="reg-step"><span class="reg-step-num">4</span>
-          <div><strong>Administrasi &amp; Tanda Tangan</strong>
-            <p>Verifikasi akhir di kantor pondok sesuai jam kerja.</p>
-          </div>
-        </li>
-      </ol>
-      <div class="registration-grid">
-        <div class="registration-card">
-          <div class="registration-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg></div>
-          <h3>Pendaftaran Online</h3>
-          <p>Prosedur pendaftaran praktis, cepat, dan mudah dilakukan secara mandiri dari rumah melalui formulir digital
-            resmi kami.</p>
-          <a href="pendaftaran/PendaftaranOnlinePondokPesantren.html" class="registration-btn btn-online">
-            <span>Daftar Online</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Fasilitas</h2>
         </div>
-
-        <div class="registration-card">
-          <div class="registration-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <line x1="16" y1="13" x2="8" y2="13"></line>
-              <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10 9 9 9 8 9"></polyline>
-            </svg></div>
-          <h3>Pendaftaran Offline</h3>
-          <p>Unduh formulir pendaftaran fisik untuk diisi secara manual, lalu serahkan langsung ke sekretariat Pondok
-            Pesantren.</p>
-          <a href="pendaftaran/PendaftaranOfflinePondokPesantren.html" class="registration-btn btn-offline">
-            <span>Daftar Offline</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-          </a>
+        <div class="fas-grid">
+          <figure class="fas zoom reveal" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Masjid.jpg" alt="Masjid"></div>
+            <h4>Masjid</h4>
+          </figure>
+          <figure class="fas zoom reveal d1" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Kantin Putra.jpg" alt="Kantin Putra"></div>
+            <h4>Kantin Putra</h4>
+          </figure>
+          <figure class="fas zoom reveal d2" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Aula Putra.jpg" alt="Aula Putra"></div>
+            <h4>Aula Putra</h4>
+          </figure>
+          <figure class="fas zoom reveal" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Asrama Putra.jpg" alt="Asrama Putra"></div>
+            <h4>Asrama Putra</h4>
+          </figure>
+          <figure class="fas zoom reveal d1" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Kantor Putri.jpg" alt="Kantor Putri"></div>
+            <h4>Kantor Putri</h4>
+          </figure>
+          <figure class="fas zoom reveal d2" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Kantin Putri.jpeg" alt="Kantin Putri">
+            </div>
+            <h4>Kantin Putri</h4>
+          </figure>
+          <figure class="fas zoom reveal" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Aula Putri.jpg" alt="Aula Putri"></div>
+            <h4>Aula Putri</h4>
+          </figure>
+          <figure class="fas zoom reveal d1" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Asrama Formal Putri.jpg"
+                alt="Asrama Formal Putri"></div>
+            <h4>Asrama Formal Putri</h4>
+          </figure>
+          <figure class="fas zoom reveal d2" style="margin:0">
+            <div class="ph"><img loading="lazy" src="assets/images/Fasilitas/Asrama Tahfidz Putri.jpg"
+                alt="Asrama Tahfidz Putri"></div>
+            <h4>Asrama Tahfidz Putri</h4>
+          </figure>
         </div>
       </div>
     </section>
 
+    <!-- PENDAFTARAN -->
+    <section class="reg" id="pendaftaran">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Pendaftaran Santri Baru</h2>
+        </div>
+        <div class="reg-grid">
+          <div class="reg-card reveal">
+            <span class="ic"><svg>
+                <use href="#i-monitor" />
+              </svg></span>
+            <h3>Pendaftaran Online</h3>
+            <p>Prosedur pendaftaran praktis, cepat, dan mudah dilakukan secara mandiri dari rumah melalui formulir
+              digital resmi kami.</p>
+            <a href="pages/Form Pendaftaran Online.html" class="btn btn-green">Daftar Online <svg>
+                <use href="#i-arrow" />
+              </svg></a>
+          </div>
+          <div class="reg-card reveal d1">
+            <span class="ic"><svg>
+                <use href="#i-file" />
+              </svg></span>
+            <h3>Pendaftaran Offline</h3>
+            <p>Unduh formulir pendaftaran fisik untuk diisi secara manual, lalu serahkan langsung ke sekretariat Pondok
+              Pesantren.</p>
+            <a href="pages/Form Pendaftaran Offline.html" class="btn btn-outline">Daftar Offline <svg>
+                <use href="#i-download" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMINISTRASI -->
     <section id="administrasi">
-      <h2 class="section-title">Administrasi</h2>
-      <div class="admin-showcase-box">
-        <div class="admin-showcase-content">
-          <h3>Transparansi Biaya &amp; Persyaratan</h3>
-          <p>Dapatkan kejelasan rincian biaya awal masuk santri baru, biaya bulanan (syahriah), serta rincian kebutuhan
-            seragam dan kitab untuk kelancaran proses belajar putra-putri Anda.</p>
-          <a href="Adminitrasi.html" class="admin-cta-btn">
-            <span>Lihat Rincian Biaya Administrasi</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
-              aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Administrasi</h2>
+        </div>
+        <div class="admin reveal">
+          <div>
+            <h3>Transparansi Biaya &amp; Persyaratan</h3>
+            <p>Dapatkan kejelasan rincian biaya awal masuk santri baru, biaya bulanan (syahriah), serta rincian
+              kebutuhan seragam dan kitab untuk kelancaran proses belajar putra-putri Anda.</p>
+            <a href="pages/Adminitrasi.html" class="btn btn-green">Lihat Rincian Biaya Administrasi <svg>
+                <use href="#i-arrow" />
+              </svg></a>
+          </div>
+          <ul>
+            <li><svg>
+                <use href="#i-check" />
+              </svg>Biaya awal masuk</li>
+            <li><svg>
+                <use href="#i-check" />
+              </svg>Biaya bulanan (syahriah)</li>
+            <li><svg>
+                <use href="#i-check" />
+              </svg>Seragam &amp; kitab</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="cta-wa" aria-labelledby="cta-wa-title">
-      <div class="cta-wa-inner">
-        <div class="cta-wa-text">
-          <h2 id="cta-wa-title">Masih ada pertanyaan?</h2>
-          <p>Silakan hubungi kami melalui WhatsApp, kami siap membantu informasi pendaftaran dan kegiatan pesantren.</p>
+    <!-- LOKASI -->
+    <section class="bg-soft" id="lokasi">
+      <div class="container">
+        <div class="sec-head reveal">
+          <h2>Lokasi</h2>
         </div>
-        <a class="cta-wa-btn"
-          href="https://wa.me/6285832155052?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20Pondok%20Pesantren%20Al-Falah."
-          target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" aria-hidden="true">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-            </path>
-          </svg><span>Chat via WhatsApp</span></a>
+        <div class="loc">
+          <div class="loc-info reveal">
+            <div class="ci"><span class="ic"><svg>
+                  <use href="#i-pin" />
+                </svg></span>
+              <div><b>Alamat</b><span>Kecamatan Rumbia, Kabupaten Lampung Tengah, Lampung</span></div>
+            </div>
+            <div class="ci"><span class="ic"><svg>
+                  <use href="#i-phone" />
+                </svg></span>
+              <div><b>WhatsApp</b><a href="https://wa.me/6285832155052" target="_blank" rel="noopener">+62
+                  858-3215-5052</a></div>
+            </div>
+            <div class="ci"><span class="ic"><svg>
+                  <use href="#i-map" />
+                </svg></span>
+              <div><b>Petunjuk Arah</b><a
+                  href="https://www.google.com/maps/search/?api=1&amp;query=Pondok+Pesantren+Al-Falah+Rumbia"
+                  target="_blank" rel="noopener">Buka di Google Maps</a></div>
+            </div>
+          </div>
+          <div class="map reveal d1">
+            <iframe title="Lokasi Pondok Pesantren Al-Falah Rumbia" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26962.304789369293!2d105.47711005!3d-4.76855775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3f679c215375ef%3A0x4fa30cea83f0f9ee!2sPondok%20Pesantren%20Al-Falah%20Rumbia!5e1!3m2!1sid!2sid!4v1779622962759!5m2!1sid!2sid"></iframe>
+          </div>
+        </div>
       </div>
     </section>
-
-    <section id="lokasi">
-      <h2 class="section-title">Lokasi</h2>
-      <div class="maps-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26962.304789369293!2d105.47711005!3d-4.76855775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3f679c215375ef%3A0x4fa30cea83f0f9ee!2sPondok%20Pesantren%20Al-Falah%20Rumbia!5e1!3m2!1sid!2sid!4v1779622962759!5m2!1sid!2sid"
-          title="Peta lokasi Pondok Pesantren Al-Falah, Teluk Dalem Ilir, Rumbia" width="600" height="450"
-          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-      <div class="maps-info">
-        <p class="maps-address"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
-            aria-hidden="true">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg><span>Pondok Pesantren Al-Falah, Teluk Dalem Ilir, Kec. Rumbia, Kab. Lampung Tengah</span></p>
-        <a class="maps-link"
-          href="https://www.google.com/maps/search/?api=1&amp;query=Pondok+Pesantren+Al+Falah+Teluk+Dalem+Ilir+Rumbia+Lampung+Tengah"
-          target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="footer">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
-      <div class="footer-content">
-        <div class="footer-identity">
-          <img src="assets/images/Logo/Logo Footer.png" alt="Logo Al-Falah" class="footer-logo">
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <img src="assets/images/Logo/Logo Footer.png" alt="Logo Pondok Pesantren Al-Falah Rumbia" class="foot-logo"
+            loading="lazy">
+          <p>Pusat pengembangan keilmuan Islam dan dakwah multikultural, dalam suasana pesantren yang damai dan penuh
+            keberkahan.</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="./Pendaftaran.html">Pendaftaran</a></li>
+            <li><a href="./Adminitrasi.html">Administrasi</a></li>
+            <li><a href="./ProgramPendidikan.html">Program Pendidikan</a></li>
+            <li><a href="kegiatan.html">Kegiatan</a></li>
+            <li><a href="fasilitas.html">Fasilitas</a></li>
+            <li><a href="ekstrakurikuler.html">Ekstrakurikuler</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        © 2026 Pondok Pesantren Al-Falah Rumbia. All Rights Reserved.
+      <div class="foot-bottom">© <span id="year">2026</span> Pondok Pesantren Al-Falah Rumbia. All Rights Reserved.
       </div>
     </div>
   </footer>
 
+  <a class="wa-float" href="https://wa.me/6285832155052" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path
+        d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.5.8.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z" />
+    </svg>
+  </a>
+  <button class="to-top" id="toTop" aria-label="Kembali ke atas"><svg viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6" />
+    </svg></button>
+
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau gambar" aria-hidden="true">
-    <button type="button" class="close" id="lightboxClose" aria-label="Tutup">&#10005;</button>
-    <button type="button" class="nav prev" id="lightPrev" aria-label="Gambar sebelumnya">&#8249;</button>
-    <figure class="lightbox-figure">
-      <img id="lightboxImg" src="" alt="">
-      <figcaption id="lightboxCaption"></figcaption>
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Tutup"><svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <path d="M18 6 6 18M6 6l12 12" />
+      </svg></button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Gambar sebelumnya"><svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6" />
+      </svg></button>
+    <figure><img id="lbImg" src="" alt="">
+      <figcaption id="lbCap"></figcaption>
     </figure>
-    <button type="button" class="nav next" id="lightNext" aria-label="Gambar berikutnya">&#8250;</button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Gambar berikutnya"><svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m9 18 6-6-6-6" />
+      </svg></button>
   </div>
 
-  <button type="button" class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
-
   <script>
-    /* ===== global.js ===== */
-    // Smart back navigation: go back if there's history, otherwise go to index.html
-    function smartBack() {
-      if (document.referrer && document.referrer !== '') {
-        history.back();
+    (function () {
+      var nav = document.getElementById('nav');
+      var burger = document.getElementById('burger');
+      var menu = document.getElementById('menu');
+      var toTop = document.getElementById('toTop');
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      /* ---------- Menu mobile ---------- */
+      function setMenu(open) {
+        menu.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', open);
+        burger.setAttribute('aria-label', open ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      burger.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('click', function (e) {
+        if (menu.classList.contains('open') && !e.target.closest('#nav')) setMenu(false);
+      });
+      window.addEventListener('resize', function () { if (window.innerWidth > 1060) setMenu(false); });
+
+      /* ---------- Navbar & tombol ke atas ---------- */
+      function onScroll() {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+        toTop.classList.toggle('show', window.scrollY > 600);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+      /* ---------- Lightbox ---------- */
+      var lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg'), lbCap = document.getElementById('lbCap');
+      var list = [], idx = 0, lastFocus = null;
+      function visibleZooms() {
+        return Array.prototype.slice.call(document.querySelectorAll('.zoom img')).filter(function (im) { return im.offsetParent !== null; });
+      }
+      function show(i) {
+        idx = (i + list.length) % list.length;
+        var im = list[idx];
+        lbImg.src = im.currentSrc || im.src;
+        lbImg.alt = im.alt;
+        lbCap.textContent = im.alt;
+      }
+      function openLb(im) {
+        list = visibleZooms(); lastFocus = document.activeElement;
+        show(list.indexOf(im));
+        lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        document.getElementById('lbClose').focus();
+      }
+      function closeLb() {
+        lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+      document.addEventListener('click', function (e) {
+        var z = e.target.closest('.zoom');
+        if (z) { var im = z.querySelector('img'); if (im) openLb(im); }
+      });
+      document.getElementById('lbClose').addEventListener('click', closeLb);
+      document.getElementById('lbPrev').addEventListener('click', function () { show(idx - 1); });
+      document.getElementById('lbNext').addEventListener('click', function () { show(idx + 1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { if (lb.classList.contains('open')) closeLb(); else setMenu(false); }
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft') show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+      var sx = 0;
+      lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - sx;
+        if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+      });
+
+      /* ---------- Animasi muncul ---------- */
+      if ('IntersectionObserver' in window) {
+        var rv = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); rv.unobserve(en.target); } });
+        }, { threshold: .1 });
+        document.querySelectorAll('.reveal').forEach(function (el) { rv.observe(el); });
       } else {
-        // Detect if we're in /pages/ subfolder or at root
-        const path = window.location.pathname;
-        if (path.includes('/pages/')) {
-          window.location.href = '../index.html';
-        } else {
-          window.location.href = 'index.html';
-        }
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
       }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      // Global fade-up animation using IntersectionObserver
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('show');
-            obs.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-    });
-  </script>
-  <script>
-    /* ===== navbar.js ===== */
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('navMenu');
-      const navOverlay = document.getElementById('navOverlay');
-      const navLinks = document.querySelectorAll('.nav-menu a');
-
-      if (hamburger && navMenu && navOverlay) {
-        function openMenu() {
-          hamburger.classList.add('active');
-          navMenu.classList.add('open');
-          navOverlay.classList.add('open');
-          hamburger.setAttribute('aria-expanded', 'true');
-          navMenu.scrollTop = 0;
-          document.body.style.overflow = 'hidden';
-        }
-
-        function closeMenu() {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('open');
-          navOverlay.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          document.body.style.overflow = '';
-        }
-
-        hamburger.addEventListener('click', (e) => {
-          e.stopPropagation();
-          navMenu.classList.contains('open') ? closeMenu() : openMenu();
-        });
-
-        navOverlay.addEventListener('click', closeMenu);
-
-        // Close menu when clicking nav links
-        navLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            // Close menu with a brief delay for external tabs or immediate for anchor links
-            if (link.getAttribute('target') === '_blank') {
-              setTimeout(closeMenu, 250);
-            } else {
-              closeMenu();
-            }
-          });
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && navMenu.classList.contains('open')) {
-            closeMenu();
-          }
-        });
-
-        // Close on screen resize to desktop
-        window.addEventListener('resize', () => {
-          if (window.innerWidth > 900 && navMenu.classList.contains('open')) {
-            closeMenu();
-          }
-        });
-      }
-
-      // Scrolling navbar state
-      const navbar = document.getElementById('mainNav');
-      if (navbar) {
-        let isScrolled = false;
-
-        const handleScroll = () => {
-          const nextIsScrolled = window.scrollY > 40;
-          if (nextIsScrolled === isScrolled) return;
-
-          isScrolled = nextIsScrolled;
-          navbar.classList.toggle('scrolled', isScrolled);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        handleScroll();
-      }
-    });
-  </script>
-  <script>
-    /* ===== index.js ===== */
-    /* ==========================================================
-       index.js — Tampilan awal (Beranda)  · v9
-       ========================================================== */
-
-    /* ---------- Menandai menu navbar yang aktif (jika ada link #anchor) ---------- */
-    const sections = document.querySelectorAll('section[id], header[id]');
-    const menuLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-
-    if (menuLinks.length) {
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            menuLinks.forEach(a => {
-              a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
-            });
-          }
-        });
-      }, { threshold: 0.4, rootMargin: '-70px 0px -30% 0px' });
-
-      sections.forEach(s => sectionObserver.observe(s));
-    }
-
-    /* ---------- Animasi muncul saat scroll (hanya desktop dengan mouse) ---------- */
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isMobileDevice = window.innerWidth <= 768 || window.matchMedia('(hover: none)').matches;
-
-    if (!isMobileDevice && !reduceMotion) {
-      const animTargets = document.querySelectorAll(
-        'section > .section-title, .quick-card, .program-card, .visi-misi-box, .kegiatan-card-item, ' +
-        '.kegiatan-harian-item, .fasilitas-item, .reg-step, .registration-card, .admin-showcase-box, ' +
-        '.cta-wa-inner, .maps-container'
-      );
-
-      // Setelah animasi selesai, lepas class animasi supaya efek hover bawaan kartu
-      // (transition bayangan, dll.) kembali bekerja normal.
-      const finish = (el) => el.classList.remove('scroll-animate', 'visible');
-
-      const scrollAnimObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          el.classList.add('visible');
-          scrollAnimObserver.unobserve(el);
-          let done = false;
-          const end = () => { if (!done) { done = true; finish(el); } };
-          el.addEventListener('transitionend', (ev) => { if (ev.propertyName === 'transform') end(); }, { once: true });
-          setTimeout(end, 800);
-        });
-      }, { threshold: 0.05, rootMargin: '40px 0px 0px 0px' });
-
-      animTargets.forEach(el => {
-        el.classList.add('scroll-animate');
-        scrollAnimObserver.observe(el);
-      });
-    }
-
-    /* ---------- Scroll halus untuk link #anchor ---------- */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href && href.length > 1 && href.startsWith('#')) {
-          e.preventDefault();
-          try {
-            const target = document.querySelector(href);
-            if (target) {
-              const offset = window.innerWidth <= 900 ? 64 : 126;
-              const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
-              window.scrollTo({
-                top: targetPosition,
-                behavior: reduceMotion ? 'auto' : 'smooth'
-              });
-            }
-          } catch (err) {
-            // Selector tidak valid — abaikan
-          }
-        }
-      });
-    });
-
-    /* ---------- Lightbox galeri (kegiatan & fasilitas) ---------- */
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const lightPrev = document.getElementById('lightPrev');
-    const lightNext = document.getElementById('lightNext');
-
-    const galleryImgs = Array.from(document.querySelectorAll(
-      '.kegiatan-card-img img, .kegiatan-harian-img-wrapper img, .fasilitas-item img'
-    ));
-    let currentIndex = 0;
-    let lastFocused = null;
-
-    function showImage(idx) {
-      currentIndex = (idx + galleryImgs.length) % galleryImgs.length;
-      const img = galleryImgs[currentIndex];
-      lightboxImg.src = img.currentSrc || img.src;
-      lightboxImg.alt = img.alt;
-      lightboxCaption.textContent = img.alt;
-    }
-
-    function openLightbox(idx) {
-      lastFocused = document.activeElement;
-      showImage(idx);
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      lightboxClose.focus();
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      if (lastFocused && lastFocused.focus) lastFocused.focus();
-    }
-
-    if (lightbox && galleryImgs.length) {
-      galleryImgs.forEach((img, i) => {
-        img.setAttribute('tabindex', '0');
-        img.setAttribute('role', 'button');
-        img.addEventListener('click', () => openLightbox(i));
-        img.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openLightbox(i);
-          }
-        });
-      });
-
-      lightboxClose.addEventListener('click', closeLightbox);
-      lightPrev.addEventListener('click', () => showImage(currentIndex - 1));
-      lightNext.addEventListener('click', () => showImage(currentIndex + 1));
-
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
-      });
-    }
-
-    /* ---------- Tombol kembali ke atas ---------- */
-    const backToTop = document.getElementById('backToTop');
-    if (backToTop) {
-      const toggleBackToTop = () => backToTop.classList.toggle('show', window.scrollY > 700);
-      window.addEventListener('scroll', toggleBackToTop, { passive: true });
-      toggleBackToTop();
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
-      });
-    }
+    })();
   </script>
 </body>
 
